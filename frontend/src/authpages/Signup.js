@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { auth, firestore } from '../components/firebase'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Signup.scss';
+
 
 
 
