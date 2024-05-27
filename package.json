@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "bootstrap": "^5.3.3",
-    "firebase": "^10.12.1",
-    "sass": "^1.77.2"
-  }
-}
