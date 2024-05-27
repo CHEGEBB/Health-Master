@@ -4,13 +4,13 @@ import { auth } from '../firebase';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
 
 const Signup = () => {
-    const [passwordStrength, setPasswordStrength] = useState(''); // State to track password strength
-    const [passwordMatch, setPasswordMatch] = useState(true); // State to track if passwords match
+    const [passwordStrength, setPasswordStrength] = useState('');
+    const [passwordMatch, setPasswordMatch] = useState(true); 
 
     const checkPasswordStrength = (password) => {
         if (password.length >= 8 || /[!@#$%^&*(),.?":{}|<>]/.test(password) ) {
             setPasswordStrength('strong');
-        } else if (password.length >= 6) {
+        } else if (password.length >= 6 || /[a-zA-Z]/.test(password) || /[0-9]/.test(password)){
             setPasswordStrength('moderate');
         } else {
             setPasswordStrength('weak');
@@ -59,7 +59,6 @@ const Signup = () => {
             const provider = new GoogleAuthProvider();
             const result = await signInWithPopup(auth, provider);
             console.log("Google sign-in successful:", result.user);
-            // You can redirect the user or perform any additional actions here
         } catch (error) {
             console.error("Error signing in with Google:", error.message);
         }
