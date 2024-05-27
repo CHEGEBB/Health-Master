@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Signup.scss';
 import { auth } from '../firebase';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
+import GoogleIcon from '../images/flat-color-icons--google.svg';
 
 const Signup = () => {
     const [passwordStrength, setPasswordStrength] = useState('');
@@ -68,6 +69,15 @@ const Signup = () => {
         <div className="signup-container">
             <div className="signup-form">
                 <h2>Sign Up</h2>
+                <div className="google-signup">
+                <div className="sign">
+                    <h2>Sign Up with Google</h2>
+                </div>
+                <div className="googlecon">
+                <img src={GoogleIcon} alt="Google Icon" onClick={googleSignIn} />
+                </div>
+               
+                </div>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="name">Name</label>
@@ -89,9 +99,7 @@ const Signup = () => {
                     </div>
                     <button type="submit">Sign Up</button>
                 </form>
-                <button onClick={googleSignIn}>Sign Up with Google</button>
                 <p>Already have an account? <a href="/login">Log in</a></p>
-                <p>Or <a href="/">Go Back</a></p>
             </div>
         </div>
     );
