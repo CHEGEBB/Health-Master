@@ -18,7 +18,8 @@ $isle: 'Island Moments', cursive;
   align-items: center;
   height: 100vh;
   background-color: $form-color;
-  font-family:$josefin;
+  font-family:$jost;
+  
 }
 
 .signup-form {
@@ -26,8 +27,8 @@ $isle: 'Island Moments', cursive;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #3A7BD5;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     }
@@ -37,20 +38,33 @@ $isle: 'Island Moments', cursive;
       color: #555;
     }
     
-    .signup-form input
+    .signup-form 
      {
+        input{
         width: 100%;
         padding: 10px;
         margin-bottom: 15px;
-        border: 1px solid #ccc;
+        border: 1px solid #3A7BD5;
         border-radius: 5px;
         box-sizing: border-box;
+        font-family: $jost;
+
+        &:focus {
+            outline: none;
+        }
+        &:hover {
+            border-color: $button-color;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+    }
         }
         
         .signup-form input[type=text]:focus,
         .signup-form input[type=password]:focus,
         .signup-form input[type=email]:focus {
-            border-color: $button-color;
+            border-color: #3A7BD5;
         }
         .form-group{
             display: flex;
@@ -80,9 +94,12 @@ $isle: 'Island Moments', cursive;
           }
           
           .password-match {
-            font-size: 14px;
-            margin-top: 5px;
+            font-size: 18px;
+            margin-top: -5px;
             color: red;
+            justify-content: left;
+            display: flex;
+            font-family: $jost;
           }
           
           @keyframes strengthPulse {
