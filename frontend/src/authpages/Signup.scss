@@ -53,3 +53,39 @@ $button-text-color: #ffffff;
                 justify-content: left;
             }
         }
+        .password-strength {
+            font-size: 14px;
+            margin-top: 5px;
+            &.weak {
+              color: red;
+            }
+            &.moderate {
+              color: orange;
+            }
+            &.strong {
+              color: green;
+            }
+          }
+          
+          .password-match {
+            font-size: 14px;
+            margin-top: 5px;
+            color: red;
+          }
+          
+          @keyframes strengthPulse {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.1);
+            }
+            100% {
+              transform: scale(1);
+            }
+          }
+          
+          .password-strength-animation {
+            animation: strengthPulse 1s infinite;
+          }
+          
