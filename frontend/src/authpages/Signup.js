@@ -9,12 +9,12 @@ const Signup = () => {
     const [passwordMatch, setPasswordMatch] = useState(true); 
 
     const checkPasswordStrength = (password) => {
-        if (password.length >= 8 || /[!@#$%^&*(),.?":{}|<>]/.test(password) ) {
-            setPasswordStrength('strong');
-        } else if (password.length >= 6 || /[a-zA-Z]/.test(password) || /[0-9]/.test(password)){
-            setPasswordStrength('moderate');
+        if (password.length >= 8 && /[!@#$%^&*(),.?":{}|<>]/.test(password) ) {
+            setPasswordStrength('The Password is strong');
+        } else if (password.length >= 6 && /[a-zA-Z]/.test(password)){
+            setPasswordStrength('The Password is moderate');
         } else {
-            setPasswordStrength('weak');
+            setPasswordStrength('The Password is weak');
         }
     };
 
@@ -90,7 +90,7 @@ const Signup = () => {
                     <div className="form-group">
                         <label htmlFor="password">Password</label>
                         <input type="password" id="password" name="password" required onChange={handlePasswordChange} />
-                        {passwordStrength && <p className={`password-strength ${passwordStrength}`}>{passwordStrength.toUpperCase()} Password</p>}
+                        {passwordStrength && <p className={`password-strength ${passwordStrength}`}>{passwordStrength} password</p>}
                     </div>
                     <div className="form-group">
                         <label htmlFor="confirmPassword">Confirm Password</label>

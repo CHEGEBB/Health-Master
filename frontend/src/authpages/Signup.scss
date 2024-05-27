@@ -63,8 +63,11 @@ $isle: 'Island Moments', cursive;
             }
         }
         .password-strength {
-            font-size: 14px;
-            margin-top: 5px;
+            font-size: 18px;
+            margin-top: -5px;
+            justify-content: left;
+            display: flex;
+            font-family: $jost;
             &.weak {
               color: red;
             }
