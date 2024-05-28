@@ -4,11 +4,10 @@ import { auth } from '../firebase';
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import GoogleIcon from '../images/flat-color-icons--google.svg';
 import BackgroundVideo2 from '../images/background3.mp4';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 
 const Login = () => {
     const navigate = useNavigate();
-    const location = useLocation();
 
     const handleEmailLogin = async (e) => {
         e.preventDefault();
@@ -46,20 +45,6 @@ const Login = () => {
             </div>
             <div className="login-form">
                 <h2>Login</h2>
-                <nav className="horizontal-nav">
-                    <ul>
-                        <li>
-                            <Link to="/" className={location.pathname === '/signup' ? 'active' : ''}>
-                                Sign Up
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/login" className={location.pathname === '/' ? 'active' : ''}>
-                                Login
-                            </Link>
-                        </li>
-                    </ul>
-                </nav>
                 <p>Or</p>
                 <div className="google-signin">
                     <div className="sign">
