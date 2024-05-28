@@ -11,7 +11,7 @@ $roboto-condensed: 'Roboto Condensed', sans-serif;
 $josefin: 'Josefin Sans', sans-serif;
 $isle: 'Island Moments', cursive;
 .profile-container {
-  border: 2px solid #ccc;
+  // border: 2px solid #ccc;
   width: 980px;
   height: auto;
   align-items: center;
@@ -23,6 +23,7 @@ $isle: 'Island Moments', cursive;
   flex-direction: column;
   gap: 20px;
   padding: 20px;
+  background-color: rgba(115, 195, 238, 0.3);
   .first{
     display: flex;
     flex-direction: row;
@@ -97,17 +98,35 @@ $isle: 'Island Moments', cursive;
 
   .health-details {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
+    flex-direction: column;
+    gap: 100px;
     height: 300px;
-    background-color: #ddd;
+    background-color: #ffff;
     width: 620px;
     border-radius: 8px;
-
-    .column1, .column2 {
+    padding-left: 90px;
+    .column1{
       display: flex;
-      flex-direction: column;
-      gap: 10px;
+      flex-direction: row;
+      gap: 70px;
+      h2{
+        font-family: $ropa;
+        color: #ccc;
+        font-size: 18px;
+        padding: 5px;
+      }
+    }
+
+   .column2 {
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    h2{
+      font-family: $ropa;
+      color: #ccc;
+      font-size: 18px;
+      padding: 5px;
+    }
     }
   }
 
