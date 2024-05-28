@@ -1,13 +1,81 @@
+@media screen and (max-width: 1440px) {
+  .App {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    height: 100vh;
+  }
+  
+  .main-app {
+    width: 100%;
+    max-width: calc(100% - 200px); 
+    margin-left: 200px; 
+    background-color: red;
+  }
 
-.App {
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  gap: 70px;
-  height: 100vh;
+  .sidenav {
+    min-width: 26%;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .main-app {
+      max-width: calc(100% - 20px); 
+      margin-left: 0;
+    }
+  }
 }
-.main-app{
-  min-width: 75%;
-  background-color: green;
 
+@media screen and (max-width: 1024px) {
+  .App {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    height: 100vh;
+  }
+  
+  .main-app {
+    min-width: 74%; 
+  }
+
+  .sidenav {
+    min-width: 26%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .App {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    height: 100vh;
+  }
+  
+  .main-app {
+    min-width: 74%;
+  }
+
+  .sidenav {
+    min-width: 26%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .App {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    height: 100vh;
+  }
+  
+  .main-app {
+    min-width: 74%; 
+  }
+
+  .sidenav {
+    min-width: 26%;
+  }
 }
