@@ -33,11 +33,11 @@ const Login = () => {
 
     return ( 
         <div className="login-container">
-        <div className="video-container">
+        <div className="video-container2">
                 <video autoPlay muted loop>
                     <source src={BackgroundVideo2} type="video/mp4" />
                 </video>
-                <div className="overlay"></div>
+                <div className="overlay2"></div>
             </div>
             <div className="login-form">
                 <h2>Login</h2>
