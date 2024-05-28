@@ -18,7 +18,7 @@ $isle: 'Island Moments', cursive;
     font-family: $jost;
     position: relative;
     z-index: 100;
-    .video-container {
+    .video-container2 {
       position: absolute;
       top: 0;
       left: 0;
@@ -39,7 +39,7 @@ $isle: 'Island Moments', cursive;
       z-index: -1;
     }
     
-    .overlay {
+    .overlay2 {
       position: absolute;
       top: 0;
       left: 0;
@@ -55,6 +55,8 @@ $isle: 'Island Moments', cursive;
     border-radius: 5px;
     background-color: #f9f9f9;
     max-width: 350px;
+    position: absolute;
+    z-index: 100;
   }
   
   .form-group {
