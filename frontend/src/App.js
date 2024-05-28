@@ -3,10 +3,17 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.scss';
 import Signup from './authpages/Signup';
 import Login from './authpages/Login';
+import Sidenav from './components/Sidenav';
 
 function App() {
   return (
     <div className="App">
+    <div className="side-navbar">
+
+    <Sidenav />
+
+    </div>
+    <div className="main-app">
     
     <Router>
       <Routes>
@@ -15,6 +22,7 @@ function App() {
         <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
+    </div>
     </div>
   );
 }
