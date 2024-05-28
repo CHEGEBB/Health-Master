@@ -8,15 +8,16 @@ const Sidenav = () => {
 
     return (  
         <nav className='side-nav'>
+        <h1>Health Master</h1>
         <ul>
-        <li>
+        {/* <li>
                 <Link to='/'>Signup</Link>
             </li>
             <li>
                 <Link to='/login'>Login</Link>
-        </li>
+        </li> */}
 
-            <li>
+            <li className='special'>
                 <Link to='/home'>Dashboard</Link>
             </li>  
             <li>

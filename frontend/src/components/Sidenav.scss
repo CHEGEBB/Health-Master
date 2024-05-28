@@ -2,8 +2,11 @@
 
 nav{
     background-color: #3A7BD5;
-    width:200px ;
+    width:250px ;
     height: 100%;
+    h1{
+        padding: 30px;
+    }
     ul{
         list-style-type: none;
         margin: 0;
@@ -12,6 +15,20 @@ nav{
         background-color: #3A7BD5;
         display: flex;
         flex-direction: column;
+        .special{
+            background-color: white;
+            color: #3A7BD5;
+            margin-left: 40px;
+
+             a{
+                display: flex;
+                flex-direction: column;
+                color: #3A7BD5;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+        }
         li{
             float: left;
         }
