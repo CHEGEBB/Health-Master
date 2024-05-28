@@ -2,6 +2,7 @@ import React from 'react';
 import './Login.scss';
 import { auth } from '../firebase';
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import GoogleIcon from '../images/flat-color-icons--google.svg';
 
 const Login = () => {
     const handleEmailLogin = async (e) => {
@@ -12,8 +13,7 @@ const Login = () => {
         try {
             // Sign in user with email and password
             await signInWithEmailAndPassword(auth, email, password);
-            
-            // Redirect or show success message
+     
             console.log("User logged in successfully");
         } catch (error) {
             console.error("Error logging in:", error.message);
@@ -34,6 +34,16 @@ const Login = () => {
         <div className="login-container">
             <div className="login-form">
                 <h2>Login</h2>
+                <p>Or</p>
+                <div className="google-signin">
+                <div className="sign">
+                    <h2>Login with Google</h2>
+                </div>
+                <div className="googlecon">
+                <img src={GoogleIcon} alt="Google Icon" onClick={handleGoogleLogin} />
+                </div>
+               
+                </div>
                 <form onSubmit={handleEmailLogin}>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
@@ -45,7 +55,6 @@ const Login = () => {
                     </div>
                     <button type="submit">Login</button>
                 </form>
-                <button onClick={handleGoogleLogin}>Sign in with Google</button>
                 <p>Don't have an account? <a href="/signup">Sign up</a></p>
             </div>
         </div>
