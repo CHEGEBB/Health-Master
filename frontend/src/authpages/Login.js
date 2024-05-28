@@ -3,6 +3,7 @@ import './Login.scss';
 import { auth } from '../firebase';
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import GoogleIcon from '../images/flat-color-icons--google.svg';
+import BackgroundVideo2 from '../images/background2.mp4';
 
 const Login = () => {
     const handleEmailLogin = async (e) => {
@@ -32,6 +33,12 @@ const Login = () => {
 
     return ( 
         <div className="login-container">
+        <div className="video-container">
+                <video autoPlay muted loop>
+                    <source src={BackgroundVideo2} type="video/mp4" />
+                </video>
+                <div className="overlay"></div>
+            </div>
             <div className="login-form">
                 <h2>Login</h2>
                 <p>Or</p>
