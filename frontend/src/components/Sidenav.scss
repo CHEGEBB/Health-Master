@@ -19,6 +19,8 @@ nav{
             background-color: white;
             color: #3A7BD5;
             margin-left: 40px;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
 
              a{
                 display: flex;
@@ -41,7 +43,7 @@ nav{
             text-decoration: none;
         }
         li a:hover{
-            background-color: #ad00b3;
+            text-decoration: none;
         }
     }
 }
