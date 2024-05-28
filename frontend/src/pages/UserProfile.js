@@ -1,17 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { auth } from '../firebase'; // Adjust the import according to your project structure
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './UserProfile.scss';
 
 const Profile = () => {
   const [userName, setUserName] = useState('Brian');
-  const [userEmail, setUserEmail] = useState('brayo@gmail.com');
+  const [userEmail, setUserEmail] = useState('');
   const [userPhone, setUserPhone] = useState('0712345678');
   const [profilePic, setProfilePic] = useState(null);
   const [appointments, setAppointments] = useState([
     { date: new Date(2024, 5, 15), description: 'Annual Checkup' },
     { date: new Date(2024, 6, 10), description: 'Dentist Appointment' },
   ]);
+
+  useEffect(() => {
+    const user = auth.currentUser;
+    if (user) {
+      setUserEmail(user.email);
+      setUserName(user.displayName || 'Brian'); // Fallback to 'Brian' if displayName is not set
+    }
+  }, []);
 
   const handleProfilePicChange = (e) => {
     setProfilePic(URL.createObjectURL(e.target.files[0]));
@@ -29,6 +38,7 @@ const Profile = () => {
 
   return (
     <div className="profile-container">
+            <div className="first">
       <div className="personal-details">
         <div className="profile-pic">
           {profilePic ? (
@@ -92,6 +102,7 @@ const Profile = () => {
             <p>Nairobi</p>
           </div>
         </div>
+      </div>
       </div>
       <div className="health-reports">
         <h2>Health Reports:</h2>

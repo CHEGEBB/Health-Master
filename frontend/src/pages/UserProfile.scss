@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Ropa+Sans:ital@0;1&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+$form-color: #f5f5f5;
+$button-color: #132aae;
+$button-hover-color: #0d1a7f;
+$button-text-color: #ffffff;
+$jost: 'Jost', sans-serif;
+$ropa: 'Ropa Sans', sans-serif;
+$roboto: 'Roboto', sans-serif;
+$roboto-slab: 'Roboto Slab', serif;
+$roboto-condensed: 'Roboto Condensed', sans-serif;
+$josefin: 'Josefin Sans', sans-serif;
+$isle: 'Island Moments', cursive;
 .profile-container {
   border: 2px solid #ccc;
   width: 980px;
@@ -11,8 +23,12 @@
   flex-direction: column;
   gap: 20px;
   padding: 20px;
-
-  .personal-details, .health-details, .health-reports, .health-habits, .calendar {
+  .first{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .health-reports, .health-habits, .calendar {
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
@@ -24,8 +40,12 @@
 
   .personal-details {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 20px;
+    width: 300px;
+    background-color: rgb(85, 144, 227);
+    border-radius: 8px;
+    margin-left: -100px;
 
     .profile-pic {
       display: flex;
@@ -64,6 +84,7 @@
         border: none;
         border-radius: 4px;
         padding: 5px 10px;
+        width: 50px;
         cursor: pointer;
 
         &:hover {
@@ -77,6 +98,8 @@
     display: flex;
     flex-direction: row;
     gap: 20px;
+    background-color: green;
+    width: 600px;
 
     .column1, .column2 {
       display: flex;
@@ -121,12 +144,15 @@
       justify-content: center;
       align-items: center;
       height: auto;
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
+      background-color: #c22626;
+      border: 1px solid #944a4a;
       padding: 10px;
 
       .custom-calendar {
-        width: 100%;
+        width: 200px;
+        background-color: #ddd;
+        color: #000;
+        font-family: $jost;
       }
 
       .appointment-marker {

@@ -1,10 +1,22 @@
 
-
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Ropa+Sans:ital@0;1&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+$form-color: #f5f5f5;
+$button-color: #132aae;
+$button-hover-color: #0d1a7f;
+$button-text-color: #ffffff;
+$jost: 'Jost', sans-serif;
+$ropa: 'Ropa Sans', sans-serif;
+$roboto: 'Roboto', sans-serif;
+$roboto-slab: 'Roboto Slab', serif;
+$roboto-condensed: 'Roboto Condensed', sans-serif;
+$josefin: 'Josefin Sans', sans-serif;
+$isle: 'Island Moments', cursive;
 nav{
     background-color: #3A7BD5;
     width:250px ;
     height: 100%;
     position: fixed;
+    font-family: $jost;
     h1{
         padding: 30px;
     }
@@ -16,12 +28,42 @@ nav{
         background-color: #3A7BD5;
         display: flex;
         flex-direction: column;
+        .nav-item{
+            display: flex;
+            flex-direction: row;
+
+            .nav-icon{
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                &:hover{
+                    cursor: pointer;
+                }
+                img{
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 10px;
+                    margin-top: 10px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
         .special{
             background-color: white;
             color: #3A7BD5;
             margin-left: 40px;
             border-top-left-radius: 8px;
             border-bottom-left-radius: 8px;
+            img{
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+                margin-top: 10px;
+                filter: invert(8);
+            }
             .dark-special {
                 background-color: black;
                 color: white;
@@ -43,6 +85,10 @@ nav{
         }
         li{
             float: left;
+            display: flex;
+            justify-content: left;
+            margin-left: 40px;
+
         }
         li a{
             display: flex;
@@ -54,6 +100,9 @@ nav{
         }
         li a:hover{
             text-decoration: none;
+            color: crimson;
+            border: 1px solid #ccc;
+            border-radius: 8px;
         }
     }
 }
