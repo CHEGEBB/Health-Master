@@ -4,6 +4,8 @@ import './App.scss';
 import Signup from './authpages/Signup';
 import Login from './authpages/Login';
 import Sidenav from './components/Sidenav';
+import Home from './pages/Home';
+
 
 const AuthenticatedRoutes=()=> {
   return (
