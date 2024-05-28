@@ -3,6 +3,7 @@ import './Signup.scss';
 import { auth } from '../firebase';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
 import GoogleIcon from '../images/flat-color-icons--google.svg';
+import BackgroundVideo from '../images/background1.mp4';
 
 const Signup = () => {
     const [passwordStrength, setPasswordStrength] = useState('');
@@ -67,6 +68,12 @@ const Signup = () => {
 
     return (
         <div className="signup-container">
+            <div className="video-container">
+                <video autoPlay muted loop>
+                    <source src={BackgroundVideo} type="video/mp4" />
+                </video>
+                <div className="overlay"></div>
+            </div>
             <div className="signup-form">
                 <h2>Sign Up</h2>
                 <div className="google-signup">
