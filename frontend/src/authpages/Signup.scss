@@ -79,7 +79,7 @@ $isle: 'Island Moments', cursive;
             input [type="text"], input[type="password"], input[type="email"]{
                 width: 280px;
                 padding: 10px;
-                border: 1px solid #ccc;
+                border: 1px solid #c0c0c0;
                 border-radius: 5px;
                 margin-left: -1px;
                 font-family: $jost;
@@ -88,7 +88,7 @@ $isle: 'Island Moments', cursive;
               }
               &:hover {
                   border-color: $button-color;
-                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                  box-shadow: 0 0 10px rgba(118, 24, 116, 0.6);
                   transition: all 0.2s ease-in-out;
                   cursor: pointer;
               }
@@ -96,7 +96,7 @@ $isle: 'Island Moments', cursive;
             #name{
               width: 280px;
               padding: 10px;
-              border: 1px solid #ccc;
+              border: 1px solid #c0c0c0;
               border-radius: 5px;
               font-family: $jost;
               &:focus {
@@ -104,7 +104,7 @@ $isle: 'Island Moments', cursive;
             }
             &:hover {
                 border-color: $button-color;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 0 10px rgba(118, 24, 116, 0.6);
                 transition: all 0.2s ease-in-out;
                 cursor: pointer;
             }
