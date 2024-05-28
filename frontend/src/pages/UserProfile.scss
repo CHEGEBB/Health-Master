@@ -48,6 +48,7 @@ $isle: 'Island Moments', cursive;
     background-color: rgb(85, 144, 227);
     border-radius: 8px;
     margin-left: -10px;
+    padding: 15px;
 
     .profile-pic {
       display: flex;
@@ -135,6 +136,7 @@ $isle: 'Island Moments', cursive;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 300px;
 
     .report {
       display: flex;
