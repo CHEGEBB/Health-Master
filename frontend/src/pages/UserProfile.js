@@ -66,10 +66,45 @@ const Profile = () => {
           <p>Nairobi</p>
         </div>
       </div>
-    
-
       </div>
-    </div>   
+      <div className="health-reports">
+        <h2>Health Reports:</h2>
+        <div className="report">
+        <div className="bp">
+        <h3>Blood Pressure</h3>
+        </div>
+        <div className="value">
+          <p>120/80</p>
+        </div>
+        <div className="date">
+          <h3>12/06/24</h3>
+        </div>
+        </div>
+        <div className="report">
+        <div className="checkup">
+          <h3>Checkup</h3>
+          </div>
+          <div className="value">
+            <p>Normal</p>
+            </div>
+            <div className="date">
+            <h3>12/06/24</h3>
+            </div>
+          </div>
+          <div className="report">
+            <div className="temperature">
+            <h3>Temperature</h3>
+            </div>
+            <div className="value">
+              <p>36.5</p>
+            </div>
+            <div className="date">
+              <h3>12/06/24</h3>
+            </div>
+          </div>
+        </div>
+        
+      </div>   
   );
   
     
