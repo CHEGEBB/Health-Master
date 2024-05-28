@@ -16,7 +16,7 @@ const Profile = () => {
     diseases: '',
     illnesses: '',
     allergies: '',
-    profilePicture: currentUser.photoURL || 'https://via.placeholder.com/150', // Default placeholder image
+    profilePicture: currentUser.photoURL || ''
   });
 
   const handleChange = (e) => {
@@ -27,10 +27,10 @@ const Profile = () => {
   const handleProfilePictureUpload = (e) => {
     const file = e.target.files[0];
     const reader = new FileReader();
-    reader.onloadend = () => {
+    reader.onload = () => {
       setUserData({ ...userData, profilePicture: reader.result });
       updateProfile(auth.currentUser, {
-        photoURL: reader.result,
+        photoURL: reader.result
       });
     };
     reader.readAsDataURL(file);
@@ -39,64 +39,64 @@ const Profile = () => {
   const saveProfile = () => {
     updateProfile(auth.currentUser, {
       displayName: userData.name,
-      photoURL: userData.profilePicture,
-    })
-      .then(() => {
-        console.log('Profile updated successfully');
-      })
-      .catch((error) => {
-        console.error('Error updating profile:', error);
-      });
+      photoURL: userData.profilePicture
+    }).then(() => {
+      console.log('Profile updated successfully');
+    }).catch((error) => {
+      console.error('Error updating profile:', error);
+    });
   };
 
   return (
     <div className="profile-container">
-      <div className="profile-header">
-        <div className="profile-picture">
-          <img src={userData.profilePicture} alt="Profile" />
-          <input type="file" accept="image/*" onChange={handleProfilePictureUpload} />
-        </div>
-        <h2>{userData.name}</h2>
-        <p>{userData.email}</p>
+      <h2>Profile</h2>
+      <div className="profile-picture">
+        <img src={userData.profilePicture} alt="Profile" />
+        <input type="file" accept="image/*" onChange={handleProfilePictureUpload} />
       </div>
       <div className="profile-details">
-        <h3>Basic Information</h3>
-        <div className="field">
+        <div className="profile-info">
           <label>Name:</label>
-          <span>{userData.name}</span>
+          <input type="text" name="name" value={userData.name} onChange={handleChange} />
         </div>
-        <div className="field">
+        <div className="profile-info">
           <label>Email:</label>
           <span>{userData.email}</span>
         </div>
-        <div className="field">
+        <div className="profile-info">
           <label>Age:</label>
           <input type="text" name="age" value={userData.age} onChange={handleChange} />
         </div>
-        <div className="field">
+        <div className="profile-info">
           <label>Sex:</label>
           <input type="text" name="sex" value={userData.sex} onChange={handleChange} />
         </div>
-        <div className="field">
+        <div className="profile-info">
           <label>Weight:</label>
           <input type="text" name="weight" value={userData.weight} onChange={handleChange} />
         </div>
-        <div className="field">
+        <div className="profile-info">
           <label>Height:</label>
           <input type="text" name="height" value={userData.height} onChange={handleChange} />
         </div>
-        <div className="field">
+        <div className="profile-info">
           <label>Blood Group:</label>
           <input type="text" name="bloodGroup" value={userData.bloodGroup} onChange={handleChange} />
         </div>
+        <div className="profile-info">
+          <label>Known Diseases/Conditions:</label>
+          <textarea name="diseases" value={userData.diseases} onChange={handleChange}></textarea>
+        </div>
+        <div className="profile-info">
+          <label>Previous Illnesses:</label>
+          <textarea name="illnesses" value={userData.illnesses} onChange={handleChange}></textarea>
+        </div>
+        <div className="profile-info">
+          <label>Allergies:</label>
+          <textarea name="allergies" value={userData.allergies} onChange={handleChange}></textarea>
+        </div>
+        <button onClick={saveProfile}>Save Profile</button>
       </div>
-      <div className="profile-details">
-        <h3>Medical Information</h3>
-        <textarea name="diseases" value={userData.diseases} onChange={handleChange} placeholder="Known Diseases"></textarea>
-        <textarea name="illnesses" value={userData.illnesses} onChange={handleChange} placeholder="Previous Illnesses"></textarea>
-        <textarea name="allergies" value={userData.allergies} onChange={handleChange} placeholder="Allergies"></textarea>
-      </div>
-      <button onClick={saveProfile}>Save Profile</button>
     </div>
   );
 };
