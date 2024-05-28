@@ -29,6 +29,10 @@ $isle: 'Island Moments', cursive;
     flex-direction: row;
     gap: 20px;
   }
+  .second{
+    display: flex;
+    flex-direction: row;
+  }
   .health-reports, .health-habits, .calendar {
     background-color: #fff;
     border-radius: 12px;
@@ -143,6 +147,11 @@ $isle: 'Island Moments', cursive;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      h3{
+        font-family: $ropa;
+        font-size: 18px;
+        font-weight: 300;
+      }
     }
   }
 

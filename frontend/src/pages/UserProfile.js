@@ -104,6 +104,16 @@ const Profile = () => {
         </div>
       </div>
       </div>
+      <div className="second">
+      <div className="calendar">
+        <h2>Appointment Calendar</h2>
+        <div className="calendar-container">
+          <Calendar
+            tileContent={tileContent}
+            className="custom-calendar"
+          />
+        </div>
+      </div>
       <div className="health-reports">
         <h2>Health Reports:</h2>
         <div className="report">
@@ -140,6 +150,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
+      </div>
       <div className="health-habits">
         <h2>Healthy Habits</h2>
         <table>
@@ -164,15 +175,6 @@ const Profile = () => {
             </tr>
           </tbody>
         </table>
-      </div>
-      <div className="calendar">
-        <h2>Appointment Calendar</h2>
-        <div className="calendar-container">
-          <Calendar
-            tileContent={tileContent}
-            className="custom-calendar"
-          />
-        </div>
       </div>
     </div>
   );
