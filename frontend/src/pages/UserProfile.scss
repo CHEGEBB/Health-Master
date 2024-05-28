@@ -1,5 +1,5 @@
 .profile-container {
-  background-color: #d1dce1;
+  border: 2px solid #ccc;
   width: 980px;
   height: auto;
   align-items: center;
@@ -120,9 +120,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 200px;
+      height: auto;
       background-color: #f9f9f9;
       border: 1px solid #ddd;
+      padding: 10px;
+
+      .custom-calendar {
+        width: 100%;
+      }
+
+      .appointment-marker {
+        color: red;
+      }
     }
   }
 }
