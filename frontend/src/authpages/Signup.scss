@@ -11,6 +11,11 @@ $roboto-condensed: 'Roboto Condensed', sans-serif;
 $josefin: 'Josefin Sans', sans-serif;
 $isle: 'Island Moments', cursive;
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .signup-container {
   display: flex;
@@ -41,25 +46,7 @@ $isle: 'Island Moments', cursive;
     
     .signup-form 
      {
-    //     input{
-    //     width: 100%;
-    //     padding: 10px;
-    //     margin-bottom: 15px;
-    //     border: 1px solid #3A7BD5;
-    //     border-radius: 5px;
-    //     box-sizing: border-box;
-    //     font-family: $jost;
-
-    //     &:focus {
-    //         outline: none;
-    //     }
-    //     &:hover {
-    //         border-color: $button-color;
-    //         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    //         transition: all 0.2s ease-in-out;
-    //         cursor: pointer;
-    //     }
-    // }
+    
         }
         
         .signup-form input[type=text]:focus,
