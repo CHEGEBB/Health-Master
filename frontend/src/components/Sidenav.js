@@ -19,6 +19,27 @@ const Sidenav = () => {
             <li>
                 <Link to='/home'>Home</Link>
             </li>  
+            <li>
+                <Link to='/profile'>Profile</Link>
+            </li>
+            <li>
+                <Link to='/healthgoals'>Health Goals</Link>
+            </li>
+            <li>
+                <Link to='/symptomchecker'>Symptom Checker</Link>
+            </li>
+            <li>
+                <Link to='/medication'>Medication</Link>
+            </li>
+            <li>
+                <Link to='/appointments'>Appointments</Link>
+            </li>
+            <li>
+                <Link to='/health'>Health</Link>
+            </li>
+            <li>
+                <Link to='/settings'>Settings</Link>
+            </li>
         </ul>
         </nav>
     );
