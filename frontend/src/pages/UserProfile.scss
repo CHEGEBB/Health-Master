@@ -1,67 +1,128 @@
-
-
-.profile-container{
+.profile-container {
   background-color: #d1dce1;
   width: 980px;
-  height: 900px;
+  height: auto;
   align-items: center;
   justify-content: center;
   margin-top: 50px;
   margin-left: 70px;
   border-radius: 12px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 20px;
+  padding: 20px;
 
-  .user-details{
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     gap: 10px;
-     width: 250px;
-     height: 300px;
-     border-radius: 12px;
-     background-color: #fff;
-     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-     padding: 20px;
-     position: relative;
-     z-index: 100;
+  .personal-details, .health-details, .health-reports, .health-habits, .calendar {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    padding: 20px;
+    position: relative;
+    z-index: 100;
+    width: 100%;
   }
-  .health-details{
+
+  .personal-details {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 250px;
-    height: 300px;
-    border-radius: 12px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    padding: 20px;
-    position: relative;
-    z-index: 100;
+    gap: 20px;
+
+    .profile-pic {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .placeholder-pic {
+        width: 100px;
+        height: 100px;
+        background-color: #ccc;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      input[type="file"] {
+        margin-top: 10px;
+      }
+    }
+
+    .user-details {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 5px 10px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
   }
-  .health-reports{
+
+  .health-details {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    .column1, .column2 {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  .health-reports {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 10px;
-    width: 400px;
-    height: 300px;
-    border-radius: 12px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    padding: 20px;
-    position: relative;
-    z-index: 100;
-    .report{
+
+    .report {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
       align-items: center;
+    }
+  }
+
+  .health-habits {
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+    }
+  }
+
+  .calendar {
+    .calendar-container {
+      display: flex;
       justify-content: center;
+      align-items: center;
+      height: 200px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
     }
   }
 }
