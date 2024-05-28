@@ -17,7 +17,7 @@ const Sidenav = () => {
         </li>
 
             <li>
-                <Link to='/home'>Home</Link>
+                <Link to='/home'>Dashboard</Link>
             </li>  
             <li>
                 <Link to='/profile'>Profile</Link>
