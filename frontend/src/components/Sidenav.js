@@ -19,6 +19,14 @@ const Sidenav = () => {
 
             <li className='special'>
                 <Link to='/home'>Dashboard</Link>
+                <div className="nav-item">
+                    <div className="nav-con">
+                        <div className="nav-icon">
+                            <i className="fas fa-user-circle"></i>
+                        </div>
+    
+                    </div>
+                </div>
             </li>  
             <li>
                 <Link to='/profile'>Profile</Link>
