@@ -9,15 +9,16 @@ const Profile = () => {
     <div className="profile-container">
     <div className="personal-details">
       <div className="profile-pic">
-       {/* profile pic implementation */}
+      {/* profile pic implementation */}
       </div>
       <div className="user-details">
         <div className="user-name">
           {/* user name implementation */}
-          <h1>Brian</h1>
+          <p>Brian</p>
         </div>
         <div className="user-email">
           {/* user email implementation */}
+          <p>brayo@gmail.com</p>
         </div>
 
       </div>
