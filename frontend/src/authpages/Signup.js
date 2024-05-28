@@ -40,7 +40,7 @@ const Signup = () => {
             if (password !== confirmPassword) {
                 throw new Error("Passwords do not match");
             }
-            if (passwordStrength !== 'strong' && passwordStrength !== 'moderate') {
+            if (passwordStrength !== 'The Password is strong' && passwordStrength !== 'The Password is moderate') {
                 throw new Error("Password must be moderately or strongly secure");
             }
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -70,13 +70,12 @@ const Signup = () => {
             <div className="signup-form">
                 <h2>Sign Up</h2>
                 <div className="google-signup">
-                <div className="sign">
-                    <h2>Sign Up with Google</h2>
-                </div>
-                <div className="googlecon">
-                <img src={GoogleIcon} alt="Google Icon" onClick={googleSignIn} />
-                </div>
-               
+                    <div className="sign">
+                        <h2>Sign Up with Google</h2>
+                    </div>
+                    <div className="googlecon">
+                        <img src={GoogleIcon} alt="Google Icon" onClick={googleSignIn} />
+                    </div>
                 </div>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
