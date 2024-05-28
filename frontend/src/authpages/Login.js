@@ -3,7 +3,7 @@ import './Login.scss';
 import { auth } from '../firebase';
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import GoogleIcon from '../images/flat-color-icons--google.svg';
-import BackgroundVideo2 from '../images/background2.mp4';
+import BackgroundVideo2 from '../images/background3.mp4';
 
 const Login = () => {
     const handleEmailLogin = async (e) => {
