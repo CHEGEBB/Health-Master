@@ -82,6 +82,7 @@ $isle: 'Island Moments', cursive;
                 border: 1px solid #ccc;
                 border-radius: 5px;
                 margin-left: -1px;
+                font-family: $jost;
                 &:focus {
                   outline: none;
               }
@@ -97,6 +98,7 @@ $isle: 'Island Moments', cursive;
               padding: 10px;
               border: 1px solid #ccc;
               border-radius: 5px;
+              font-family: $jost;
               &:focus {
                 outline: none;
             }
