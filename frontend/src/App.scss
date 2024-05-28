@@ -1,4 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Ropa+Sans:ital@0;1&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+$form-color: #f5f5f5;
+$button-color: #132aae;
+$button-hover-color: #0d1a7f;
+$button-text-color: #ffffff;
+$jost: 'Jost', sans-serif;
+$ropa: 'Ropa Sans', sans-serif;
+$roboto: 'Roboto', sans-serif;
+$roboto-slab: 'Roboto Slab', serif;
+$roboto-condensed: 'Roboto Condensed', sans-serif;
+$josefin: 'Josefin Sans', sans-serif;
+$isle: 'Island Moments', cursive;
 @media screen and (max-width: 1440px) {
+  body{
+    background-color: #c0c0c0;
+  }
   .App {
     text-align: center;
     display: flex;
@@ -11,6 +26,10 @@
     width: 100%;
     max-width: calc(100% - 200px); 
     margin-left: 200px; 
+    font-family: $jost;
+    h2{
+      font-size: 16px;
+    }
   }
 
   .sidenav {
