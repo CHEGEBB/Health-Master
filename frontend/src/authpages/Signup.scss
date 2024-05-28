@@ -41,25 +41,25 @@ $isle: 'Island Moments', cursive;
     
     .signup-form 
      {
-        input{
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #3A7BD5;
-        border-radius: 5px;
-        box-sizing: border-box;
-        font-family: $jost;
+    //     input{
+    //     width: 100%;
+    //     padding: 10px;
+    //     margin-bottom: 15px;
+    //     border: 1px solid #3A7BD5;
+    //     border-radius: 5px;
+    //     box-sizing: border-box;
+    //     font-family: $jost;
 
-        &:focus {
-            outline: none;
-        }
-        &:hover {
-            border-color: $button-color;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.2s ease-in-out;
-            cursor: pointer;
-        }
-    }
+    //     &:focus {
+    //         outline: none;
+    //     }
+    //     &:hover {
+    //         border-color: $button-color;
+    //         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    //         transition: all 0.2s ease-in-out;
+    //         cursor: pointer;
+    //     }
+    // }
         }
         
         .signup-form input[type=text]:focus,
@@ -76,10 +76,42 @@ $isle: 'Island Moments', cursive;
                 display: flex;
                 justify-content: left;
             }
+            input [type="text"], input[type="password"], input[type="email"]{
+                width: 280px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                margin-left: -1px;
+                &:focus {
+                  outline: none;
+              }
+              &:hover {
+                  border-color: $button-color;
+                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                  transition: all 0.2s ease-in-out;
+                  cursor: pointer;
+              }
+            }
+            #name{
+              width: 280px;
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              &:focus {
+                outline: none;
+            }
+            &:hover {
+                border-color: $button-color;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                transition: all 0.2s ease-in-out;
+                cursor: pointer;
+            }
+            }
+              
         }
         .password-strength {
             font-size: 18px;
-            margin-top: -5px;
+            margin-top: 2px;
             justify-content: left;
             display: flex;
             font-family: $jost;
@@ -96,7 +128,7 @@ $isle: 'Island Moments', cursive;
           
           .password-match {
             font-size: 18px;
-            margin-top: -5px;
+            margin-top: 3px;
             color: red;
             justify-content: left;
             display: flex;
