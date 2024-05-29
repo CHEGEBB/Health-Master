@@ -56,7 +56,7 @@ const Homepage = () => {
         label: 'Heart Rate',
         data: heartRateData,
         fill: false,
-        borderColor: 'rgba(75,192,192,1)',
+        borderColor: '#FF0000',
         tension: 0.1,
       }
     ]
