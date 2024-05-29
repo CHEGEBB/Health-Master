@@ -165,7 +165,7 @@ header {
         
             .heart-rate {
                 width: 300px;
-                background-color: $slate-blue;
+                background-color: $sky-blue;
                 h4 {
                     margin-bottom: 10px;
                 }
@@ -178,8 +178,8 @@ header {
                 }
         
                 .graph-for-heartrate {
+                    margin-top: 50px;
                     width: 100%;
-                    height: 300px;
                 }
             }
         }

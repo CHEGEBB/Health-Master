@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './Home.scss';
 import { Line } from 'react-chartjs-2';
 import {
@@ -30,21 +30,19 @@ ChartJS.register(
 const generateRandomHeartRate = () => Math.floor(Math.random() * (120 - 60 + 1) + 60);
 
 const Homepage = () => {
-  const [heartRateData, setHeartRateData] = useState([]);
-  const [labels, setLabels] = useState([]);
+  const [heartRateData, setHeartRateData] = useState([{ x: 0, y: generateRandomHeartRate() }]);
+  const chartRef = useRef(null);
+  let xValue = useRef(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setHeartRateData((prevData) => {
-        const newData = [...prevData, generateRandomHeartRate()];
-        if (newData.length > 20) newData.shift(); // Keep the array length constant
+        const newData = [...prevData, { x: xValue.current, y: generateRandomHeartRate() }];
+        xValue.current += 1;
+        if (chartRef.current) {
+          chartRef.current.update('quiet');
+        }
         return newData;
-      });
-
-      setLabels((prevLabels) => {
-        const newLabels = [...prevLabels, prevLabels.length + 1];
-        if (newLabels.length > 20) newLabels.shift(); // Keep the array length constant
-        return newLabels;
       });
     }, 1000);
 
@@ -52,7 +50,6 @@ const Homepage = () => {
   }, []);
 
   const data = {
-    labels,
     datasets: [
       {
         label: 'Heart Rate',
@@ -69,7 +66,15 @@ const Homepage = () => {
     scales: {
       x: {
         type: 'linear',
-        position: 'bottom'
+        position: 'bottom',
+        min: heartRateData.length > 20 ? heartRateData[heartRateData.length - 20].x : 0,
+        max: heartRateData.length > 20 ? heartRateData[heartRateData.length - 1].x : 20,
+        grid : {
+            display: false
+        },
+        ticks: {
+          stepSize: 1
+        }
       },
       y: {
         min: 50,
@@ -115,8 +120,11 @@ const Homepage = () => {
           <h2>My Health Stats</h2>
           <div className="heart-rate">
             <h4>Heart Rate</h4>
+            <div className="heart-rate-value">
+                <p>{heartRateData[heartRateData.length - 1].y}/118</p>
+            </div>
             <div className="graph-for-heartrate">
-              <Line data={data} options={options} />
+              <Line ref={chartRef} data={data} options={options} />
             </div>
           </div>
         </div>
