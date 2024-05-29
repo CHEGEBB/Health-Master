@@ -158,19 +158,38 @@ header {
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 20px;
+            .stats{
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+
+                .blood-pressure{
+                    border-radius: 8px;
+                    width: 200px;
+                    height: 350px;
+                    border: 2px solid #ccc;
+                }
+            }
+        
         
             h2 {
                 margin-bottom: 20px;
+                color: $dark-pink;
+                font-size: 26px;
+                font-family: $ropa;
             }
         
             .heart-rate {
                 width: 300px;
-                background-color: $sky-blue;
+                background-color: $royal-blue;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.7);
+                height: 400px;
                 .heartRate{
                     display: flex;
                     flex-direction: row;
                     margin-left: 50px;
-                    gap :20px;
+                    gap :10px;
                     padding-top: 50px;
 
                     img{
@@ -200,6 +219,7 @@ header {
                     padding-top: 20px;
                     padding-bottom: 20px;
                     width: 100%;
+                    font-family: $jost;
                 }
             }
         }
