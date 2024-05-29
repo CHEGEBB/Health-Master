@@ -162,6 +162,12 @@ header {
                 display: flex;
                 flex-direction: row;
                 gap: 10px;
+                .body-temperature{
+                    border: 1px solid #ccc;
+                    width: 200px;
+                    height: 150px;
+                    border-radius: 8px;
+                }
 
                 .blood-pressure{
                     border-radius: 8px;
@@ -247,6 +253,7 @@ header {
                     font-family: $jost;
                 }
             }
+        
         }
         .my-doctors{
             height: 100vh;

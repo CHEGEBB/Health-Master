@@ -170,6 +170,14 @@ const Homepage = () => {
             <div className="body-temperature-value">
               <p>36.8°C</p>
             </div>
+          </div>
+          <div className="diagnosis-history">
+            <h4>Diagnosis History</h4>
+            <table>
+                <thead>
+                    
+                </thead>
+            </table>
   
           </div>
           </div>
