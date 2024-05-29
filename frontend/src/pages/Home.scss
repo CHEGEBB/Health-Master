@@ -48,29 +48,87 @@ $forest-green: #228b22;
 $sea-green: #2e8b57;
 $dark-green: #006400;
 
-
-.homepage{
-background-color: $snow-white;
-width: 1000px;
-margin-left: 80px;
-margin-top: 50px;
-height: 100vh;
-position: relative;
-z-index: -1;
-
+body {
+    margin: 0;
+    font-family: $roboto, sans-serif;
 }
 
-header{
+header {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     background-color: $ghost-white;
     height: 130px;
-    border-bottom: 2px solid #ccc;
-    margin-top: -55px;
     width: 1000px;
-    order: 1;
-    margin-left: -18px;
+    border-bottom: 2px solid #ccc;
+    padding: 0 20px;
     position: fixed;
+    top: 0;
+    left: 50;
+    right: 0;
     z-index: 100;
+}
 
+.search-bar {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    img {
+        position: absolute;
+        left: 10px;
+        width: 24px;
+        height: 24px;
+    }
+
+    input {
+        padding: 10px 10px 10px 40px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+}
+
+.notifications, .reminders {
+    img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+
+    .profile-pic {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .profile-info {
+        display: flex;
+        flex-direction: column;
+
+        .profile-name {
+            font-weight: bold;
+        }
+
+        .profile-email {
+            font-size: 14px;
+            color: #666;
+        }
+    }
+}
+
+.homepage {
+    background-color: $snow-white;
+    width: 980px;
+    margin: 50px auto 0;
+    height: 100vh;
+    margin-left: 80px;
+    position: relative;
+    z-index: 1;
+    padding-top: 150px;
 }
