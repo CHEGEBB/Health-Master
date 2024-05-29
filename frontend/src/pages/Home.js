@@ -156,6 +156,9 @@ const Homepage = () => {
           </div>
           <div className="blood-pressure">
             <h4>Blood Pressure</h4>
+            <div className="blood-pressure-value">
+                <p>{bloodPressureData.systolic}/{bloodPressureData.diastolic}</p>
+            </div>
             <div className="graph-for-blood-pressure">
               <Bar data={bloodPressureChartData} />
             </div>
