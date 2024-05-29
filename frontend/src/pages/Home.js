@@ -74,12 +74,17 @@ const Homepage = () => {
             display: false
         },
         ticks: {
-          stepSize: 1
+          stepSize: 1,
+          color : 'white'
         }
       },
       y: {
         min: 50,
         max: 130,
+
+        ticks : {
+            color : 'white'
+        }
         
       },
   
