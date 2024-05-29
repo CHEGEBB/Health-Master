@@ -62,7 +62,7 @@ const Sidenav = () => {
                         <img src={Symptomcon} alt="Symptoms" />
                     </div>
                     <div className="navtem">
-                        <Link to='/symptoms'>Symptoms</Link>
+                        <Link to='/symptoms'>Symptoms Checker</Link>
                     </div>
                 </div>
             </li>
@@ -72,7 +72,7 @@ const Sidenav = () => {
                         <img src={Medicationcon} alt="Medication" />
                     </div>
                     <div className="navtem">
-                        <Link to='/medication'>Medication</Link>
+                        <Link to='/medication'>Medication Management</Link>
                     </div>
                 </div>
             </li>
@@ -92,7 +92,7 @@ const Sidenav = () => {
                         <img src={Healthcon} alt="Health" />
                     </div>
                     <div className="navtem">
-                        <Link to='/health'>Health</Link>
+                        <Link to='/health'>Health & Wellness</Link>
                     </div>
                 </div>
             </li>

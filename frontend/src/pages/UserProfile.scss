@@ -32,6 +32,7 @@ $isle: 'Island Moments', cursive;
   .second{
     display: flex;
     flex-direction: row;
+    gap: 20px;
   }
   .health-reports, .health-habits, .calendar {
     background-color: #fff;
@@ -140,7 +141,9 @@ $isle: 'Island Moments', cursive;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 300px;
+    width: 620px;
+    margin-top: -50px;
+    height: 300px;
 
     .report {
       display: flex;
@@ -151,6 +154,14 @@ $isle: 'Island Moments', cursive;
         font-family: $ropa;
         font-size: 18px;
         font-weight: 300;
+      }
+      p{
+        font-family: $ropa;
+        font-size: 18px;
+        font-weight: 300;
+        color: crimson;
+        text-align: center;
+      
       }
     }
   }
@@ -173,17 +184,18 @@ $isle: 'Island Moments', cursive;
   }
 
   .calendar {
+    width: 300px;
+    height: 350px;
+
     .calendar-container {
       display: flex;
       justify-content: center;
       align-items: center;
       height: auto;
-      background-color: #c22626;
-      border: 1px solid #944a4a;
       padding: 10px;
 
       .custom-calendar {
-        width: 200px;
+        width: 300px;
         background-color: #ddd;
         color: #000;
         font-family: $jost;
