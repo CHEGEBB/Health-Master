@@ -11,6 +11,7 @@ import {
   Tooltip,
   Legend
 } from 'chart.js';
+import Heartcon from '../images/icons/bytesize--heart.svg';
 
 import Notificationicon from '../images/icons/ic--baseline-notifications.svg';
 import SearchIcon from '../images/icons/fluent--search-48-filled (1).svg';
@@ -78,8 +79,10 @@ const Homepage = () => {
       },
       y: {
         min: 50,
-        max: 130
-      }
+        max: 130,
+        
+      },
+  
     },
     animation: {
       duration: 1000,
@@ -119,7 +122,14 @@ const Homepage = () => {
         <div className="health-stats">
           <h2>My Health Stats</h2>
           <div className="heart-rate">
-            <h4>Heart Rate</h4>
+          <div className="heartRate">
+          <div className="rate">
+          <h4>Heart Rate</h4>
+          </div>
+          <div className="heartcon">
+          <img src={Heartcon} alt="Heart Rate" />
+          </div>
+          </div>
             <div className="heart-rate-value">
                 <p>{heartRateData[heartRateData.length - 1].y}/118</p>
             </div>

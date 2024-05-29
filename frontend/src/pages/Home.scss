@@ -166,19 +166,39 @@ header {
             .heart-rate {
                 width: 300px;
                 background-color: $sky-blue;
+                .heartRate{
+                    display: flex;
+                    flex-direction: row;
+                    margin-left: 50px;
+                    gap :20px;
+                    padding-top: 50px;
+
+                    img{
+                        width: 30px;
+                        height: 30px;
+                        margin-right: 10px;
+                    }
+
+                }
                 h4 {
                     margin-bottom: 10px;
+                    color: $snow-white;
+                    font-size: 25px;
+                    font-family: $ropa;
+                    width: 150px;
                 }
-        
-                .value {
+        .heart-rate-value {
                     p {
                         font-size: 24px;
                         margin: 0 0 10px;
+                        color: $red;
+                        font-family: $roboto-condensed;
                     }
                 }
         
                 .graph-for-heartrate {
-                    margin-top: 50px;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
                     width: 100%;
                 }
             }
