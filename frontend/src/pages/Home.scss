@@ -127,27 +127,51 @@ header {
 .homepage {
     background-color: $snow-white;
     width: 980px;
-    margin: 50px auto 0;
-    height: 100vh;
+    margin: 5px auto 0;
+    height: 200vh;
     margin-left: 80px;
     position: relative;
     z-index: 1;
     padding-top: 150px;
+    .intro{
+        h2{
+            font-family: $ropa;
+            font-size: 40px;
+            font-weight: bold;
+            color: #000080;
+        }
+        h3{
+            font-family: $jost;
+            font-size: 20px;
+            font-weight: bold;
+            color: #000080;
+        }
+    }
     .main{
         height: 600px;
         display: flex;
         flex-direction: row;
         margin-left: 20px;
-        gap: 30px;
+        gap: 20px;
         .health-stats{
-            background-color: #000080;
+            border: 1px solid #ccc;
             height: 100vh;
             width: 600px;
+            border-radius: 8px;
+            h2{
+                font-family: $roboto;
+                font-size: 30px;
+                font-weight: bold;
+                color: #000080;
+                padding: 20px;
+                text-align: left;
+            }
         }
         .my-doctors{
-            background-color: #08605e;
             height: 100vh;
-            width: 330px;
+            width: 350px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
         }
     }
 

@@ -27,12 +27,17 @@ const Homepage = () => {
                     </div>
                 </div>
             </header>
+            <div className="intro">
+            <h2>Dashboard</h2>
+            <h3>Goodmorning</h3>
+            </div>
             <div className="main">
             <div className="health-stats">
+            <h2>My Health Stats</h2>
 
             </div>
             <div className="my-doctors">
-                
+
             </div>
             </div>
         </div>
