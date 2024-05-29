@@ -134,17 +134,15 @@ header {
     z-index: 1;
     padding-top: 150px;
     .intro{
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
         h2{
             font-family: $ropa;
-            font-size: 40px;
+            font-size: 0px;
             font-weight: bold;
             color: #000080;
-        }
-        h3{
-            font-family: $jost;
-            font-size: 20px;
-            font-weight: bold;
-            color: #000080;
+            text-align: left;
         }
     }
     .main{
@@ -153,18 +151,36 @@ header {
         flex-direction: row;
         margin-left: 20px;
         gap: 20px;
-        .health-stats{
-            border: 1px solid #ccc;
-            height: 100vh;
-            width: 600px;
+        .health-stats {
+            width: 100%;
+            padding: 20px;
+            background-color: #fff;
             border-radius: 8px;
-            h2{
-                font-family: $roboto;
-                font-size: 30px;
-                font-weight: bold;
-                color: #000080;
-                padding: 20px;
-                text-align: left;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        
+            h2 {
+                margin-bottom: 20px;
+            }
+        
+            .heart-rate {
+                width: 300px;
+                background-color: $slate-blue;
+                h4 {
+                    margin-bottom: 10px;
+                }
+        
+                .value {
+                    p {
+                        font-size: 24px;
+                        margin: 0 0 10px;
+                    }
+                }
+        
+                .graph-for-heartrate {
+                    width: 100%;
+                    height: 300px;
+                }
             }
         }
         .my-doctors{
