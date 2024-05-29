@@ -135,16 +135,15 @@ header {
     padding-top: 150px;
    
 }
-// .main{
-//     background-color: red;
-//     height: 600px;
-
-// }
-.health-stats{
-    background-color: #000080;
+.main{
+    background-color: red;
     height: 600px;
-}
-.my-doctors{
-    background-color: #08605e;
-    height: 600px;
+    .health-stats{
+        background-color: #000080;
+        height: 600px;
+    }
+    .my-doctors{
+        background-color: #08605e;
+        height: 600px;
+    }
 }
