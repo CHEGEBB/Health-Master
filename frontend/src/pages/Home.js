@@ -27,6 +27,8 @@ const generateRandomBloodPressure = () => ({
   systolic: Math.floor(Math.random() * (150 - 90 + 1) + 90),
   diastolic: Math.floor(Math.random() * (90 - 60 + 1) + 60)
 });
+const generateRandomTemperature = () => Math.floor(Math.random() * (40 - 35 + 1) + 35);
+
 
 const Homepage = () => {
   const [heartRateData, setHeartRateData] = useState([{ x: 0, y: generateRandomHeartRate() }]);
@@ -162,6 +164,13 @@ const Homepage = () => {
             <div className="graph-for-blood-pressure">
               <Bar data={bloodPressureChartData} />
             </div>
+          </div>
+          <div className="body-temperature">
+            <h4>Body Temperature</h4>
+            <div className="body-temperature-value">
+              <p>36.8°C</p>
+            </div>
+  
           </div>
           </div>
         </div>
