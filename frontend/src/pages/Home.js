@@ -165,21 +165,49 @@ const Homepage = () => {
               <Bar data={bloodPressureChartData} />
             </div>
           </div>
+          <div className="diagnosis-stats">
           <div className="body-temperature">
             <h4>Body Temperature</h4>
             <div className="body-temperature-value">
               <p>36.8°C</p>
             </div>
           </div>
-          <div className="diagnosis-history">
-            <h4>Diagnosis History</h4>
-            <table>
-                <thead>
-                    
-                </thead>
-            </table>
-  
-          </div>
+          <div class="recent-illnesses">
+    <h4>Recent Illnesses</h4>
+    <div class="illnesses-container">
+        <div class="illness-card">
+            <div class="illness-info">
+                <span class="illness-name">common cold</span>
+                <span class="illness-date">2024-05-01</span>
+            </div>
+            <div class="status-icon ongoing"></div>
+        </div>
+        <div class="illness-card">
+            <div class="illness-info">
+                <span class="illness-name">Illness 2</span>
+                <span class="illness-date">2024-05-15</span>
+            </div>
+            <div class="status-icon complete"></div>
+        </div>
+        <div class="illness-card">
+            <div class="illness-info">
+                <span class="illness-name">Illness 3</span>
+                <span class="illness-date">2024-05-25</span>
+            </div>
+            <div class="status-icon severe"></div>
+        </div>
+        <div class="illness-card">
+            <div class="illness-info">
+                <span class="illness-name">Illness 4</span>
+                <span class="illness-date">2024-06-02</span>
+            </div>
+            <div class="status-icon complete"></div>
+        </div>
+    </div>
+</div>
+
+</div>
+
           </div>
         </div>
         <div className="my-doctors">

@@ -162,12 +162,92 @@ header {
                 display: flex;
                 flex-direction: row;
                 gap: 10px;
+                .diagnosis-stats{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
                 .body-temperature{
                     border: 1px solid #ccc;
                     width: 200px;
                     height: 150px;
                     border-radius: 8px;
                 }
+                .recent-illnesses {
+                    width: 200px;
+                    padding: 10px;
+                    border-radius: 8px;
+                    margin: 0 auto;
+                    border: 1px solid #ccc;
+                    h4{
+                        font-weight: bold;
+                        font-family: $ropa;
+                    }
+                }
+                
+                .illnesses-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+                
+                .illness-card {
+                    display: flex;
+                    align-items: center;
+                    background-color: #f2f2f2;
+                    border-radius: 10px;
+                    padding: 10px;
+                }
+                
+                .illness-info {
+                    flex-grow: 1;
+                    display: flex;
+                    flex-direction: column;
+                }
+                
+                .illness-name {
+                    font-weight: bold;
+                }
+                
+                .status-icon {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    margin-left: 10px;
+                }
+                
+                .ongoing {
+                    background-color: #ffd700; 
+                }
+                
+                .complete {
+                    background-color: #32cd32;
+                }
+                
+                .severe {
+                    background-color: #ff6347; 
+                }
+                
+                
+                .status {
+                    display: inline-block;
+                    padding: 5px 10px;
+                    border-radius: 10px;
+                    font-weight: bold;
+                }
+                
+                .ongoing {
+                    background-color: #ffd700; /* yellow */
+                }
+                
+                .complete {
+                    background-color: #32cd32; /* green */
+                }
+                
+                .severe {
+                    background-color: #ff6347; /* red */
+                }
+            }
+                
 
                 .blood-pressure{
                     border-radius: 8px;
