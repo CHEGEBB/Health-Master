@@ -1,0 +1,28 @@
+$jost: 'Jost', sans-serif;
+$ropa: 'Ropa Sans', sans-serif;
+$roboto: 'Roboto', sans-serif;
+$roboto-slab: 'Roboto Slab', serif;
+$roboto-condensed: 'Roboto Condensed', sans-serif;
+$josefin: 'Josefin Sans', sans-serif;
+$isle: 'Island Moments', cursive;
+.homepage{
+background-color: green;
+width: 800px;
+margin-left: 200px;
+border: 1px solid #3A7BD5;
+order: 2;
+margin-top: 50px;
+height: 100vh;
+
+}
+header{
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+    margin-top: 50px;
+    height: 100px;
+    width: 900px;
+    order: 1;
+    margin-left: -100px;
+
+}
