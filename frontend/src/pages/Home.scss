@@ -133,17 +133,19 @@ header {
     position: relative;
     z-index: 1;
     padding-top: 150px;
+    .main{
+        height: 600px;
+        display: flex;
+        flex-direction: row;
+        .health-stats{
+            background-color: #000080;
+            height: 600px;
+        }
+        .my-doctors{
+            background-color: #08605e;
+            height: 600px;
+        }
+    }
+
    
-}
-.main{
-    background-color: red;
-    height: 600px;
-    .health-stats{
-        background-color: #000080;
-        height: 600px;
-    }
-    .my-doctors{
-        background-color: #08605e;
-        height: 600px;
-    }
 }
