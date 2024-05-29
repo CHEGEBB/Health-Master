@@ -13,7 +13,7 @@ $josefin: 'Josefin Sans', sans-serif;
 $isle: 'Island Moments', cursive;
 nav{
     background-color: #3A7BD5;
-    width:250px ;
+    width:260px ;
     height: 100%;
     position: fixed;
     font-family: $jost;
@@ -31,6 +31,13 @@ nav{
         .nav-item{
             display: flex;
             flex-direction: row;
+            gap: 1px;
+            .navtem{
+                width: 200px;
+                margin-left: -20px;
+                display: flex;
+                justify-content: left;
+            }
 
             .nav-icon{
                 width: 40px;
