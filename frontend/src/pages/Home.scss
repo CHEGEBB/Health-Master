@@ -50,15 +50,16 @@ $dark-green: #006400;
 
 
 .homepage{
-background-color: green;
-width: 800px;
-margin-left: 200px;
-border: 1px solid #3A7BD5;
-order: 2;
+background-color: $snow-white;
+width: 1000px;
+margin-left: 80px;
 margin-top: 50px;
 height: 100vh;
+position: relative;
+z-index: -1;
 
 }
+
 header{
     display: flex;
     flex-direction: row;
@@ -68,7 +69,8 @@ header{
     margin-top: -55px;
     width: 1000px;
     order: 1;
-    margin-left: -140px;
+    margin-left: -18px;
     position: fixed;
+    z-index: 100;
 
 }
