@@ -5,6 +5,50 @@ $roboto-slab: 'Roboto Slab', serif;
 $roboto-condensed: 'Roboto Condensed', sans-serif;
 $josefin: 'Josefin Sans', sans-serif;
 $isle: 'Island Moments', cursive;
+
+$white: #ffffff;
+$snow-white: #f9f9f9;
+$ghost-white: #f8f8ff;
+$ivory: #fffff0;
+$old-lace: #fdf5e6;
+$linen: #faf0e6;
+$seashell: #fff5ee;
+
+$dark-pink: #ff1493;
+$deep-pink: #ff1493;
+$pale-violet-red: #db7093;
+$hot-pink: #ff69b4;
+$light-pink: #ffb6c1;
+
+$slate-blue: #6a5acd;
+$medium-slate-blue: #7b68ee;
+$dark-slate-blue: #483d8b;
+$light-slate-blue: #8470ff;
+
+$blue: #0000ff;
+$medium-blue: #0000cd;
+$dark-blue: #00008b;
+$navy: #000080;
+$royal-blue: #4169e1;
+$sky-blue: #87ceeb;
+$light-sky-blue: #87cefa;
+$steel-blue: #4682b4;
+$light-steel-blue: #b0c4de;
+$powder-blue: #b0e0e6;
+
+$red: #ff0000;
+$dark-red: #8b0000;
+$light-red: #ffcccb;
+$firebrick: #b22222;
+$crimson: #dc143c;
+
+$green: #008000;
+$lime: #00ff00;
+$forest-green: #228b22;
+$sea-green: #2e8b57;
+$dark-green: #006400;
+
+
 .homepage{
 background-color: green;
 width: 800px;
@@ -18,11 +62,13 @@ height: 100vh;
 header{
     display: flex;
     flex-direction: row;
-    background-color: red;
-    height: 100px;
-    margin-top: -50px;
+    background-color: $ghost-white;
+    height: 130px;
+    border-bottom: 2px solid #ccc;
+    margin-top: -55px;
     width: 1000px;
     order: 1;
-    margin-left: -100px;
+    margin-left: -140px;
+    position: fixed;
 
 }

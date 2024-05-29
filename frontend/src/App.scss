@@ -13,6 +13,7 @@ $isle: 'Island Moments', cursive;
 @media screen and (max-width: 1440px) {
   body{
     // background-color: #c0c0c0;
+    overflow-x: hidden;
   }
   .App {
     text-align: center;
