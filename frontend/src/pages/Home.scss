@@ -65,18 +65,20 @@ $light-sky-blue: #87cefa;
 $steel-blue: #4682b4;
 $light-steel-blue: #b0c4de;
 $powder-blue: #b0e0e6;
-
 $red: #ff0000;
 $dark-red: #8b0000;
 $light-red: #ffcccb;
 $firebrick: #b22222;
 $crimson: #dc143c;
-
 $green: #008000;
 $lime: #00ff00;
 $forest-green: #228b22;
 $sea-green: #2e8b57;
 $dark-green: #006400;
+
+@media screen and (max-width: 1920px){
+    
+
 
 body {
     margin: 0;
@@ -226,86 +228,154 @@ header {
                 flex-direction: row;
                 gap: 40px;
 
-                .appointments{
+                .appointments-fact{
                     width: 200px;
-                    height: 100px;
+                    height: 110px;
                     background-color: $light-slate-blue;
                     border-radius: 8px;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    box-shadow: 0 2px 4px rgba(28, 67, 85, 0.5);
                     padding: 20px;
                     color: #fff;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 12px;
+
+                    img{
+                        width: 40px;
+                        height: 40px;
+                    }
                     h2{
                         font-family: $ropa;
                         font-size: 26px;
                         font-weight: bold;
+                        text-align: left;
                     }
                     h3{
                         font-family: $josefin;
                         font-size: 20px;
                         font-weight: 300;
+                    }
+                    &:hover{
+                        background-color: $royal-blue;
+                        cursor: pointer;
+                        transition: 0.5s;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        transform:  scale(1.1);
                     }
                 
                 }
                 .health-costs{
                     width: 200px;
-                    height: 100px;
+                    height: 110px;
                     background-color: $light-pink;
                     border-radius: 8px;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
                     padding: 20px;
                     color: #fff;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 12px;
+
+                    img{
+                        width: 40px;
+                        height: 40px;
+                    }
                     h2{
                         font-family: $ropa;
                         font-size: 26px;
                         font-weight: bold;
+                        text-align: left;
                     }
                     h3{
                         font-family: $josefin;
                         font-size: 20px;
                         font-weight: 300;
+                        width: 150px;
+                        margin-left: -30px;
+                    }
+                    &:hover{
+                        background-color: $hot-pink;
+                        cursor: pointer;
+                        transition: 0.5s;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        transform:  scale(1.1);
                     }
                 
                 }
                 .online-consultancy{
                     width: 200px;
-                    height: 100px;
+                    height: 110px;
                     background-color: $light-sky-blue;
                     border-radius: 8px;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
                     padding: 20px;
                     color: #fff;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 12px;
+
+                    img{
+                        width: 40px;
+                        height: 40px;
+                    }
                     h2{
                         font-family: $ropa;
                         font-size: 26px;
                         font-weight: bold;
+                        text-align: left;
+                        margin-top: 10px;
                     }
                     h3{
                         font-family: $josefin;
                         font-size: 20px;
                         font-weight: 300;
+                        width: 200px;
+                        margin-left: -70px;
+                    }
+                    &:hover{
+                        background-color: $medium-slate-blue;
+                        cursor: pointer;
+                        transition: 0.5s;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        transform:  scale(1.1);
                     }
                 
                 
                 }
                 .pending{
                     width: 200px;
-                    height: 100px;
-                    background-color: $light-red;
+                    height: 110px;
+                    background-color: $coral;
                     border-radius: 8px;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
                     padding: 20px;
                     color: #fff;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 12px;
+
+                    img{
+                        width: 40px;
+                        height: 40px;
+                    }
                     h2{
                         font-family: $ropa;
                         font-size: 26px;
                         font-weight: bold;
+                        text-align: left;
                     }
                     h3{
                         font-family: $josefin;
                         font-size: 20px;
                         font-weight: 300;
                     }
-                
+                    &:hover {
+                        background-color: $dark-orange;
+                        cursor: pointer;
+                        transition: 0.5s;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        transform:  scale(1.1);
+                    }
                 
                 }
             }
@@ -585,5 +655,6 @@ header {
             }
           }
           
+}
 }
 }

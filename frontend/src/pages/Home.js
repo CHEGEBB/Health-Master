@@ -27,6 +27,10 @@ import Ming from "../images/ming.jpg";
 import smith from "../images/smith.jpg";
 import jethro from "../images/jethro.png";
 import CountUp from "react-countup";
+import appcon from "../images/icons/appointment.svg";
+import hccon from "../images/icons/cost.svg";
+import occon from "../images/icons/online.svg";
+import pcon from "../images/icons/pending.svg";
 
 
 ChartJS.register(
@@ -233,15 +237,19 @@ const Homepage = () => {
             </div>
           </div>
           <div className="facts">
-            <div className="appointments">
-              <div className="apcon"></div>
+            <div className="appointments-fact">
+              <div className="apcon">
+                <img src={appcon} alt="Appointments" />
+              </div>
               <div className="appointment-info">
                 <h2>20</h2>
                 <h3>Appointments</h3>
               </div>
             </div>
             <div className="health-costs">
-              <div className="hccon"></div>
+              <div className="hccon">
+                <img src={hccon} alt="Health Costs" />
+              </div>
 
               <div className="health-costs-info">
                 <h2>$2000</h2>
@@ -249,14 +257,18 @@ const Homepage = () => {
               </div>
             </div>
             <div className="online-consultancy">
-              <div className="occon"></div>
+              <div className="occon">
+                <img src={occon} alt="Online Consultancy" />
+              </div>
               <div className="online-consultancy-info">
                 <h2>20</h2>
                 <h3>Online Consultancy</h3>
               </div>
             </div>
             <div className="pending">
-              <div className="pcon"></div>
+              <div className="pcon">
+                <img src={pcon} alt ="Pending" />
+              </div>
               <div className="pending-info">
                 <h2>10</h2>
                 <h3>Pending</h3>
