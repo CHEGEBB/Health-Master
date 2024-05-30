@@ -207,9 +207,12 @@ const Homepage = () => {
   const iconStyles = {
     filter: isDarkMode ? 'invert(1)' : 'invert(0)'
   };
+  const homepageStyles ={
+    backgroundColor: isDarkMode ? '#000' : '#f5f5f5',
+  }
 
   return (
-    <div className="homepage">
+    <div className="homepage" style={homepageStyles}>
           <header style={headerStyles}>
         <div className="search-bar">
           <img src={SearchIcon} alt="Search" style={iconStyles} />
