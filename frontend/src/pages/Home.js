@@ -242,6 +242,7 @@ const Homepage = () => {
         </div>
         <div className="scheduled-appointments">
           <h4>Scheduled Appointments</h4>
+          <div className="appoints">
           <div className="appointment">
             <div className="appointment-time">09:15am - 10:45am</div>
             <div className="appointment-details">
@@ -292,6 +293,7 @@ const Homepage = () => {
               </div>
               <div className="appointment-status">Starts in 3 hrs</div>
             </div>
+          </div>
           </div>
         </div>
         <div className="recent-medications">

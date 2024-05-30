@@ -251,6 +251,7 @@ header {
     flex-direction: row;
     gap: 30px;
     border-radius: 12px;
+    margin-top: 30px;
   }
   
   .medication {
@@ -267,9 +268,9 @@ header {
     color: #666;
   }
   
-  /* Style for medication status */
+
   .medication-status {
-    color: green; /* You can change color based on status */
+    color: green; 
   }
   
         }
@@ -281,6 +282,7 @@ header {
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 20px;
             height: 100vh;
+            margin-top: 30px;
             .stats{
                 display: flex;
                 flex-direction: row;
@@ -415,7 +417,7 @@ header {
         
             .heart-rate {
                 width: 250px;
-                background-color: $royal-blue;
+                background-color: $steel-blue;
                 border-radius: 8px;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.7);
                 height: 400px;
@@ -459,8 +461,10 @@ header {
         
         }
         .scheduled-appointments{
-            height: 100vh;
-            max-width: 350px;
+            display: flex;
+            flex-direction: column;
+            .appoints{
+            height: 300px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -535,5 +539,5 @@ header {
         }
     }
 
-   
+}
 }
