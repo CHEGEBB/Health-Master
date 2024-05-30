@@ -26,6 +26,8 @@ import Liu from "../images/liu.jpg";
 import Ming from "../images/ming.jpg";
 import smith from "../images/smith.jpg";
 import jethro from "../images/jethro.png";
+import CountUp from "react-countup";
+
 
 ChartJS.register(
   CategoryScale,
@@ -299,31 +301,31 @@ const Homepage = () => {
                 </div>
               </div>
               <div className="diagnosis-stats">
-                <div className="blood-count">
-                  <div className="blood-count-icon">
-                    <img src={Bloodcountcon} alt="Blood Count" />
-                  </div>
-                  <div className="count">
-                    <h4>Blood Count</h4>
-                    <div className="blood-count-value">
-                      <p>9455/ml</p>
-                      <span className="arrow up"></span>
-                    </div>
-                  </div>
-                </div>
-                <div className="glucose-level">
-                  <div className="glucose-level-icon">
-                    <img src={Glucosecon} alt="Glucose Level" />
-                  </div>
-                  <div className="level">
-                    <h4>Glucose Level</h4>
-                    <div className="glucose-level-value">
-                      <p>120mg/dL</p>
-                      <span className="arrow down"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+  <div className="blood-count">
+    <div className="blood-count-icon">
+      <img src={Bloodcountcon} alt="Blood Count" />
+    </div>
+    <div className="count">
+      <h4>Blood Count</h4>
+      <div className="blood-count-value">
+        <CountUp end={9455} duration={2} />/ml
+        <span className="arrow up"></span>
+      </div>
+    </div>
+  </div>
+  <div className="glucose-level">
+    <div className="glucose-level-icon">
+      <img src={Glucosecon} alt="Glucose Level" />
+    </div>
+    <div className="level">
+      <h4>Glucose Level</h4>
+      <div className="glucose-level-value">
+        <CountUp end={120} duration={2} />mg/dL
+        <span className="arrow down"></span>
+      </div>
+    </div>
+  </div>
+</div>
             </div>
           </div>
           <div className="upcoming-appointments">
