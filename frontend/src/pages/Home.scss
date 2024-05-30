@@ -278,7 +278,7 @@ header {
         .health-stats {
             width: 100%;
             padding: 20px;
-            background-color: #fff;
+            background-color: $azure;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 20px;
@@ -533,7 +533,7 @@ header {
         }
         .upcoming-appointments {
             margin-top: 20px;
-            background-color: $azure;
+            background-color: $honeydew;
             width: 960px;
             padding: 10px;
           
