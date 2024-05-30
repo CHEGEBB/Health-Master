@@ -56,7 +56,7 @@ const Homepage = () => {
         label: 'Heart Rate',
         data: heartRateData,
         fill: false,
-        borderColor: '#FF0000',
+        borderColor: '#ff1493',
         tension: 0.1,
       }
     ]
@@ -68,7 +68,7 @@ const Homepage = () => {
       {
         label: 'Blood Pressure',
         data: [bloodPressureData.systolic, bloodPressureData.diastolic],
-        backgroundColor: ['#FF0000', '#0000FF']
+        backgroundColor: ['#ff1493', '#4169e1']
       }
     ]
   };
