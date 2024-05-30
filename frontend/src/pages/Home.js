@@ -1,15 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Home.scss';
-import { Line } from 'react-chartjs-2';
+import { Line, Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, BarElement } from 'chart.js';
 import Heartcon from '../images/icons/bytesize--heart.svg';
-import {  Bar } from 'react-chartjs-2';
-
-
 import Notificationicon from '../images/icons/ic--baseline-notifications.svg';
 import SearchIcon from '../images/icons/fluent--search-48-filled (1).svg';
 import Remindericon from '../images/icons/hugeicons--apple-reminder.svg';
 import ProfilePic from '../images/brian.jpeg';
+import DoctorPic from '../images/brian.jpeg'; // Assuming you have a doctor picture
 
 ChartJS.register(
   CategoryScale,
@@ -28,7 +26,6 @@ const generateRandomBloodPressure = () => ({
   diastolic: Math.floor(Math.random() * (90 - 60 + 1) + 60)
 });
 const generateRandomTemperature = () => Math.floor(Math.random() * (40 - 35 + 1) + 35);
-
 
 const Homepage = () => {
   const [heartRateData, setHeartRateData] = useState([{ x: 0, y: generateRandomHeartRate() }]);
@@ -94,13 +91,10 @@ const Homepage = () => {
       y: {
         min: 50,
         max: 130,
-
         ticks: {
           color: 'white'
         }
-
       },
-
     },
     animation: {
       duration: 1000,
@@ -140,82 +134,127 @@ const Homepage = () => {
         <div className="health-stats">
           <h2>My Health Stats</h2>
           <div className="stats">
-          <div className="heart-rate">
-            <div className="heartRate">
-              <div className="rate">
-                <h4>Heart Rate</h4>
+            <div className="heart-rate">
+              <div className="heartRate">
+                <div className="rate">
+                  <h4>Heart Rate</h4>
+                </div>
+                <div className="heartcon">
+                  <img src={Heartcon} alt="Heart Rate" />
+                </div>
               </div>
-              <div className="heartcon">
-                <img src={Heartcon} alt="Heart Rate" />
+              <div className="heart-rate-value">
+                <p>{heartRateData[heartRateData.length - 1].y}/118</p>
+              </div>
+              <div className="graph-for-heartrate">
+                <Line ref={chartRef} data={heartRateChartData} options={options} />
               </div>
             </div>
-            <div className="heart-rate-value">
-              <p>{heartRateData[heartRateData.length - 1].y}/118</p>
-            </div>
-            <div className="graph-for-heartrate">
-              <Line ref={chartRef} data={heartRateChartData} options={options} />
-            </div>
-          </div>
-          <div className="blood-pressure">
-            <h4>Blood Pressure</h4>
-            <div className="blood-pressure-value">
+            <div className="blood-pressure">
+              <h4>Blood Pressure</h4>
+              <div className="blood-pressure-value">
                 <p>{bloodPressureData.systolic}/{bloodPressureData.diastolic}</p>
+              </div>
+              <div className="graph-for-blood-pressure">
+                <Bar data={bloodPressureChartData} />
+              </div>
             </div>
-            <div className="graph-for-blood-pressure">
-              <Bar data={bloodPressureChartData} />
+            <div className="diagnosis-stats">
+              <div className="body-temperature">
+                <h4>Body Temperature</h4>
+                <div className="body-temperature-value">
+                  <p>36.8°C</p>
+                </div>
+              </div>
+              <div className="recent-illnesses">
+                <h4>Recent Illnesses</h4>
+                <div className="illnesses-container">
+                  <div className="illness-card">
+                    <div className="illness-info">
+                      <span className="illness-name">common cold</span>
+                      <span className="illness-date">2024-05-01</span>
+                    </div>
+                    <div className="status-icon ongoing"></div>
+                  </div>
+                  <div className="illness-card">
+                    <div className="illness-info">
+                      <span className="illness-name">Bronchitis</span>
+                      <span className="illness-date">2024-05-15</span>
+                    </div>
+                    <div className="status-icon complete"></div>
+                  </div>
+                  <div className="illness-card">
+                    <div className="illness-info">
+                      <span className="illness-name">Stomach Flu</span>
+                      <span className="illness-date">2024-05-25</span>
+                    </div>
+                    <div className="status-icon severe"></div>
+                  </div>
+                  <div className="illness-card">
+                    <div className="illness-info">
+                      <span className="illness-name">Tonsillitis</span>
+                      <span className="illness-date">2024-06-02</span>
+                    </div>
+                    <div className="status-icon complete"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="diagnosis-stats">
-          <div className="body-temperature">
-            <h4>Body Temperature</h4>
-            <div className="body-temperature-value">
-              <p>36.8°C</p>
+        </div>
+        <div className="scheduled-appointments">
+          <h4>Scheduled Appointments</h4>
+          <div className="appointment">
+            <div className="appointment-time">09:15am - 10:45am</div>
+            <div className="appointment-details">
+              <div className="doctor-info">
+                <img src={DoctorPic} alt="Dr. Meculam" className="doctor-pic" />
+                <div>
+                  <div className="doctor-name">Dr. Meculam Deo</div>
+                  <div className="appointment-type">Routine Checkup - Standard Consult</div>
+                  <div className="contact-info">
+                    <div className="contact-number">+1 142 536 7890</div>
+                    <div className="billing-status">Billed</div>
+                  </div>
+                </div>
+              </div>
+              <div className="appointment-status">Starts in 15 min</div>
             </div>
           </div>
-          <div class="recent-illnesses">
-    <h4>Recent Illnesses</h4>
-    <div class="illnesses-container">
-        <div class="illness-card">
-            <div class="illness-info">
-                <span class="illness-name">common cold</span>
-                <span class="illness-date">2024-05-01</span>
+          <div className="appointment">
+            <div className="appointment-time">11:00am - 12:00pm</div>
+            <div className="appointment-details">
+              <div className="doctor-info">
+                <img src={DoctorPic} alt="Dr. Meculam" className="doctor-pic" />
+                <div>
+                  <div className="doctor-name">Dr. Meculam Deo</div>
+                  <div className="appointment-type">Follow-up - Blood Test</div>
+                  <div className="contact-info">
+                    <div className="contact-number">+1 142 536 7890</div>
+                    <div className="billing-status">Billed</div>
+                  </div>
+                </div>
+              </div>
+              <div className="appointment-status">Starts in 45 min</div>
             </div>
-            <div class="status-icon ongoing"></div>
-        </div>
-        <div class="illness-card">
-            <div class="illness-info">
-                <span class="illness-name">
-                    Bronchitis
-                </span>
-                <span class="illness-date">2024-05-15</span>
-            </div>
-            <div class="status-icon complete"></div>
-        </div>
-        <div class="illness-card">
-            <div class="illness-info">
-                <span class="illness-name">
-                Stomach Flu
-                </span>
-                <span class="illness-date">2024-05-25</span>
-            </div>
-            <div class="status-icon severe"></div>
-        </div>
-        <div class="illness-card">
-            <div class="illness-info">
-                <span class="illness-name">Tonsillitis</span>
-                <span class="illness-date">2024-06-02</span>
-            </div>
-            <div class="status-icon complete"></div>
-        </div>
-    </div>
-</div>
-
-</div>
-
           </div>
-        </div>
-        <div className="my-doctors">
-          {/* Add content here if needed */}
+          <div className="appointment">
+            <div className="appointment-time">01:00pm - 02:30pm</div>
+            <div className="appointment-details">
+              <div className="doctor-info">
+                <img src={DoctorPic} alt="Dr. Meculam" className="doctor-pic" />
+                <div>
+                  <div className="doctor-name">Dr. Meculam Deo</div>
+                  <div className="appointment-type">Consultation - New Symptoms</div>
+                  <div className="contact-info">
+                    <div className="contact-number">+1 142 536 7890</div>
+                    <div className="billing-status">Billed</div>
+                  </div>
+                </div>
+              </div>
+              <div className="appointment-status">Starts in 3 hrs</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

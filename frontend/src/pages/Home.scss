@@ -150,7 +150,7 @@ header {
         display: flex;
         flex-direction: row;
         margin-left: 20px;
-        gap: 20px;
+        gap: 15px;
         .health-stats {
             width: 100%;
             padding: 20px;
@@ -158,6 +158,7 @@ header {
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 20px;
+            height: 100vh-;
             .stats{
                 display: flex;
                 flex-direction: row;
@@ -335,11 +336,79 @@ header {
             }
         
         }
-        .my-doctors{
+        .scheduled-appointments{
             height: 100vh;
-            width: 350px;
+            max-width: 320px;
+            background-color: #fff;
             border-radius: 8px;
-            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            gap: 10px;
+            display: flex;  
+            flex-direction: column;
+              
+              .scheduled-appointments h4 {
+                margin-bottom: 1rem;
+              }
+              
+              .appointment {
+                display: flex;
+                flex-direction: column;
+                padding: 1rem;
+                background-color: #ccc;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+              }
+              
+              .appointment-time {
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+              }
+              
+              .appointment-details {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              }
+              
+              .doctor-info {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+              }
+              
+              .doctor-pic {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+              }
+              
+              .doctor-name {
+                font-weight: bold;
+              }
+              
+              .appointment-type {
+                font-style: italic;
+              }
+              
+              .contact-info {
+                display: flex;
+                flex-direction: column;
+              }
+              
+              .contact-number {
+                font-size: 0.9rem;
+              }
+              
+              .billing-status {
+                font-size: 0.9rem;
+                color: green;
+              }
+              
+              .appointment-status {
+                font-weight: bold;
+                color: #007bff;
+              }
+              
         }
     }
 
