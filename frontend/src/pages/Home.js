@@ -1,15 +1,27 @@
-import React, { useEffect, useState, useRef } from 'react';
-import './Home.scss';
-import { Line, Bar } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, BarElement } from 'chart.js';
-import Heartcon from '../images/heart-rate.png';
-import Notificationicon from '../images/icons/ic--baseline-notifications.svg';
-import SearchIcon from '../images/icons/fluent--search-48-filled (1).svg';
-import Remindericon from '../images/icons/hugeicons--apple-reminder.svg';
-import ProfilePic from '../images/brian.jpeg';
-import WelcomImage from '../images/welcome.png';
-import Bloodcountcon from '../images/blood-count.png';
-import Glucosecon from '../images/glucose.png';
+import React, { useEffect, useState, useRef } from "react";
+import "./Home.scss";
+import { Line, Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  BarElement
+} from "chart.js";
+import Heartcon from "../images/heart-rate.png";
+import Bloodcon from "../images/blood-pressure.png";
+import Notificationicon from "../images/icons/ic--baseline-notifications.svg";
+import SearchIcon from "../images/icons/fluent--search-48-filled (1).svg";
+import Remindericon from "../images/icons/hugeicons--apple-reminder.svg";
+import ProfilePic from "../images/brian.jpeg";
+import WelcomImage from "../images/welcome.png";
+import Bloodcountcon from "../images/blood-count.png";
+import Glucosecon from "../images/glucose.png";
+import BrianImage from "../images/brian.jpeg";
 
 ChartJS.register(
   CategoryScale,
@@ -22,24 +34,32 @@ ChartJS.register(
   BarElement
 );
 
-const generateRandomHeartRate = () => Math.floor(Math.random() * (120 - 60 + 1) + 60);
+const generateRandomHeartRate = () =>
+  Math.floor(Math.random() * (120 - 60 + 1) + 60);
 const generateRandomBloodPressure = () => ({
   systolic: Math.floor(Math.random() * (150 - 90 + 1) + 90),
   diastolic: Math.floor(Math.random() * (90 - 60 + 1) + 60)
 });
 const Homepage = () => {
-  const [heartRateData, setHeartRateData] = useState([{ x: 0, y: generateRandomHeartRate() }]);
-  const [bloodPressureData, setBloodPressureData] = useState(generateRandomBloodPressure());
+  const [heartRateData, setHeartRateData] = useState([
+    { x: 0, y: generateRandomHeartRate() }
+  ]);
+  const [bloodPressureData, setBloodPressureData] = useState(
+    generateRandomBloodPressure()
+  );
   const chartRef = useRef(null);
   let xValue = useRef(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setHeartRateData((prevData) => {
-        const newData = [...prevData, { x: xValue.current, y: generateRandomHeartRate() }];
+        const newData = [
+          ...prevData,
+          { x: xValue.current, y: generateRandomHeartRate() }
+        ];
         xValue.current += 1;
         if (chartRef.current) {
-          chartRef.current.update('quiet');
+          chartRef.current.update("quiet");
         }
         return newData;
       });
@@ -52,22 +72,22 @@ const Homepage = () => {
   const heartRateChartData = {
     datasets: [
       {
-        label: 'Heart Rate',
+        label: "Heart Rate",
         data: heartRateData,
         fill: false,
-        borderColor: '#db7093',
-        tension: 0.1,
+        borderColor: "#db7093",
+        tension: 0.1
       }
     ]
   };
 
   const bloodPressureChartData = {
-    labels: ['Systolic', 'Diastolic'],
+    labels: ["Systolic", "Diastolic"],
     datasets: [
       {
-        label: 'Blood Pressure',
+        label: "Blood Pressure",
         data: [bloodPressureData.systolic, bloodPressureData.diastolic],
-        backgroundColor: ['#ff1493', '#4169e1']
+        backgroundColor: ["#ff1493", "#4169e1"]
       }
     ]
   };
@@ -76,28 +96,34 @@ const Homepage = () => {
     responsive: true,
     scales: {
       x: {
-        type: 'linear',
-        position: 'bottom',
-        min: heartRateData.length > 20 ? heartRateData[heartRateData.length - 20].x : 0,
-        max: heartRateData.length > 20 ? heartRateData[heartRateData.length - 1].x : 20,
+        type: "linear",
+        position: "bottom",
+        min:
+          heartRateData.length > 20
+            ? heartRateData[heartRateData.length - 20].x
+            : 0,
+        max:
+          heartRateData.length > 20
+            ? heartRateData[heartRateData.length - 1].x
+            : 20,
         grid: {
           display: false
         },
         ticks: {
           stepSize: 1,
-          color: 'black'
+          color: "black"
         }
       },
       y: {
         min: 50,
         max: 130,
         ticks: {
-          color: 'black'
+          color: "black"
         }
-      },
+      }
     },
     animation: {
-      duration: 1000,
+      duration: 1000
     },
     plugins: {
       legend: {
@@ -110,30 +136,29 @@ const Homepage = () => {
   };
   const appointments = [
     {
-      imgSrc: '../images/brian.jpeg',
-      doctorName: 'Dr. Cara Stevens',
-      profession: 'Radiologist',
+      imgSrc: BrianImage,
+      doctorName: "Dr. Cara Stevens",
+      profession: "Radiologist",
       date: "12 June '20",
-      time: '09:00-10:00',
-      treatment: 'CT scans',
-      contactNumber: '+123 676545655',
-      isFulfilled: false,
+      time: "09:00-10:00",
+      treatment: "CT scans",
+      contactNumber: "+123 676545655",
+      isFulfilled: false
     },
     {
-      imgSrc: '../images/brian.jpeg',
-      doctorName: 'Dr. John Doe',
-      profession: 'Cardiologist',
+      imgSrc: BrianImage,
+      doctorName: "Dr. John Doe",
+      profession: "Cardiologist",
       date: "13 June '20",
-      time: '11:00-11:30',
-      treatment: 'Heart checkup',
-      contactNumber: '+123 434656764',
-      isFulfilled: false,
-    },
+      time: "11:00-11:30",
+      treatment: "Heart checkup",
+      contactNumber: "+123 434656764",
+      isFulfilled: false
+    }
   ];
-  
 
   return (
-    <div className='homepage'>
+    <div className="homepage">
       <header>
         <div className="search-bar">
           <img src={SearchIcon} alt="Search" />
@@ -154,180 +179,173 @@ const Homepage = () => {
         </div>
       </header>
       <div className="main">
-     
         <div className="quick-actions">
-        <div className="welcome-message">
-        <div className="img">
-        <img src={WelcomImage} alt="Welcome" />
-        </div>
-        <div className="content">
-        <h1>Welcome back, John Doe!</h1>
-        <p>We would like to take this opportunity to welcome you to our practice and to thank you for choosing our physicians to participate in your healthcare. We look forward to providing you with personalized, comprehensive health care focusing on wellness and prevention.</p>
-        </div>
-        
-      </div>
-        <div className="facts">
-        <div className="appointments">
-          <div className="apcon">
+          <div className="welcome-message">
+            <div className="img">
+              <img src={WelcomImage} alt="Welcome" />
+            </div>
+            <div className="content">
+              <h1>Welcome back, John Doe!</h1>
+              <p>
+                We would like to take this opportunity to welcome you to our
+                practice and to thank you for choosing our physicians to
+                participate in your healthcare. We look forward to providing you
+                with personalized, comprehensive health care focusing on
+                wellness and prevention.
+              </p>
+            </div>
+          </div>
+          <div className="facts">
+            <div className="appointments">
+              <div className="apcon"></div>
+              <div className="appointment-info">
+                <h2>20</h2>
+                <h3>Appointments</h3>
+              </div>
+            </div>
+            <div className="health-costs">
+              <div className="hccon"></div>
 
-          </div>
-          <div className="appointment-info">
-          <h2>20</h2>
-            <h3>Appointments</h3>
-          </div>
-        </div>
-        <div className="health-costs">
-          <div className="hccon">
-          </div>
-
-          <div className="health-costs-info">
-            <h2>$2000</h2>
-            <h3>Health Costs</h3>
-            </div>
-        </div>
-        <div className="online-consultancy">
-          <div className="occon">
-          </div>
-          <div className="online-consultancy-info">
-            <h2>20</h2>
-            <h3>Online Consultancy</h3>
-          </div>
-        </div>
-        <div className="pending">
-          <div className="pcon">
-          </div>
-          <div className="pending-info">
-            <h2>10</h2>
-            <h3>Pending</h3>
-            </div>
-        </div>
-
-        </div>
-        <div className="health-stats">
-          <h2>My Health Stats</h2>
-          <div className="stats">
-            <div className="heart-rate">
-              <div className="heartRate">
-                <div className="rate">
-                  <h4>Heart Rate</h4>
-                </div>
-                <div className="heartcon">
-                  <img src={Heartcon} alt="Heart Rate" />
-                </div>
-              </div>
-              <div className="heart-rate-value">
-                <p>{heartRateData[heartRateData.length - 1].y}/118</p>
-              </div>
-              <div className="graph-for-heartrate">
-                <Line ref={chartRef} data={heartRateChartData} options={options} />
+              <div className="health-costs-info">
+                <h2>$2000</h2>
+                <h3>Health Costs</h3>
               </div>
             </div>
-            <div className="blood-pressure">
-              <h4>Blood Pressure</h4>
-              <div className="blood-pressure-value">
-                <p>{bloodPressureData.systolic}/{bloodPressureData.diastolic}</p>
-              </div>
-              <div className="graph-for-blood-pressure">
-                <Bar data={bloodPressureChartData} />
+            <div className="online-consultancy">
+              <div className="occon"></div>
+              <div className="online-consultancy-info">
+                <h2>20</h2>
+                <h3>Online Consultancy</h3>
               </div>
             </div>
-            <div className="diagnosis-stats">
-              <div className="blood-count">
-                <div className="blood-count-icon">
-                  <img src={Bloodcountcon} alt="Blood Count" />
-                </div>
-                <div className="count">
-                <h4>Blood Count</h4>
-                <div className="blood-count-value">
-                  <p>9455/ml</p>
-                    <span className="arrow up"></span>
-                </div>
-                </div>
-         
+            <div className="pending">
+              <div className="pcon"></div>
+              <div className="pending-info">
+                <h2>10</h2>
+                <h3>Pending</h3>
               </div>
-              <div className="glucose-level">
-                <div className="glucose-level-icon">
-                  <img src={Glucosecon} alt="Glucose Level" />
+            </div>
+          </div>
+          <div className="health-stats">
+            <h2>My Health Stats</h2>
+            <div className="stats">
+              <div className="heart-rate">
+                <div className="heartRate">
+                  <div className="rate">
+                    <h4>Heart Rate</h4>
                   </div>
-                <div className="level">
-                <h4>Glucose Level</h4>
-                <div className="glucose-level-value">
-                  <p>120mg/dL</p>
-                    <span className="arrow down"></span>
+                  <div className="heartcon">
+                    <img src={Heartcon} alt="Heart Rate" />
+                  </div>
+                </div>
+                <div className="heart-rate-value">
+                  <p>{heartRateData[heartRateData.length - 1].y}/118</p>
+                </div>
+                <div className="graph-for-heartrate">
+                  <Line
+                    ref={chartRef}
+                    data={heartRateChartData}
+                    options={options}
+                  />
+                </div>
+              </div>
+              <div className="blood-pressure">
+                <h4>Blood Pressure</h4>
+                <div className="bloodcon">
+                  <img src={Bloodcon} alt="Blood Pressure" />
+                </div>
+                <div className="blood-pressure-value">
+                  <p>
+                    {bloodPressureData.systolic}/{bloodPressureData.diastolic}
+                  </p>
+                </div>
+                <div className="graph-for-blood-pressure">
+                  <Bar data={bloodPressureChartData} />
+                </div>
+              </div>
+              <div className="diagnosis-stats">
+                <div className="blood-count">
+                  <div className="blood-count-icon">
+                    <img src={Bloodcountcon} alt="Blood Count" />
+                  </div>
+                  <div className="count">
+                    <h4>Blood Count</h4>
+                    <div className="blood-count-value">
+                      <p>9455/ml</p>
+                      <span className="arrow up"></span>
                     </div>
+                  </div>
+                </div>
+                <div className="glucose-level">
+                  <div className="glucose-level-icon">
+                    <img src={Glucosecon} alt="Glucose Level" />
+                  </div>
+                  <div className="level">
+                    <h4>Glucose Level</h4>
+                    <div className="glucose-level-value">
+                      <p>120mg/dL</p>
+                      <span className="arrow down"></span>
                     </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="upcoming-appointments">
-          <h2>Upcoming Appointments</h2>
-          <div className="appointments-list">
-          {appointments.map((appointment, index) => (
-  <div key={index} className="appointment">
-    <img src={appointment.imgSrc} alt={appointment.doctorName} />
-    <div className="details">
-      <div className="doctor-info">
-        <h3>{appointment.doctorName}</h3>
-        <p>{appointment.profession}</p>
-      </div>
-      <div className="appointment-info">
-        <p><strong>Date:</strong> {appointment.date}</p>
-        <p><strong>Time:</strong> {appointment.time}</p>
-        <p><strong>Treatment:</strong> {appointment.treatment}</p>
-        <p><strong>Contact Number:</strong> {appointment.contactNumber}</p>
-      </div>
-      <div className="appointment-status">
-        <label>
-          <input type="radio" name={`appointment-${index}`} value="fulfilled" checked={appointment.isFulfilled} />
-          Fulfilled
-        </label>
-        <label>
-          <input type="radio" name={`appointment-${index}`} value="not-fulfilled" checked={!appointment.isFulfilled} />
-          Not Fulfilled
-        </label>
-      </div>
-    </div>
-  </div> 
-))}
-
-        <div className="recent-medications">
-          <h4>Recent Medications</h4>
-          <div className="medication">
-            <div className="medication-info">
-              <div className="medication-name">Paracetamol</div>
-              <div className="medication-dosage">500mg</div>
+          <div className="upcoming-appointments">
+            <h2>Upcoming Appointments</h2>
+            <div className="appointments-list">
+              {appointments.map((appointment, index) => (
+                <div key={index} className="appointment">
+                  <img src={appointment.imgSrc} alt={appointment.doctorName} />
+                  <div className="details">
+                    <div className="doctor-info">
+                      <h3>{appointment.doctorName}</h3>
+                      <p>{appointment.profession}</p>
+                    </div>
+                    <div className="appointment-info">
+                      <p>
+                        <strong>Date:</strong> {appointment.date}
+                      </p>
+                      <p>
+                        <strong>Time:</strong> {appointment.time}
+                      </p>
+                      <p>
+                        <strong>Treatment:</strong> {appointment.treatment}
+                      </p>
+                      <p>
+                        <strong>Contact Number:</strong>{" "}
+                        {appointment.contactNumber}
+                      </p>
+                    </div>
+                    <div className="appointment-status">
+                      <label>
+                        <input
+                          type="radio"
+                          name={`appointment-${index}`}
+                          value="fulfilled"
+                          checked={appointment.isFulfilled}
+                        />
+                        Fulfilled
+                      </label>
+                      <label>
+                        <input
+                          type="radio"
+                          name={`appointment-${index}`}
+                          value="not-fulfilled"
+                          checked={!appointment.isFulfilled}
+                        />
+                        Not Fulfilled
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="medication-status">Taken</div>
-          </div>
-          <div className="medication">
-            <div className="medication-info">
-              <div className="medication-name">Ibuprofen</div>
-              <div className="medication-dosage">400mg</div>
-            </div>
-            <div className="medication-status">Taken</div>
-          </div>
-          <div className="medication">
-            <div className="medication-info">
-              <div className="medication-name">Amoxicillin</div>
-              <div className="medication-dosage">500mg</div>
-            </div>
-            <div className="medication-status">Taken</div>
-          </div>
-          <div className="medication">
-            <div className="medication-info">
-              <div className="medication-name">Ciprofloxacin</div>
-              <div className="medication-dosage">500mg</div>
-            </div>
-            <div className="medication-status">Taken</div>
           </div>
         </div>
-        </div>
       </div>
-    </div>
-    </div>
     </div>
   );
-}
+};
 
 export default Homepage;
