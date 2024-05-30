@@ -211,6 +211,8 @@ const Homepage = () => {
     backgroundColor: isDarkMode ? '#000' : '#f5f5f5',
   }
 
+
+const 
   return (
     <div className="homepage" style={homepageStyles}>
           <header style={headerStyles}>

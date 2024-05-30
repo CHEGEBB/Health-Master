@@ -9,14 +9,18 @@ import Medicationcon from '../images/icons/ic--outline-medication-liquid.svg';
 import Appointmentcon from '../images/icons/streamline--waiting-appointments-calendar-solid.svg';
 import Healthcon from '../images/icons/healthicons--blood-pressure-2-negative.svg';
 import Settings from '../images/icons/mdi--settings.svg';
-import { useDarkMode } from '../context/DarkModeContext'; // Import the useDarkMode hook
+import { useDarkMode } from '../context/DarkModeContext';
 
 const Sidenav = () => {
-    const { isDarkMode, toggleDarkMode } = useDarkMode(); // Get dark mode state and toggle function
+    const { isDarkMode, toggleDarkMode } = useDarkMode(); 
+
+    const navStyles={
+        backgroundColor: isDarkMode ? '#483d8b' : '#f0f8ff',
+        color: isDarkMode ? '#ffffff' : '#000000'
+    }
 
     return (  
-        <nav className={`side-nav ${isDarkMode ? 'dark-mode' : ''}`}> {/* Apply dark mode class if isDarkMode is true */}
-            <h1>Health Master</h1>
+        <nav className={`side-nav ${isDarkMode ? 'dark-mode' : ''}`} style={navStyles}> 
             <ul>
                 <li className='special'>
                     <div className="nav-item">
