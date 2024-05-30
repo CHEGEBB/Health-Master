@@ -154,15 +154,35 @@ header {
         .quick-actions{
             display: flex;
             flex-direction: column;
-            .recent-medications{
-                width: 100%;
-                padding: 20px;
-                background-color: #fff;
-                border-radius: 8px;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                margin-bottom: 20px;
-
-            }
+.recent-medications {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    border-radius: 12px;
+  }
+  
+  .medication {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+  }
+  
+  .medication-name {
+    font-weight: bold;
+  }
+  
+  .medication-dosage {
+    color: #666;
+  }
+  
+  /* Style for medication status */
+  .medication-status {
+    color: green; /* You can change color based on status */
+  }
+  
         }
         .health-stats {
             width: 100%;
