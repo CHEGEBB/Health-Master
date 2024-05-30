@@ -132,6 +132,18 @@ const Homepage = () => {
       </header>
       <div className="main">
         <div className="quick-actions">
+        <div className="facts">
+        <div className="appointments">
+          <div className="apcon">
+
+          </div>
+          <div className="appointment-info">
+          <h2>20</h2>
+            <h3>Appointments</h3>
+          </div>
+        </div>
+
+        </div>
         <div className="health-stats">
           <h2>My Health Stats</h2>
           <div className="stats">
