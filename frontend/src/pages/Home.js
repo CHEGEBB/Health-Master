@@ -9,6 +9,7 @@ import Remindericon from '../images/icons/hugeicons--apple-reminder.svg';
 import ProfilePic from '../images/brian.jpeg';
 import DoctorPic from '../images/brian.jpeg'; 
 import WelcomImage from '../images/welcome.png';
+import Bloodcountcon from '../images/blood-count.png';
 
 ChartJS.register(
   CategoryScale,
@@ -210,11 +211,17 @@ const Homepage = () => {
               </div>
             </div>
             <div className="diagnosis-stats">
-              <div className="body-temperature">
-                <h4>Body Temperature</h4>
-                <div className="body-temperature-value">
-                  <p>36.8°C</p>
+              <div className="blood-count">
+                <div className="blood-count-icon">
+                  <img src={Bloodcountcon} alt="Blood Count" />
                 </div>
+                <div className="count">
+                <h4>Blood Count</h4>
+                <div className="body-temperature-value">
+                  <p>9455/ml</p>
+                </div>
+                </div>
+         
               </div>
               <div className="recent-illnesses">
                 <h4>Recent Illnesses</h4>

@@ -316,11 +316,14 @@ header {
                     display: flex;
                     flex-direction: column;
                     gap: 10px;
-                .body-temperature{
+                .blood-count{
                     border: 1px solid #ccc;
                     width: 200px;
                     height: 150px;
                     border-radius: 8px;
+                    display: flex;
+                    flex-direction: row;
+                    padding: 20px;
                 }
                 .recent-illnesses {
                     width: 200px;
