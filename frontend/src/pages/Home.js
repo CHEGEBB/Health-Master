@@ -139,7 +139,7 @@ const Homepage = () => {
         <img src={WelcomImage} alt="Welcome" />
         </div>
         <div className="content">
-        <h1>Welcome back, Sarah Smith!</h1>
+        <h1>Welcome back, John Doe!</h1>
         <p>We would like to take this opportunity to welcome you to our practice and to thank you for choosing our physicians to participate in your healthcare. We look forward to providing you with personalized, comprehensive health care focusing on wellness and prevention.</p>
         </div>
         

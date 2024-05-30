@@ -161,6 +161,13 @@ header {
                 padding: 20px;
                 margin-bottom: 20px;
                 text-align: center;
+                display: flex;
+                flex-direction: row;
+
+                img{
+                    width: 250px;
+                    height: 190px;
+                }
             
                 h1 {
                   color: #333;
