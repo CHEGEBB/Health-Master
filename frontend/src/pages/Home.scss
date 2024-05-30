@@ -338,7 +338,7 @@ header {
         }
         .scheduled-appointments{
             height: 100vh;
-            max-width: 320px;
+            max-width: 350px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -354,6 +354,7 @@ header {
                 display: flex;
                 flex-direction: column;
                 padding: 1rem;
+                width: 300px;
                 background-color: #ccc;
                 border-radius: 8px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
