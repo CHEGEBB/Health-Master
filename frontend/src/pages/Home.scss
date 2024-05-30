@@ -154,6 +154,53 @@ header {
         .quick-actions{
             display: flex;
             flex-direction: column;
+
+            .facts{
+                display: flex;
+                flex-direction: row;
+                gap: 40px;
+
+                .appointments{
+                    width: 200px;
+                    height: 100px;
+                    background-color: $light-slate-blue;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    padding: 20px;
+                    color: #fff;
+                    h2{
+                        font-family: $ropa;
+                        font-size: 26px;
+                        font-weight: bold;
+                    }
+                    h3{
+                        font-family: $josefin;
+                        font-size: 20px;
+                        font-weight: 300;
+                    }
+                
+                }
+                .health-costs{
+                    width: 200px;
+                    height: 100px;
+                    background-color: $light-pink;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    padding: 20px;
+                    color: #fff;
+                    h2{
+                        font-family: $ropa;
+                        font-size: 26px;
+                        font-weight: bold;
+                    }
+                    h3{
+                        font-family: $josefin;
+                        font-size: 20px;
+                        font-weight: 300;
+                    }
+                
+                }
+            }
 .recent-medications {
     border: 1px solid #ccc;
     padding: 10px;

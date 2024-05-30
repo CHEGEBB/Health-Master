@@ -142,6 +142,31 @@ const Homepage = () => {
             <h3>Appointments</h3>
           </div>
         </div>
+        <div className="health-costs">
+          <div className="hccon">
+          </div>
+
+          <div className="health-costs-info">
+            <h2>$2000</h2>
+            <h3>Health Costs</h3>
+            </div>
+        </div>
+        <div className="online-consultancy">
+          <div className="occon">
+          </div>
+          <div className="online-consultancy-info">
+            <h2>20</h2>
+            <h3>Online Consultancy</h3>
+          </div>
+        </div>
+        <div className="pending">
+          <div className="pcon">
+          </div>
+          <div className="pending-info">
+            <h2>10</h2>
+            <h3>Pending</h3>
+            </div>
+        </div>
 
         </div>
         <div className="health-stats">
