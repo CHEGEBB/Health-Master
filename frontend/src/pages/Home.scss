@@ -88,7 +88,7 @@ body {
 header {
     display: flex;
     align-items: center;
-    background-color: $alice-blue;
+    background-color: $alice-blue; 
     height: 125px;
     gap: 50px;
     width: 1000px;
@@ -96,10 +96,11 @@ header {
     padding: 0 20px;
     position: fixed;
     top: 0;
-    left: 50;
+    left: 50; 
     right: 0;
     z-index: 100;
-}
+  }
+  
 
 .search-bar {
     display: flex;
@@ -171,11 +172,13 @@ header {
     background-color: $snow-white;
     width: 980px;
     margin: 5px auto 0;
-    height: 200vh;
+    height: 300vh;
     margin-left: 80px;
     position: relative;
     z-index: 1;
     padding-top: 150px;
+    background-color: red;
+
     .intro{
         display: flex;
         justify-content: left;

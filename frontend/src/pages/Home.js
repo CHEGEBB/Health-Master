@@ -31,6 +31,7 @@ import appcon from "../images/icons/appointment.svg";
 import hccon from "../images/icons/cost.svg";
 import occon from "../images/icons/online.svg";
 import pcon from "../images/icons/pending.svg";
+import { useDarkMode } from "../context/DarkModeContext"; 
 
 
 ChartJS.register(
@@ -51,6 +52,7 @@ const generateRandomBloodPressure = () => ({
   diastolic: Math.floor(Math.random() * (90 - 60 + 1) + 60)
 });
 const Homepage = () => {
+  const { isDarkMode } = useDarkMode();
   const [heartRateData, setHeartRateData] = useState([
     { x: 0, y: generateRandomHeartRate() }
   ]);
@@ -197,19 +199,27 @@ const Homepage = () => {
     }
 
   ];
+  const headerStyles = {
+    backgroundColor: isDarkMode ? '#222' : '#f5f5f5', 
+    color: isDarkMode ? '#fff' : '#000'
+  
+  };
+  const iconStyles = {
+    filter: isDarkMode ? 'invert(1)' : 'invert(0)'
+  };
 
   return (
     <div className="homepage">
-      <header>
+          <header style={headerStyles}>
         <div className="search-bar">
-          <img src={SearchIcon} alt="Search" />
-          <input type="text" name="search" placeholder="Search" />
+          <img src={SearchIcon} alt="Search" style={iconStyles} />
+          <input type="text" name="search" placeholder="Search"/>
         </div>
         <div className="notifications">
-          <img src={Notificationicon} alt="Notifications" />
+          <img src={Notificationicon} alt="Notifications" style={iconStyles}/>
         </div>
         <div className="reminders">
-          <img src={Remindericon} alt="Reminders" />
+          <img src={Remindericon} alt="Reminders" style={iconStyles}/>
         </div>
         <div className="profile">
           <img className="profile-pic" src={ProfilePic} alt="Profile" />

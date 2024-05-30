@@ -66,8 +66,8 @@ $sea-green: #2e8b57;
 $dark-green: #006400;
 @media screen and (max-width: 1440px) {
   body{
-    // background-color: #c0c0c0;
     overflow-x: hidden;
+    height: 300vh;
   }
   .App {
     text-align: center;

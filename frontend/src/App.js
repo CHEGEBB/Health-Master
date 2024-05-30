@@ -1,12 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
 import './App.scss';
 import Signup from './authpages/Signup';
 import Login from './authpages/Login';
 import AuthenticatedRoutes from './AuthenticatedRoutes';
 import Sidenav from './components/Sidenav';
-import { DarkModeProvider } from './context/DarkModeContext'; // Import the DarkModeProvider
+import { DarkModeProvider } from './context/DarkModeContext';
 
 const App = () => {
   return (
@@ -23,16 +22,11 @@ const App = () => {
 };
 
 const AuthenticatedApp = () => {
-  const location = useLocation();
-  const isAuthRoute = location.pathname === '/' || location.pathname === '/login';
-
   return (
     <div className="App">
-      {!isAuthRoute && (
-        <div className="side-navbar">
-          <Sidenav />
-        </div>
-      )}
+      <div className="side-navbar">
+        <Sidenav />
+      </div>
       <div className="main-app">
         <AuthenticatedRoutes />
       </div>
