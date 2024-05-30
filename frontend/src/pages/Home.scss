@@ -13,6 +13,11 @@ $ivory: #fffff0;
 $old-lace: #fdf5e6;
 $linen: #faf0e6;
 $seashell: #fff5ee;
+$white-smoke: #f5f5f5;
+$floral-white: #fffaf0;
+$alice-blue: #f0f8ff;
+$honeydew: #f0fff0;
+$azure: #f0ffff;
 
 $dark-pink: #ff1493;
 $deep-pink: #ff1493;
@@ -528,6 +533,9 @@ header {
         }
         .upcoming-appointments {
             margin-top: 20px;
+            background-color: $azure;
+            width: 960px;
+            padding: 10px;
           
             h2 {
               font-size: 1.5em;

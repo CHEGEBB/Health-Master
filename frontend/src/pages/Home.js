@@ -141,7 +141,7 @@ const Homepage = () => {
   const appointments = [
     {
       imgSrc: CaraImage,
-      doctorName: "Dr. Cara Stevens",
+      doctorName: "Dr. Cara",
       profession: "Radiologist",
       date: "12 June '20",
       time: "09:00-10:00",
@@ -151,7 +151,7 @@ const Homepage = () => {
     },
     {
       imgSrc: Liu,
-      doctorName: "Dr. Jane Liu ",
+      doctorName: "Dr. Jane",
       profession: "Cardiologist",
       date: "13 June '20",
       time: "11:00-11:30",
@@ -161,7 +161,7 @@ const Homepage = () => {
     },
     {
       imgSrc: Ming,
-      doctorName: "Dr. Ming Li",
+      doctorName: "Dr. Ming",
       profession: "Dermatologist",
       date: "14 June '20",
       time: "10:30-11:00",
@@ -185,7 +185,7 @@ const Homepage = () => {
       profession: "Gynecologist",
       date: "16 June '20",
       time: "11:00-11:30",
-      treatment: "Pregnancy checkup",
+      treatment: "Prostate checkup",
       contactNumber: "+123 434656764",
       isFulfilled: false
     }
