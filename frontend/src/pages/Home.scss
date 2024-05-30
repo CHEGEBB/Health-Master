@@ -293,8 +293,8 @@ header {
                     flex-direction: column;
                     gap: 10px;
                 .blood-count{
-                    border: 1px solid #ccc;
                     width: 300px;
+                    background-color: $alice-blue;
                     height: 190px;
                     border-radius: 8px;
                     display: flex;
@@ -330,8 +330,8 @@ header {
                     }
                 }
                 .glucose-level{
-                    border: 1px solid #ccc;
                     width: 300px;
+                    background-color: $alice-blue;
                     height: 200px;
                     border-radius: 8px;
                     display: flex;
@@ -367,88 +367,13 @@ header {
                         }
                     }
                 }
-                .recent-illnesses {
-                    width: 200px;
-                    padding: 10px;
-                    border-radius: 8px;
-                    margin: 0 auto;
-                    border: 1px solid #ccc;
-                    h4{
-                        font-weight: bold;
-                        font-family: $ropa;
-                    }
-                }
-                
-                .illnesses-container {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 10px;
-                }
-                
-                .illness-card {
-                    display: flex;
-                    align-items: center;
-                    background-color: #f2f2f2;
-                    border-radius: 10px;
-                    padding: 10px;
-                }
-                
-                .illness-info {
-                    flex-grow: 1;
-                    display: flex;
-                    flex-direction: column;
-                }
-                
-                .illness-name {
-                    font-weight: bold;
-                }
-                
-                .status-icon {
-                    width: 20px;
-                    height: 20px;
-                    border-radius: 50%;
-                    margin-left: 10px;
-                }
-                
-                .ongoing {
-                    background-color: #ffd700; 
-                }
-                
-                .complete {
-                    background-color: #32cd32;
-                }
-                
-                .severe {
-                    background-color: #ff6347; 
-                }
-                
-                
-                .status {
-                    display: inline-block;
-                    padding: 5px 10px;
-                    border-radius: 10px;
-                    font-weight: bold;
-                }
-                
-                .ongoing {
-                    background-color: #ffd700; 
-                }
-                
-                .complete {
-                    background-color: #32cd32; 
-                }
-                
-                .severe {
-                    background-color: #ff6347;
-                }
             }
-                
 
                 .blood-pressure{
                     border-radius: 8px;
                     width: 300px;
                     height: 400px;
-                    border: 1px solid #ccc;
+                    background-color: $alice-blue;
                     box-shadow:  0 2px 4px rgba(0,0,0,0.7);
                     h4{
                         font-size: 20px;
@@ -487,7 +412,7 @@ header {
         
             .heart-rate {
                 width: 300px;
-                background-color: $snow-white;
+                background-color: $alice-blue;
                 border-radius: 8px;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.7);
                 height: 400px;
