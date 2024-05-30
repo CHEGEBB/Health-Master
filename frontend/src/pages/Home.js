@@ -240,38 +240,6 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-        <div className="recent-medications">
-          <h4>Recent Medications</h4>
-          <div className="medication">
-            <div className="medication-info">
-              <div className="medication-name">Paracetamol</div>
-              <div className="medication-dosage">500mg</div>
-            </div>
-            <div className="medication-status">Taken</div>
-          </div>
-          <div className="medication">
-            <div className="medication-info">
-              <div className="medication-name">Ibuprofen</div>
-              <div className="medication-dosage">400mg</div>
-            </div>
-            <div className="medication-status">Taken</div>
-          </div>
-          <div className="medication">
-            <div className="medication-info">
-              <div className="medication-name">Amoxicillin</div>
-              <div className="medication-dosage">500mg</div>
-            </div>
-            <div className="medication-status">Taken</div>
-          </div>
-          <div className="medication">
-            <div className="medication-info">
-              <div className="medication-name">Ciprofloxacin</div>
-              <div className="medication-dosage">500mg</div>
-            </div>
-            <div className="medication-status">Taken</div>
-          </div>
-        </div>
-        </div>
         <div className="scheduled-appointments">
           <h4>Scheduled Appointments</h4>
           <div className="appointment">
@@ -325,6 +293,38 @@ const Homepage = () => {
               <div className="appointment-status">Starts in 3 hrs</div>
             </div>
           </div>
+        </div>
+        <div className="recent-medications">
+          <h4>Recent Medications</h4>
+          <div className="medication">
+            <div className="medication-info">
+              <div className="medication-name">Paracetamol</div>
+              <div className="medication-dosage">500mg</div>
+            </div>
+            <div className="medication-status">Taken</div>
+          </div>
+          <div className="medication">
+            <div className="medication-info">
+              <div className="medication-name">Ibuprofen</div>
+              <div className="medication-dosage">400mg</div>
+            </div>
+            <div className="medication-status">Taken</div>
+          </div>
+          <div className="medication">
+            <div className="medication-info">
+              <div className="medication-name">Amoxicillin</div>
+              <div className="medication-dosage">500mg</div>
+            </div>
+            <div className="medication-status">Taken</div>
+          </div>
+          <div className="medication">
+            <div className="medication-info">
+              <div className="medication-name">Ciprofloxacin</div>
+              <div className="medication-dosage">500mg</div>
+            </div>
+            <div className="medication-status">Taken</div>
+          </div>
+        </div>
         </div>
       </div>
     </div>
