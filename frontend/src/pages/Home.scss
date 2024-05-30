@@ -25,11 +25,36 @@ $pale-violet-red: #db7093;
 $hot-pink: #ff69b4;
 $light-pink: #ffb6c1;
 
+$firebrick: #b22222;
+$indian-red: #cd5c5c;
+$crimson: #dc143c;
+$dark-red: #8b0000;
+$maroon: #800000;
+
+$light-salmon: #ffa07a;
+$coral: #ff7f50;
+$tomato: #ff6347;
+$orange-red: #ff4500;
+$dark-orange: #ff8c00;
+$navy: #000080;
+$dark-blue: #00008b;
+$medium-blue: #0000cd;
+$blue: #0000ff;
+$royal-blue: #4169e1;
+$cornflower-blue: #6495ed;
+$sky-blue: #87ceeb;
 $slate-blue: #6a5acd;
 $medium-slate-blue: #7b68ee;
 $dark-slate-blue: #483d8b;
 $light-slate-blue: #8470ff;
-
+$steel-blue: #4682b4;
+$deep-sky-blue: #00bfff;
+$powder-blue: #b0e0e6;
+$light-blue: #add8e6;
+$medium-purple: #9370db;
+$medium-spring-green: #00fa9a;
+$medium-aquamarine: #66cdaa;
+$medium-sea-green: #3cb371;
 $blue: #0000ff;
 $medium-blue: #0000cd;
 $dark-blue: #00008b;
@@ -60,10 +85,10 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: $ghost-white;
+    background-color: $alice-blue;
     height: 125px;
+    gap: 50px;
     width: 1000px;
     border-bottom: 2px solid #ccc;
     padding: 0 20px;
@@ -87,11 +112,22 @@ header {
     }
 
     input {
+        width: 300px;
         padding: 10px 10px 10px 40px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+        border: 1px solid $deep-sky-blue;
+        background-color: $white-smoke;
+        border-radius: 8px;
         font-size: 16px;
         font-family: $jost;
+
+        &:focus {
+            outline: none;
+            border-color: $light-slate-blue;
+        }
+        &:hover {
+            border-color: $light-slate-blue;
+            outline: none;
+        }
 
     }
 }
@@ -278,7 +314,7 @@ header {
         .health-stats {
             width: 100%;
             padding: 20px;
-            background-color: $azure;
+            background-color: $alice-blue;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 20px;
@@ -294,7 +330,7 @@ header {
                     gap: 10px;
                 .blood-count{
                     width: 300px;
-                    background-color: $alice-blue;
+                    background-color: $white-smoke;
                     height: 190px;
                     border-radius: 8px;
                     display: flex;
@@ -331,7 +367,7 @@ header {
                 }
                 .glucose-level{
                     width: 300px;
-                    background-color: $alice-blue;
+                    background-color: $white-smoke;
                     height: 200px;
                     border-radius: 8px;
                     display: flex;
@@ -373,7 +409,7 @@ header {
                     border-radius: 8px;
                     width: 300px;
                     height: 400px;
-                    background-color: $alice-blue;
+                    background-color: $white-smoke;
                     box-shadow:  0 2px 4px rgba(0,0,0,0.7);
                     h4{
                         font-size: 20px;
@@ -405,14 +441,14 @@ header {
         
             h2 {
                 margin-bottom: 20px;
-                color: $dark-pink;
+                color: #000;
                 font-size: 26px;
                 font-family: $ropa;
             }
         
             .heart-rate {
                 width: 300px;
-                background-color: $alice-blue;
+                background-color: $white-smoke;
                 border-radius: 8px;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.7);
                 height: 400px;
@@ -459,13 +495,15 @@ header {
         .upcoming-appointments {
             margin-top: 20px;
             background-color: $alice-blue;
-            width: 960px;
+            width: 950px;
+            border-radius: 9px;
             padding: 10px;
           
             h2 {
               font-size: 1.5em;
-              margin-bottom: 20px;
+              margin-bottom: 25px;
               color: #333;
+              font-family: $ropa;
             }
           
             .appointments-list {
@@ -495,15 +533,14 @@ header {
                   gap: 5px;
           
                   .doctor-info {
-                    h3 {
-                      margin: 0;
+                    h3 {margin-top: 30px;
                       font-size: 1.2em;
-                      color: #333;
+                      color: $light-slate-blue;
                     }
           
                     p {
                       margin: 0;
-                      color: #555;
+                      color: $dark-slate-blue;
                     }
                   }
           
@@ -516,14 +553,14 @@ header {
                     padding: 20px;
                     p {
                       margin: 0;
-                      color: #666;
+                      color: #333;
                       font-size: 0.9em;
                       display: flex;
                       flex-direction: column;
                       gap: 10px;
           
                       strong {
-                        color: #333;
+                        color: $coral;
                       }
                     }
                   }

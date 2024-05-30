@@ -308,7 +308,7 @@ const Homepage = () => {
     <div className="count">
       <h4>Blood Count</h4>
       <div className="blood-count-value">
-        <CountUp end={9455} duration={2} />/ml
+        <CountUp end={9455} duration={10} />/ml
         <span className="arrow up"></span>
       </div>
     </div>
@@ -320,7 +320,7 @@ const Homepage = () => {
     <div className="level">
       <h4>Glucose Level</h4>
       <div className="glucose-level-value">
-        <CountUp end={120} duration={2} />mg/dL
+        <CountUp end={120} duration={10} />mg/dL
         <span className="arrow down"></span>
       </div>
     </div>
