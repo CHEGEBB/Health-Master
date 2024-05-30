@@ -155,7 +155,7 @@ header {
             display: flex;
             flex-direction: column;
             .welcome-message {
-                background-color: #f0f8ff; /* Light blue that works well with white */
+                background-color: #f0f8ff;
                 border-radius: 10px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 padding: 20px;
@@ -268,37 +268,8 @@ header {
                 
                 }
             }
-.recent-medications {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    border-radius: 12px;
-    margin-top: 30px;
-  }
-  
-  .medication {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 5px;
-  }
-  
-  .medication-name {
-    font-weight: bold;
-  }
-  
-  .medication-dosage {
-    color: #666;
-  }
-  
-
-  .medication-status {
-    color: green; 
-  }
-  
         }
+
         .health-stats {
             width: 100%;
             padding: 20px;
@@ -311,19 +282,85 @@ header {
             .stats{
                 display: flex;
                 flex-direction: row;
-                gap: 50px;
+                gap: 10px;
                 .diagnosis-stats{
                     display: flex;
                     flex-direction: column;
                     gap: 10px;
                 .blood-count{
                     border: 1px solid #ccc;
-                    width: 200px;
-                    height: 150px;
+                    width: 300px;
+                    height: 190px;
                     border-radius: 8px;
                     display: flex;
                     flex-direction: row;
-                    padding: 20px;
+                    padding: 40px;
+                    gap: 30px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.7);
+                    h4{
+                        font-size: 20px;
+                        color: #333;
+                        font-family: $ropa;
+                    }
+                    .blood-count-value{
+                        p {
+                            font-size: 20px;
+                            color: $dark-green;
+                            font-family: $josefin;
+                            margin-top: 20px;
+                        }
+                        .arrow {
+                            margin-left: 5px;
+                            width: 0;
+                            height: 0;
+                            border-left: 5px solid transparent;
+                            border-right: 5px solid transparent;
+                            &.up {
+                              border-bottom: 10px solid green;
+                            }
+                            &.down {
+                              border-top: 10px solid red;
+                            }
+                        }
+                    }
+                }
+                .glucose-level{
+                    border: 1px solid #ccc;
+                    width: 300px;
+                    height: 200px;
+                    border-radius: 8px;
+                    display: flex;
+                    flex-direction: row;
+                    padding: 40px;
+                    gap: 30px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.7);
+                    h4{
+                        font-size: 20px;
+                        color: #333;
+                        font-family: $ropa;
+                    }
+                    .glucose-level-value{
+                        p {
+                            font-size: 20px;
+                            color: $dark-pink;
+                            font-family: $josefin;
+                            margin-top: 20px;
+                        }
+                        .arrow {
+                            margin-left: 5px;
+                            width: 0;
+                            height: 0;
+                            border-left: 5px solid transparent;
+                            border-right: 5px solid transparent;
+                            &.up {
+                              border-bottom: 10px solid green;
+                            }
+                            &.down {
+                              border-top: 10px solid red;
+                              padding-top: 20px;
+                            }
+                        }
+                    }
                 }
                 .recent-illnesses {
                     width: 200px;
@@ -445,7 +482,7 @@ header {
         
             .heart-rate {
                 width: 300px;
-                background-color: $steel-blue;
+                background-color: $snow-white;
                 border-radius: 8px;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.7);
                 height: 400px;

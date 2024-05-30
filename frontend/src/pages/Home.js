@@ -10,6 +10,7 @@ import ProfilePic from '../images/brian.jpeg';
 import DoctorPic from '../images/brian.jpeg'; 
 import WelcomImage from '../images/welcome.png';
 import Bloodcountcon from '../images/blood-count.png';
+import Glucosecon from '../images/glucose.png';
 
 ChartJS.register(
   CategoryScale,
@@ -57,7 +58,7 @@ const Homepage = () => {
         label: 'Heart Rate',
         data: heartRateData,
         fill: false,
-        borderColor: '#ff1493',
+        borderColor: '#db7093',
         tension: 0.1,
       }
     ]
@@ -87,14 +88,14 @@ const Homepage = () => {
         },
         ticks: {
           stepSize: 1,
-          color: 'white'
+          color: 'black'
         }
       },
       y: {
         min: 50,
         max: 130,
         ticks: {
-          color: 'white'
+          color: 'black'
         }
       },
     },
@@ -217,13 +218,26 @@ const Homepage = () => {
                 </div>
                 <div className="count">
                 <h4>Blood Count</h4>
-                <div className="body-temperature-value">
+                <div className="blood-count-value">
                   <p>9455/ml</p>
+                    <span className="arrow up"></span>
                 </div>
                 </div>
          
               </div>
-              <div className="recent-illnesses">
+              <div className="glucose-level">
+                <div className="glucose-level-icon">
+                  <img src={Glucosecon} alt="Glucose Level" />
+                  </div>
+                <div className="level">
+                <h4>Glucose Level</h4>
+                <div className="glucose-level-value">
+                  <p>120mg/dL</p>
+                    <span className="arrow down"></span>
+                    </div>
+                    </div>
+              </div>
+              {/* <div className="recent-illnesses">
                 <h4>Recent Illnesses</h4>
                 <div className="illnesses-container">
                   <div className="illness-card">
@@ -255,7 +269,7 @@ const Homepage = () => {
                     <div className="status-icon complete"></div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
