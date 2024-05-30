@@ -7,7 +7,6 @@ import Notificationicon from '../images/icons/ic--baseline-notifications.svg';
 import SearchIcon from '../images/icons/fluent--search-48-filled (1).svg';
 import Remindericon from '../images/icons/hugeicons--apple-reminder.svg';
 import ProfilePic from '../images/brian.jpeg';
-import DoctorPic from '../images/brian.jpeg'; 
 import WelcomImage from '../images/welcome.png';
 import Bloodcountcon from '../images/blood-count.png';
 import Glucosecon from '../images/glucose.png';
@@ -28,8 +27,6 @@ const generateRandomBloodPressure = () => ({
   systolic: Math.floor(Math.random() * (150 - 90 + 1) + 90),
   diastolic: Math.floor(Math.random() * (90 - 60 + 1) + 60)
 });
-const generateRandomTemperature = () => Math.floor(Math.random() * (40 - 35 + 1) + 35);
-
 const Homepage = () => {
   const [heartRateData, setHeartRateData] = useState([{ x: 0, y: generateRandomHeartRate() }]);
   const [bloodPressureData, setBloodPressureData] = useState(generateRandomBloodPressure());
@@ -111,6 +108,29 @@ const Homepage = () => {
       }
     }
   };
+  const appointments = [
+    {
+      imgSrc: '../images/brian.jpeg',
+      doctorName: 'Dr. Cara Stevens',
+      profession: 'Radiologist',
+      date: "12 June '20",
+      time: '09:00-10:00',
+      treatment: 'CT scans',
+      contactNumber: '+123 676545655',
+      isFulfilled: false,
+    },
+    {
+      imgSrc: '../images/brian.jpeg',
+      doctorName: 'Dr. John Doe',
+      profession: 'Cardiologist',
+      date: "13 June '20",
+      time: '11:00-11:30',
+      treatment: 'Heart checkup',
+      contactNumber: '+123 434656764',
+      isFulfilled: false,
+    },
+  ];
+  
 
   return (
     <div className='homepage'>
@@ -273,62 +293,38 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-        <div className="scheduled-appointments">
-          <h4>Scheduled Appointments</h4>
-          <div className="appoints">
-          <div className="appointment">
-            <div className="appointment-time">09:15am - 10:45am</div>
-            <div className="appointment-details">
-              <div className="doctor-info">
-                <img src={DoctorPic} alt="Dr. Meculam" className="doctor-pic" />
-                <div>
-                  <div className="doctor-name">Dr. Meculam Deo</div>
-                  <div className="appointment-type">Routine Checkup - Standard Consult</div>
-                  <div className="contact-info">
-                    <div className="contact-number">+1 142 536 7890</div>
-                    <div className="billing-status">Billed</div>
+        <div className="upcoming-appointments">
+          <h2>Upcoming Appointments</h2>
+          <div className="appointments-list">
+            {appointments.map((appointment, index) => (
+              <div key={index} className="appointment">
+                <img src={appointment.imgSrc} alt={appointment.doctorName} />
+                <div className="details">
+                  <div className="doctor-info">
+                    <h3>{appointment.doctorName}</h3>
+                    <p>{appointment.profession}</p>
+                  </div>
+                  <div className="appointment-info">
+                    <p><strong>Date:</strong> {appointment.date}</p>
+                    <p><strong>Time:</strong> {appointment.time}</p>
+                    <p><strong>Treatment:</strong> {appointment.treatment}</p>
+                    <p><strong>Contact Number:</strong> {appointment.contactNumber}</p>
+                  </div>
+                  <div className="appointment-status">
+                    <label>
+                      <input type="radio" name={`appointment-${index}`} value="fulfilled" checked={appointment.isFulfilled} />
+                      Fulfilled
+                    </label>
+                    <label>
+                      <input type="radio" name={`appointment-${index}`} value="not-fulfilled" checked={!appointment.isFulfilled} />
+                      Not Fulfilled
+                    </label>
                   </div>
                 </div>
               </div>
-              <div className="appointment-status">Starts in 15 min</div>
-            </div>
-          </div>
-          <div className="appointment">
-            <div className="appointment-time">11:00am - 12:00pm</div>
-            <div className="appointment-details">
-              <div className="doctor-info">
-                <img src={DoctorPic} alt="Dr. Meculam" className="doctor-pic" />
-                <div>
-                  <div className="doctor-name">Dr. Meculam Deo</div>
-                  <div className="appointment-type">Follow-up - Blood Test</div>
-                  <div className="contact-info">
-                    <div className="contact-number">+1 142 536 7890</div>
-                    <div className="billing-status">Billed</div>
-                  </div>
-                </div>
-              </div>
-              <div className="appointment-status">Starts in 45 min</div>
-            </div>
-          </div>
-          <div className="appointment">
-            <div className="appointment-time">01:00pm - 02:30pm</div>
-            <div className="appointment-details">
-              <div className="doctor-info">
-                <img src={DoctorPic} alt="Dr. Meculam" className="doctor-pic" />
-                <div>
-                  <div className="doctor-name">Dr. Meculam Deo</div>
-                  <div className="appointment-type">Consultation - New Symptoms</div>
-                  <div className="contact-info">
-                    <div className="contact-number">+1 142 536 7890</div>
-                    <div className="billing-status">Billed</div>
-                  </div>
-                </div>
-              </div>
-              <div className="appointment-status">Starts in 3 hrs</div>
-            </div>
+            ))}
           </div>
           </div>
-        </div>
         <div className="recent-medications">
           <h4>Recent Medications</h4>
           <div className="medication">
