@@ -9,106 +9,100 @@ import Medicationcon from '../images/icons/ic--outline-medication-liquid.svg';
 import Appointmentcon from '../images/icons/streamline--waiting-appointments-calendar-solid.svg';
 import Healthcon from '../images/icons/healthicons--blood-pressure-2-negative.svg';
 import Settings from '../images/icons/mdi--settings.svg';
-
-
+import { useDarkMode } from '../context/DarkModeContext'; // Import the useDarkMode hook
 
 const Sidenav = () => {
-
+    const { isDarkMode, toggleDarkMode } = useDarkMode(); // Get dark mode state and toggle function
 
     return (  
-        <nav className='side-nav'>
-        <h1>Health Master</h1>
-        <ul>
-        {/* <li>
-                <Link to='/'>Signup</Link>
-            </li>
-            <li>
-                <Link to='/login'>Login</Link>
-        </li> */}
-
-            <li className='special'>
-                <div className="nav-item">
+        <nav className={`side-nav ${isDarkMode ? 'dark-mode' : ''}`}> {/* Apply dark mode class if isDarkMode is true */}
+            <h1>Health Master</h1>
+            <ul>
+                <li className='special'>
+                    <div className="nav-item">
                         <div className="nav-icon">
                             <img src={Dashcon} alt="Dashboard" />
                         </div>
                         <div className="navtem">
-                        <Link to='/home'>Dashboard</Link>
+                            <Link to='/home'>Dashboard</Link>
+                        </div>
                     </div>
-                </div>
-            </li>  
-            <li>
-                <div className="nav-item">
-                    <div className="nav-icon">
-                        <img src={Profilecon} alt="Profile" />
-                    </div>
-                    <div className="navtem">
-                        <Link to='/profile'>Profile</Link>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div className="nav-item">
-                    <div className="nav-icon">
-                        <img src={HealthGoalcon} alt="Health Goals" />
-                    </div>
-                    <div className="navtem">
-                        <Link to='/healthgoals'>Health Goals</Link>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div className="nav-item">
-                    <div className="nav-icon">
-                        <img src={Symptomcon} alt="Symptoms" />
-                    </div>
-                    <div className="navtem">
-                        <Link to='/symptoms'>Symptoms Checker</Link>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div className="nav-item">
-                    <div className="nav-icon">
-                        <img src={Medicationcon} alt="Medication" />
-                    </div>
-                    <div className="navtem">
-                        <Link to='/medication'>Medication Management</Link>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div className="nav-item">
-                    <div className="nav-icon">
-                        <img src={Appointmentcon} alt="Appointments" />
-                    </div>
-                    <div className="navtem">
-                        <Link to='/appointments'>Appointments</Link>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div className="nav-item">
-                    <div className="nav-icon">
-                        <img src={Healthcon} alt="Health" />
-                    </div>
-                    <div className="navtem">
-                        <Link to='/health'>Health & Wellness</Link>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div className="nav-item">
-                    <div className="nav-icon">
-                        <img src={Settings}
-                        alt="Settings" />
+                </li>  
+                <li>
+                    <div className="nav-item">
+                        <div className="nav-icon">
+                            <img src={Profilecon} alt="Profile" />
                         </div>
                         <div className="navtem">
-
+                            <Link to='/profile'>Profile</Link>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div className="nav-item">
+                        <div className="nav-icon">
+                            <img src={HealthGoalcon} alt="Health Goals" />
+                        </div>
+                        <div className="navtem">
+                            <Link to='/healthgoals'>Health Goals</Link>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div className="nav-item">
+                        <div className="nav-icon">
+                            <img src={Symptomcon} alt="Symptoms" />
+                        </div>
+                        <div className="navtem">
+                            <Link to='/symptoms'>Symptoms Checker</Link>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div className="nav-item">
+                        <div className="nav-icon">
+                            <img src={Medicationcon} alt="Medication" />
+                        </div>
+                        <div className="navtem">
+                            <Link to='/medication'>Medication Management</Link>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div className="nav-item">
+                        <div className="nav-icon">
+                            <img src={Appointmentcon} alt="Appointments" />
+                        </div>
+                        <div className="navtem">
+                            <Link to='/appointments'>Appointments</Link>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div className="nav-item">
+                        <div className="nav-icon">
+                            <img src={Healthcon} alt="Health" />
+                        </div>
+                        <div className="navtem">
+                            <Link to='/health'>Health & Wellness</Link>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div className="nav-item">
+                        <div className="nav-icon">
+                            <img src={Settings} alt="Settings" />
+                        </div>
+                        <div className="navtem">
                             <Link to='/settings'>Settings</Link>
                         </div>
                     </div>
-                        </li>
-        </ul>
+                </li>
+            </ul>
+            <div className="dark-mode-toggle" onClick={toggleDarkMode}>
+                {/* Display dark mode toggle button */}
+                {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+            </div>
         </nav>
     );
 }
