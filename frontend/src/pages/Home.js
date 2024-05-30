@@ -21,7 +21,11 @@ import ProfilePic from "../images/brian.jpeg";
 import WelcomImage from "../images/welcome.png";
 import Bloodcountcon from "../images/blood-count.png";
 import Glucosecon from "../images/glucose.png";
-import BrianImage from "../images/brian.jpeg";
+import CaraImage from "../images/cara.jpg";
+import Liu from "../images/liu.jpg";
+import Ming from "../images/ming.jpg";
+import smith from "../images/smith.jpg";
+import jethro from "../images/jethro.png";
 
 ChartJS.register(
   CategoryScale,
@@ -136,7 +140,7 @@ const Homepage = () => {
   };
   const appointments = [
     {
-      imgSrc: BrianImage,
+      imgSrc: CaraImage,
       doctorName: "Dr. Cara Stevens",
       profession: "Radiologist",
       date: "12 June '20",
@@ -146,15 +150,46 @@ const Homepage = () => {
       isFulfilled: false
     },
     {
-      imgSrc: BrianImage,
-      doctorName: "Dr. John Doe",
+      imgSrc: Liu,
+      doctorName: "Dr. Jane Liu ",
       profession: "Cardiologist",
       date: "13 June '20",
       time: "11:00-11:30",
       treatment: "Heart checkup",
       contactNumber: "+123 434656764",
       isFulfilled: false
+    },
+    {
+      imgSrc: Ming,
+      doctorName: "Dr. Ming Li",
+      profession: "Dermatologist",
+      date: "14 June '20",
+      time: "10:30-11:00",
+      treatment: "Skin checkup",
+      contactNumber: "+123 434656764",
+      isFulfilled: false
+    },
+    {
+      imgSrc: smith,
+      doctorName: "Dr. Smith",
+      profession: "Neurologist",
+      date: "15 June '20",
+      time: "11:00-11:30",
+      treatment: "Brain checkup",
+      contactNumber: "+123 434656764",
+      isFulfilled: false
+    },
+    {
+      imgSrc: jethro,
+      doctorName: "Dr. Jethro",
+      profession: "Gynecologist",
+      date: "16 June '20",
+      time: "11:00-11:30",
+      treatment: "Pregnancy checkup",
+      contactNumber: "+123 434656764",
+      isFulfilled: false
     }
+
   ];
 
   return (
@@ -330,6 +365,8 @@ const Homepage = () => {
                       <label>
                         <input
                           type="radio"
+                          // to make the radio buttons square
+                          style={{ width: "20px", height: "20px" }}
                           name={`appointment-${index}`}
                           value="not-fulfilled"
                           checked={!appointment.isFulfilled}

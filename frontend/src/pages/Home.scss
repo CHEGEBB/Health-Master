@@ -575,10 +575,19 @@ header {
                   }
           
                   .appointment-info {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 50px;
+                    text-align: left;
+                    margin-left: 20px;
+                    padding: 20px;
                     p {
                       margin: 0;
                       color: #666;
                       font-size: 0.9em;
+                      display: flex;
+                      flex-direction: column;
+                      gap: 10px;
           
                       strong {
                         color: #333;
