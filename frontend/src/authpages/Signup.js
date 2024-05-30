@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import './Signup.scss';
 import { auth } from '../firebase';
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
-import GoogleIcon from '../images/flat-color-icons--google.svg';
-import BackgroundVideo from '../images/background1.mp4';
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+
 
 const Signup = () => {
     const [passwordStrength, setPasswordStrength] = useState('');
@@ -56,39 +55,15 @@ const Signup = () => {
         }
     };
 
-    const googleSignIn = async () => {
-        try {
-            const provider = new GoogleAuthProvider();
-            const result = await signInWithPopup(auth, provider);
-            console.log("Google sign-in successful:", result.user);
-        } catch (error) {
-            console.error("Error signing in with Google:", error.message);
-        }
-    };
+
 
     return (
         <div className="signup-container">
             <div className="video-container">
-                <video autoPlay muted loop>
-                    <source src={BackgroundVideo} type="video/mp4" />
-                </video>
-                <div className="overlay"></div>
             </div>
             <div className="signup-form">
                 <h2>Sign Up</h2>
-                <div className="google-signup">
-                    <div className="sign">
-                        <h2>Sign Up with Google</h2>
-                    </div>
-                    <div className="googlecon">
-                        <img src={GoogleIcon} alt="Google Icon" onClick={googleSignIn} />
-                    </div>
-                </div>
                 <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="name">Name</label>
-                        <input type="text" id="name" name="name" required />
-                    </div>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
                         <input type="email" id="email" name="email" required />

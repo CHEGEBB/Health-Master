@@ -1,20 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Ropa+Sans:ital@0;1&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Island+Moments&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Ropa+Sans:ital@0;1&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 $form-color: #f5f5f5;
 $button-color: #132aae;
 $button-hover-color: #0d1a7f;
 $button-text-color: #ffffff;
-$jost: 'Jost', sans-serif;
-$ropa: 'Ropa Sans', sans-serif;
-$roboto: 'Roboto', sans-serif;
-$roboto-slab: 'Roboto Slab', serif;
-$roboto-condensed: 'Roboto Condensed', sans-serif;
-$josefin: 'Josefin Sans', sans-serif;
-$isle: 'Island Moments', cursive;
+$jost: "Jost", sans-serif;
+$ropa: "Ropa Sans", sans-serif;
+$roboto: "Roboto", sans-serif;
+$roboto-slab: "Roboto Slab", serif;
+$roboto-condensed: "Roboto Condensed", sans-serif;
+$josefin: "Josefin Sans", sans-serif;
+$isle: "Island Moments", cursive;
 
-*{
+* {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 .signup-container {
@@ -23,192 +22,164 @@ $isle: 'Island Moments', cursive;
   align-items: center;
   height: 100vh;
   background-color: $form-color;
-  font-family:$jost;
-  position: relative;
-  z-index: 100;
-  
-  
+  font-family: $jost;
+  overflow: hidden;
 }
 
 .signup-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #3a7bd5;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(240, 246, 248, 0.5);
+  max-width: 400px;
+  height: 500px;
+}
+
+.signup-form h1 {
+  margin: 0 0 15px 0;
+  color: #555;
+}
+
+form {
+  button {
+    width: 280px;
     padding: 10px;
-    border: 1px solid #3A7BD5;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color:rgba(240, 246, 248, 0.5) ;
-    max-width: 350px;
-    position: absolute;
-z-index: 100;
-height: 600px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #ad00b3;
+  }
+}
+
+.signup-form input[type="text"]:focus,
+.signup-form input[type="password"]:focus,
+.signup-form input[type="email"]:focus {
+  border-color: #3a7bd5;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-bottom: 10px;
+  label {
+    display: flex;
+    justify-content: left;
+  }
+  input [type="text"],
+  input[type="password"],
+  input[type="email"] {
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    margin-left: 6px;
+    font-family: $jost;
+    &:focus {
+      outline: none;
     }
-    
-    .signup-form h1 {
-      margin: 0 0 15px 0;
-      color: #555;
-    }
-    
-  form{
-    button {
-      width: 280px;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      background-color: #007bff;
-      color: #fff;
-      margin-left: -5px;
+    &:hover {
+      border-color: $button-color;
+      box-shadow: 0 0 10px rgba(118, 24, 116, 0.6);
+      transition: all 0.2s ease-in-out;
       cursor: pointer;
     }
-    
-    button:hover {
-      background-color: #ad00b3;
-    }
-    
   }
-        
-        .signup-form input[type=text]:focus,
-        .signup-form input[type=password]:focus,
-        .signup-form input[type=email]:focus {
-            border-color: #3A7BD5;
-        }
-        .form-group{
-            display: flex;
-            flex-direction: column;
-            width: 300px;
-            margin-bottom: 10px;
-            label{
-                display: flex;
-                justify-content: left;
-            }
-            input [type="text"], input[type="password"], input[type="email"]{
-                width: 280px;
-                padding: 10px;
-                border: 1px solid #c0c0c0;
-                border-radius: 5px;
-                margin-left: 6px;
-                font-family: $jost;
-                &:focus {
-                  outline: none;
-              }
-              &:hover {
-                  border-color: $button-color;
-                  box-shadow: 0 0 10px rgba(118, 24, 116, 0.6);
-                  transition: all 0.2s ease-in-out;
-                  cursor: pointer;
-              }
-            }
-            #name{
-              width: 280px;
-              padding: 10px;
-              border: 1px solid #c0c0c0;
-              border-radius: 5px;
-              font-family: $jost;
-              margin-left: 6px;
-              &:focus {
-                outline: none;
-            }
-            &:hover {
-                border-color: $button-color;
-                box-shadow: 0 0 10px rgba(118, 24, 116, 0.6);
-                transition: all 0.2s ease-in-out;
-                cursor: pointer;
-            }
-            }
-              
-        }
-        .password-strength {
-            font-size: 18px;
-            margin-top: 2px;
-            justify-content: left;
-            display: flex;
-            font-family: $jost;
-            &.weak {
-              color: red;
-            }
-            &.moderate {
-              color: orange;
-            }
-            &.strong {
-              color: green;
-            }
-          }
-          
-          .password-match {
-            font-size: 18px;
-            margin-top: 3px;
-            color: red;
-            justify-content: left;
-            display: flex;
-            font-family: $jost;
-          }
-          
-          @keyframes strengthPulse {
-            0% {
-              transform: scale(1);
-            }
-            50% {
-              transform: scale(1.1);
-            }
-            100% {
-              transform: scale(1);
-            }
-          }
-          
-          .password-strength-animation {
-            animation: strengthPulse 1s infinite;
-          }
-          .google-signup{
-            display: flex;
-            flex-direction: column;
-            .googlecon {
-                img{
-                    width: 40px;
-                    height: 40px;
-                    margin-right: 10px;
-                    margin-bottom: 10px;
-                    &:hover{
-                        cursor: pointer;
-                        opacity: 0.8;
-                        transition: opacity 0.2s ease-in-out;
-                        transform:  scale(1.1);
-                    }
-                }
-            }
-            .sign{
-                h2{
-                    margin: 0;
-                    font-size: 16px;
-                }
-            }
-          }
-          .video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-          }
-          
-          video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-          }
-          
-          .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(22, 86, 103, 0.8);
-          }
+  #name {
+    width: 280px;
+    padding: 10px;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    font-family: $jost;
+    margin-left: 6px;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      border-color: $button-color;
+      box-shadow: 0 0 10px rgba(118, 24, 116, 0.6);
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+    }
+  }
+}
+.password-strength {
+  font-size: 18px;
+  margin-top: 2px;
+  justify-content: left;
+  display: flex;
+  font-family: $jost;
+  &.weak {
+    color: red;
+  }
+  &.moderate {
+    color: orange;
+  }
+  &.strong {
+    color: green;
+  }
+}
+
+.password-match {
+  font-size: 18px;
+  margin-top: 3px;
+  color: red;
+  justify-content: left;
+  display: flex;
+  font-family: $jost;
+}
+
+@keyframes strengthPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.password-strength-animation {
+  animation: strengthPulse 1s infinite;
+}
+.google-signup {
+  display: flex;
+  flex-direction: column;
+  .googlecon {
+    img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+        transition: opacity 0.2s ease-in-out;
+        transform: scale(1.1);
+      }
+    }
+  }
+  .sign {
+    h2 {
+      margin: 0;
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .signup-form {
+    height: 600px;
+  }
+}

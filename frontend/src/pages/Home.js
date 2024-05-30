@@ -212,7 +212,13 @@ const Homepage = () => {
   }
 
 
-const 
+const healthStatsStyles = {
+  backgroundColor: isDarkMode ? '#556b78' : '#f0f8ff', 
+}
+const upcomingAppointmentsStyles = {
+  backgroundColor: isDarkMode ? '#556b78' : '#f0f8ff',
+  color: isDarkMode ? '#fff' : '#000'
+}
   return (
     <div className="homepage" style={homepageStyles}>
           <header style={headerStyles}>
@@ -290,7 +296,7 @@ const
               </div>
             </div>
           </div>
-          <div className="health-stats">
+          <div className="health-stats" style={healthStatsStyles}>
             <h2>My Health Stats</h2>
             <div className="stats">
               <div className="heart-rate">
@@ -355,7 +361,7 @@ const
 </div>
             </div>
           </div>
-          <div className="upcoming-appointments">
+          <div className="upcoming-appointments" style={upcomingAppointmentsStyles}>
             <h2>Upcoming Appointments</h2>
             <div className="appointments-list">
               {appointments.map((appointment, index) => (

@@ -15,7 +15,7 @@ const Sidenav = () => {
     const { isDarkMode, toggleDarkMode } = useDarkMode(); 
 
     const navStyles={
-        backgroundColor: isDarkMode ? '#483d8b' : '#f0f8ff',
+        backgroundColor: isDarkMode ? '#8b008b' : '#3A7BD5',
         color: isDarkMode ? '#ffffff' : '#000000'
     }
 
