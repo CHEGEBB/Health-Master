@@ -151,6 +151,19 @@ header {
         flex-direction: row;
         margin-left: 20px;
         gap: 15px;
+        .quick-actions{
+            display: flex;
+            flex-direction: column;
+            .recent-medications{
+                width: 100%;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                margin-bottom: 20px;
+
+            }
+        }
         .health-stats {
             width: 100%;
             padding: 20px;
@@ -158,7 +171,7 @@ header {
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 20px;
-            height: 100vh-;
+            height: 100vh;
             .stats{
                 display: flex;
                 flex-direction: row;
