@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import './Home.scss';
 import { Line, Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, BarElement } from 'chart.js';
-import Heartcon from '../images/icons/bytesize--heart.svg';
+import Heartcon from '../images/heart-rate.png';
 import Notificationicon from '../images/icons/ic--baseline-notifications.svg';
 import SearchIcon from '../images/icons/fluent--search-48-filled (1).svg';
 import Remindericon from '../images/icons/hugeicons--apple-reminder.svg';
@@ -257,74 +257,40 @@ const Homepage = () => {
                     </div>
                     </div>
               </div>
-              {/* <div className="recent-illnesses">
-                <h4>Recent Illnesses</h4>
-                <div className="illnesses-container">
-                  <div className="illness-card">
-                    <div className="illness-info">
-                      <span className="illness-name">common cold</span>
-                      <span className="illness-date">2024-05-01</span>
-                    </div>
-                    <div className="status-icon ongoing"></div>
-                  </div>
-                  <div className="illness-card">
-                    <div className="illness-info">
-                      <span className="illness-name">Bronchitis</span>
-                      <span className="illness-date">2024-05-15</span>
-                    </div>
-                    <div className="status-icon complete"></div>
-                  </div>
-                  <div className="illness-card">
-                    <div className="illness-info">
-                      <span className="illness-name">Stomach Flu</span>
-                      <span className="illness-date">2024-05-25</span>
-                    </div>
-                    <div className="status-icon severe"></div>
-                  </div>
-                  <div className="illness-card">
-                    <div className="illness-info">
-                      <span className="illness-name">Tonsillitis</span>
-                      <span className="illness-date">2024-06-02</span>
-                    </div>
-                    <div className="status-icon complete"></div>
-                  </div>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>
         <div className="upcoming-appointments">
           <h2>Upcoming Appointments</h2>
           <div className="appointments-list">
-            {appointments.map((appointment, index) => (
-              <div key={index} className="appointment">
-                <img src={appointment.imgSrc} alt={appointment.doctorName} />
-                <div className="details">
-                  <div className="doctor-info">
-                    <h3>{appointment.doctorName}</h3>
-                    <p>{appointment.profession}</p>
-                  </div>
-                  <div className="appointment-info">
-                    <p><strong>Date:</strong> {appointment.date}</p>
-                    <p><strong>Time:</strong> {appointment.time}</p>
-                    <p><strong>Treatment:</strong> {appointment.treatment}</p>
-                    <p><strong>Contact Number:</strong> {appointment.contactNumber}</p>
-                  </div>
-                  <div className="appointment-status">
-                    <label>
-                      <input type="radio" name={`appointment-${index}`} value="fulfilled" checked={appointment.isFulfilled} />
-                      Fulfilled
-                    </label>
-                    <label>
-                      <input type="radio" name={`appointment-${index}`} value="not-fulfilled" checked={!appointment.isFulfilled} />
-                      Not Fulfilled
-                    </label>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          </div>
+          {appointments.map((appointment, index) => (
+  <div key={index} className="appointment">
+    <img src={appointment.imgSrc} alt={appointment.doctorName} />
+    <div className="details">
+      <div className="doctor-info">
+        <h3>{appointment.doctorName}</h3>
+        <p>{appointment.profession}</p>
+      </div>
+      <div className="appointment-info">
+        <p><strong>Date:</strong> {appointment.date}</p>
+        <p><strong>Time:</strong> {appointment.time}</p>
+        <p><strong>Treatment:</strong> {appointment.treatment}</p>
+        <p><strong>Contact Number:</strong> {appointment.contactNumber}</p>
+      </div>
+      <div className="appointment-status">
+        <label>
+          <input type="radio" name={`appointment-${index}`} value="fulfilled" checked={appointment.isFulfilled} />
+          Fulfilled
+        </label>
+        <label>
+          <input type="radio" name={`appointment-${index}`} value="not-fulfilled" checked={!appointment.isFulfilled} />
+          Not Fulfilled
+        </label>
+      </div>
+    </div>
+  </div> 
+))}
+
         <div className="recent-medications">
           <h4>Recent Medications</h4>
           <div className="medication">
@@ -358,6 +324,8 @@ const Homepage = () => {
         </div>
         </div>
       </div>
+    </div>
+    </div>
     </div>
   );
 }
