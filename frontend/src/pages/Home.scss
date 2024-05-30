@@ -154,6 +154,24 @@ header {
         .quick-actions{
             display: flex;
             flex-direction: column;
+            .welcome-message {
+                background-color: #f0f8ff; /* Light blue that works well with white */
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                margin-bottom: 20px;
+                text-align: center;
+            
+                h1 {
+                  color: #333;
+                  margin-bottom: 10px;
+                }
+            
+                p {
+                  color: #555;
+                  line-height: 1.6;
+                }
+              }
 
             .facts{
                 display: flex;
@@ -465,7 +483,6 @@ header {
             flex-direction: column;
             .appoints{
             height: 300px;
-            background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             gap: 10px;
@@ -481,7 +498,7 @@ header {
                 flex-direction: column;
                 padding: 1rem;
                 width: 300px;
-                background-color: #ccc;
+                background-color: $snow-white;
                 border-radius: 8px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
               }

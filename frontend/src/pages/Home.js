@@ -7,7 +7,8 @@ import Notificationicon from '../images/icons/ic--baseline-notifications.svg';
 import SearchIcon from '../images/icons/fluent--search-48-filled (1).svg';
 import Remindericon from '../images/icons/hugeicons--apple-reminder.svg';
 import ProfilePic from '../images/brian.jpeg';
-import DoctorPic from '../images/brian.jpeg'; // Assuming you have a doctor picture
+import DoctorPic from '../images/brian.jpeg'; 
+import WelcomImage from '../images/welcome.png';
 
 ChartJS.register(
   CategoryScale,
@@ -131,7 +132,12 @@ const Homepage = () => {
         </div>
       </header>
       <div className="main">
+     
         <div className="quick-actions">
+        <div className="welcome-message">
+        <h1>Welcome back, Sarah Smith!</h1>
+        <p>We would like to take this opportunity to welcome you to our practice and to thank you for choosing our physicians to participate in your healthcare. We look forward to providing you with personalized, comprehensive health care focusing on wellness and prevention.</p>
+      </div>
         <div className="facts">
         <div className="appointments">
           <div className="apcon">
