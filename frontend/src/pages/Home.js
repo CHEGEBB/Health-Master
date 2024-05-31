@@ -205,7 +205,7 @@ const Homepage = () => {
 
   ];
   const headerStyles = {
-    backgroundColor: isDarkMode ? '#222' : '#f5f5f5', 
+    backgroundColor: isDarkMode ? '#141C27' : '#f5f5f5', 
     color: isDarkMode ? '#fff' : '#000'
   
   };
@@ -213,15 +213,15 @@ const Homepage = () => {
     filter: isDarkMode ? 'invert(1)' : 'invert(0)'
   };
   const homepageStyles ={
-    backgroundColor: isDarkMode ? '#000' : '#f5f5f5',
+    backgroundColor: isDarkMode ? '#141C27' : '#f5f5f5',
   }
 
 
 const healthStatsStyles = {
-  backgroundColor: isDarkMode ? '#556b78' : '#f0f8ff', 
+  backgroundColor: isDarkMode ? '#141C27' : '#f0f8ff', 
 }
 const upcomingAppointmentsStyles = {
-  backgroundColor: isDarkMode ? '#556b78' : '#f0f8ff',
+  backgroundColor: isDarkMode ? '#141C27' : '#f0f8ff',
   color: isDarkMode ? '#fff' : '#000'
 }
   return (
