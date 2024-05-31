@@ -103,7 +103,7 @@ header {
     background-color: $alice-blue; 
     height: 120px;
     gap: 50px;
-    width: 1000x;
+    width: 1000px;
     border-bottom: 2px solid #ccc;
     padding: 0 20px;
     position: fixed;
@@ -180,7 +180,7 @@ header {
 
 .homepage {
     background-color: $snow-white;
-    width: 980px;
+    width: 900px;
     margin: 5px auto 0;
     height: 300vh;
     margin-left: 80px;
@@ -218,6 +218,7 @@ header {
                 text-align: center;
                 display: flex;
                 flex-direction: row;
+                width: 900px;
 
                 img{
                     width: 250px;
@@ -238,10 +239,10 @@ header {
             .facts{
                 display: flex;
                 flex-direction: row;
-                gap: 40px;
+                gap: 30px;
 
                 .appointments-fact{
-                    width: 200px;
+                    width: 170px;
                     height: 110px;
                     background-color: $light-slate-blue;
                     border-radius: 8px;
@@ -277,7 +278,7 @@ header {
                 
                 }
                 .health-costs{
-                    width: 200px;
+                    width: 170px;
                     height: 110px;
                     background-color: $light-pink;
                     border-radius: 8px;
@@ -315,7 +316,7 @@ header {
                 
                 }
                 .online-consultancy{
-                    width: 200px;
+                    width: 170px;
                     height: 110px;
                     background-color: $light-sky-blue;
                     border-radius: 8px;
@@ -355,7 +356,7 @@ header {
                 
                 }
                 .pending{
-                    width: 200px;
+                    width: 170px;
                     height: 110px;
                     background-color: $coral;
                     border-radius: 8px;
@@ -411,7 +412,7 @@ header {
                     flex-direction: column;
                     gap: 10px;
                 .blood-count{
-                    width: 300px;
+                    width: 250px;
                     background-color: $white-smoke;
                     height: 190px;
                     border-radius: 8px;
@@ -448,7 +449,7 @@ header {
                     }
                 }
                 .glucose-level{
-                    width: 300px;
+                    width: 250px;
                     background-color: $white-smoke;
                     height: 200px;
                     border-radius: 8px;
