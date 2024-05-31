@@ -17,8 +17,8 @@ const LandingPage = () => {
                     <li><a href='#intro-section'>Home</a></li>
                     <li><a href='#about'>About</a></li>
                     <li><a href='#featured'>Featured</a></li>
-                    <li><Link to='/login'>Login</Link></li>
-                    <li><Link to='/signup'>Sign Up</Link></li>
+                    <li className='login'><Link to='/login'>Login</Link></li>
+                    <li className='signup'><Link to='/signup'>Sign Up</Link></li>
                 </ul>
             </nav>
             <section className='intro-section' id='intro-section'>
@@ -106,6 +106,50 @@ const LandingPage = () => {
                     <p>Check out the <a href='https://github.com/your-repo'>GitHub repository</a> for this project.</p>
                 </div>
             </section>
+            <section className='contact-section' id='contact'>
+                <div className='content'>
+                    <h1>Contact Us</h1>
+                    <form className='contact-form'>
+                        <div className='form-group'>
+                            <label htmlFor='name'>Name</label>
+                            <input type='text' id='name' name='name' required />
+                        </div>
+                        <div className='form-group'>
+                            <label htmlFor='email'>Email</label>
+                            <input type='email' id='email' name='email' required />
+                        </div>
+                        <div className='form-group'>
+                            <label htmlFor='message'>Message</label>
+                            <textarea id='message' name='message' required></textarea>
+                        </div>
+                        <button type='submit'>Send Message</button>
+                    </form>
+                </div>
+            </section>
+            <footer className='footer'>
+                <div className='footer-content'>
+                    <div className='quick-links'>
+                        <h2>Quick Links</h2>
+                        <ul>
+                            <li><a href='#intro-section'>Home</a></li>
+                            <li><a href='#about'>About</a></li>
+                            <li><a href='#featured'>Featured</a></li>
+                            <li><a href='#contact'>Contact</a></li>
+                        </ul>
+                    </div>
+                    <div className='social-links'>
+                        <h2>Follow Me</h2>
+                        <ul>
+                            <li><a href='https://github.com/CHEGEBB' target='_blank' rel='noopener noreferrer'>GitHub</a></li>
+                            <li><a href='https://www.linkedin.com/in/yourprofile' target='_blank' rel='noopener noreferrer'>LinkedIn</a></li>
+                            <li><a href='https://twitter.com/yourprofile' target='_blank' rel='noopener noreferrer'>Twitter</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div className='footer-bottom'>
+                    <p>&copy; 2024 Brian Chege. All rights reserved.</p>
+                </div>
+            </footer>
         </div>
     );
 }
