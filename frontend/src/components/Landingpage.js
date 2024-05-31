@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Landingpage.scss';
+import IntroImage from '../images/Healdi - Medical & Health Template_files/3.jpg';
 
 const LandingPage = () => {
     return (  
@@ -16,7 +17,7 @@ const LandingPage = () => {
             </nav>
             <section className='intro-section' id='intro-section'>
                 <div className='cover-image'>
-                    <img src='path_to_your_image.jpg' alt='Health Master Cover' />
+                    <img src={IntroImage} alt='Health Master Cover' />
                 </div>
                 <div className='content'>
                     <h1>Health Master</h1>
@@ -28,18 +29,56 @@ const LandingPage = () => {
                 <div className='content'>
                     <h1>Features</h1>
                     <p>Explore the key features of Health Master:</p>
-                    <ul>
-                        <li>Intelligent Symptom Checker</li>
-                        <li>Medication Management System</li>
-                        <li>Health and Wellness Gamification App</li>
-                        <li>Health Goals and Progress Tracking</li>
-                    </ul>
+                    <div className='features-grid'>
+                        <div className='feature'>
+                            <div className='feature-image'>
+                                <img src='path_to_feature1_image.jpg' alt='Intelligent Symptom Checker' />
+                            </div>
+                            <div className='feature-info'>
+                                <h2>Intelligent Symptom Checker</h2>
+                                <p>Description of the Intelligent Symptom Checker.</p>
+                            </div>
+                        </div>
+                        <div className='feature'>
+                            <div className='feature-image'>
+                                <img src='path_to_feature2_image.jpg' alt='Medication Management System' />
+                            </div>
+                            <div className='feature-info'>
+                                <h2>Medication Management System</h2>
+                                <p>Description of the Medication Management System.</p>
+                            </div>
+                        </div>
+                        <div className='feature'>
+                            <div className='feature-image'>
+                                <img src='path_to_feature3_image.jpg' alt='Health and Wellness Gamification App' />
+                            </div>
+                            <div className='feature-info'>
+                                <h2>Health and Wellness Gamification App</h2>
+                                <p>Description of the Health and Wellness Gamification App.</p>
+                            </div>
+                        </div>
+                        <div className='feature'>
+                            <div className='feature-image'>
+                                <img src='path_to_feature4_image.jpg' alt='Health Goals and Progress Tracking' />
+                            </div>
+                            <div className='feature-info'>
+                                <h2>Health Goals and Progress Tracking</h2>
+                                <p>Description of Health Goals and Progress Tracking.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section className='about-section' id='about'>
                 <div className='content'>
                     <h1>About</h1>
                     <p>Health Master is designed to tackle the challenge of managing health and wellness efficiently. In today's fast-paced world, individuals often struggle to keep track of their symptoms, medications, health goals, and overall wellness. Health Master aims to bridge this gap by providing a platform that offers an Intelligent Symptom Checker, Medication Management System, Health and Wellness Gamification App, and Health Goals and Progress Tracking.</p>
+                    <p>This project was inspired by the need for better health management tools and is a portfolio project for Holberton School.</p>
+                    <p>Meet the team:</p>
+                    <ul>
+                        <li>Developer: [Your Name] - <a href='https://www.linkedin.com/in/yourprofile'>LinkedIn</a>, <a href='https://github.com/yourprofile'>GitHub</a>, <a href='https://twitter.com/yourprofile'>Twitter</a></li>
+                    </ul>
+                    <p>Check out the <a href='https://github.com/your-repo'>GitHub repository</a> for this project.</p>
                 </div>
             </section>
         </div>
