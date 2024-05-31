@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Landingpage.scss';
 import IntroImage from '../images/Healdi - Medical & Health Template_files/3.jpg';
+import sypmtom from '../images/Healdi - Medical & Health Template_files/3(3).jpg';
 
 const LandingPage = () => {
     return (  
@@ -32,7 +33,7 @@ const LandingPage = () => {
                     <div className='features-grid'>
                         <div className='feature'>
                             <div className='feature-image'>
-                                <img src='path_to_feature1_image.jpg' alt='Intelligent Symptom Checker' />
+                                <img src={sypmtom} alt='Intelligent Symptom Checker' />
                             </div>
                             <div className='feature-info'>
                                 <h2>Intelligent Symptom Checker</h2>
@@ -65,6 +66,25 @@ const LandingPage = () => {
                                 <h2>Health Goals and Progress Tracking</h2>
                                 <p>Description of Health Goals and Progress Tracking.</p>
                             </div>
+                        </div>
+                        <div className='feature'>
+                            <div className='feature-image'>
+                                <img src='path_to_feature5_image.jpg' alt='Online Consultancy' />
+                            </div>
+                            <div className='feature-info'>
+                                <h2>Online Consultancy</h2>
+                                <p>Description of the Online Consultancy.</p>
+                            </div>
+                        </div>
+                        <div className='feature'>
+                            <div className='feature-image'>
+                                <img src='path_to_feature6_image.jpg' alt='Online Consultancy' />
+                            </div>
+                            <div className='feature-info'>
+                                <h2>Online Consultancy</h2>
+                                <p>Description of the Online Consultancy.</p>
+                            </div>
+        
                         </div>
                     </div>
                 </div>
