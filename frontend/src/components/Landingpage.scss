@@ -117,9 +117,21 @@ body {
         align-items: center;
         justify-content: space-between;
         background: url('../images/slide1.jpg') no-repeat center center/cover;
+        background-size: cover;
         padding: 2rem;
         height: 100vh;
-        animation: fadeIn 2s ease-in-out;
+        animation: bgZoom 10s infinite ease-in-out;
+        @keyframes bgZoom {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
         .cover-image {
             width: 40%;
             img {
@@ -153,6 +165,7 @@ body {
                 border-radius: 5px;
                 cursor: pointer;
                 animation: bounce 2s infinite;
+                font-family: $josefin;
                 &:hover {
                     background-color: $dark-slate-blue;
                 }
@@ -161,7 +174,9 @@ body {
     }
 
     .feature-section {
-        background-color: #fff;
+background: url("../images/8.png");
+        background-size: cover;
+        background-repeat: no-repeat;        
         padding: 2rem;
         .content {
             text-align: center;
