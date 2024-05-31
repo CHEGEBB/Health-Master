@@ -64,13 +64,7 @@ $lime: #00ff00;
 $forest-green: #228b22;
 $sea-green: #2e8b57;
 $dark-green: #006400;
-body{
-    background: url("../images/slide1.jpg");
-    position: relative;
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 .landing-page {
     .navbar {
         background-color: rgba(1,1,1,1);
