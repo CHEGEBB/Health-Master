@@ -224,6 +224,11 @@ const upcomingAppointmentsStyles = {
   backgroundColor: isDarkMode ? '#141C27' : '#f0f8ff',
   color: isDarkMode ? '#fff' : '#000'
 }
+
+const rateStyles={
+  backgroundColor: isDarkMode ? '#041f46' : '#f0f8ff',
+  color: isDarkMode ? '#fff' : '#000'
+}
   return (
     <div className="homepage" style={homepageStyles}>
           <header style={headerStyles}>
@@ -304,7 +309,7 @@ const upcomingAppointmentsStyles = {
           <div className="health-stats" style={healthStatsStyles}>
             <h2>My Health Stats</h2>
             <div className="stats">
-              <div className="heart-rate">
+              <div className="heart-rate" style={rateStyles}>
                 <div className="heartRate">
                   <div className="rate">
                     <h4>Heart Rate</h4>
