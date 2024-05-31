@@ -1,5 +1,5 @@
 import React from 'react';
-import './Landingpage.scss'; // Import your SCSS file
+import './Landingpage.scss';
 import { Link } from 'react-router-dom';
 
 const LandingPage = () => {

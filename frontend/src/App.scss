@@ -151,3 +151,22 @@ $dark-green: #006400;
     min-width: 26%;
   }
 }
+@media  screen and (min-width: 1920px) {
+  .App {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    height: 100vh;
+  }
+  
+  .main-app {
+    min-width: 74%; 
+    margin-left: 300px;
+  }
+
+  .sidenav {
+    min-width: 26%;
+  }
+  
+}

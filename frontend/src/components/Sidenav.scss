@@ -115,3 +115,109 @@ nav{
         }
     }
 }
+
+@media  screen and (min-width :1920px) {
+
+    nav{
+        padding-top: 120px;
+        width: 400px;
+        h1{
+            padding: 30px;
+        }
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            .nav-item{
+                display: flex;
+                flex-direction: row;
+                gap: 1px;
+                .navtem{
+                    width: 200px;
+                    margin-left: -20px;
+                    display: flex;
+                    justify-content: left;
+                }
+
+                .nav-icon{
+                    width: 40px;
+                    height: 40px;
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    img{
+                        width: 30px;
+                        height: 30px;
+                        margin-right: 10px;
+                        margin-top: 10px;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            .special{
+                background-color: white;
+                color: #3A7BD5;
+                margin-left: 40px;
+                border-top-left-radius: 15px;
+                border-bottom-left-radius: 15px;
+                border: 2px solid #ccc;
+
+                img{
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 10px;
+                    margin-top: 10px;
+                    filter: invert(8);
+                }
+                .dark-special {
+                    background-color: black;
+                    color: white;
+                }
+            
+                .light-special {
+                    background-color: white;
+                    color: black;
+                }
+
+                 a{
+                    display: flex;
+                    flex-direction: column;
+                    color: #3A7BD5;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                }
+            }
+            li{
+                float: left;
+                display: flex;
+                justify-content: left;
+                margin-left: 40px;
+
+            }
+            li a{
+                display: flex;
+                flex-direction: column;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            li a:hover{
+                text-decoration: none;
+                color: crimson;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+            }
+
+            }
+        }
+    
+}
