@@ -32,6 +32,11 @@ import hccon from "../images/icons/cost.svg";
 import occon from "../images/icons/online.svg";
 import pcon from "../images/icons/pending.svg";
 import { useDarkMode } from "../context/DarkModeContext"; 
+import medcon1 from "../images/icons/bi--capsule-pill.svg";
+import medcon2 from "../images/icons/bxs--injection.svg";
+import medcon3 from "../images/icons/fa6-solid--capsules.svg";
+import medcon4 from "../images/icons/fa6-solid--tablets (1).svg";
+import medcon5 from "../images/icons/fa6-solid--tablets.svg";
 
 
 ChartJS.register(
@@ -417,7 +422,9 @@ const upcomingAppointmentsStyles = {
           <div className="important-info">
           <div className="medications">
     <div className="medicine">
-        <div className="medcon"></div>
+        <div className="medcon">
+          <img src={medcon2} alt="Medications" />
+        </div>
         <div className="med-info">
             <p>Sermorelin (injectable)</p>
         </div>
@@ -427,7 +434,9 @@ const upcomingAppointmentsStyles = {
     </div>
     
     <div className="medicine">
-        <div className="medcon"></div>
+        <div className="medcon">
+        <img src={medcon1} alt="Medications" />
+        </div>
         <div className="med-info">
             <p>Econochlor (chloramphenicol-oral)</p>
         </div>
@@ -437,7 +446,10 @@ const upcomingAppointmentsStyles = {
     </div>
     
     <div className="medicine">
-        <div className="medcon"></div>
+        <div className="medcon">
+        <img src={medcon3} alt="Medications" />
+
+        </div>
         <div className="med-info">
             <p>Desmopressin (tabs)</p>
         </div>
@@ -447,7 +459,9 @@ const upcomingAppointmentsStyles = {
     </div>
     
     <div className="medicine">
-        <div className="medcon"></div>
+        <div className="medcon">
+        <img src={medcon2} alt="Medications" />
+        </div>
         <div className="med-info">
             <p>Abciximab (injection)</p>
         </div>
@@ -457,7 +471,10 @@ const upcomingAppointmentsStyles = {
     </div>
     
     <div className="medicine">
-        <div className="medcon"></div>
+        <div className="medcon">
+        <img src={medcon4} alt="Medications" />
+
+        </div>
         <div className="med-info">
             <p>Kevzara (sarilumab)</p>
         </div>
@@ -467,7 +484,10 @@ const upcomingAppointmentsStyles = {
     </div>
     
     <div className="medicine">
-        <div className="medcon"></div>
+        <div className="medcon">
+        <img src={medcon5} alt="Medications" />
+
+        </div>
         <div className="med-info">
             <p>Gentamicin (topical)</p>
         </div>
