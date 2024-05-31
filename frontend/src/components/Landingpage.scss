@@ -174,9 +174,7 @@ body {
     }
 
     .feature-section {
-background: url("../images/8.png");
-        background-size: cover;
-        background-repeat: no-repeat;        
+        background-color: $powder-blue;       
         padding: 2rem;
         .content {
             text-align: center;
