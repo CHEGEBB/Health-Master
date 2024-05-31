@@ -421,6 +421,7 @@ const upcomingAppointmentsStyles = {
           </div>
           <div className="important-info">
           <div className="medications">
+          <h2>Medications</h2>
     <div className="medicine">
         <div className="medcon">
           <img src={medcon2} alt="Medications" />
