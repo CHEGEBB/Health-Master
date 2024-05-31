@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Landingpage.scss';
-import IntroImage from '../images/Healdi - Medical & Health Template_files/3.jpg';
-import sypmtom from '../images/Healdi - Medical & Health Template_files/3(3).jpg';
+import IntroImage from '../images/3.jpg';
+import sypmtom from '../images/3(3).jpg';
 
 const LandingPage = () => {
     return (  
@@ -96,7 +96,7 @@ const LandingPage = () => {
                     <p>This project was inspired by the need for better health management tools and is a portfolio project for Holberton School.</p>
                     <p>Meet the team:</p>
                     <ul>
-                        <li>Developer: [Your Name] - <a href='https://www.linkedin.com/in/yourprofile'>LinkedIn</a>, <a href='https://github.com/yourprofile'>GitHub</a>, <a href='https://twitter.com/yourprofile'>Twitter</a></li>
+                        <li>Brian Chege - <a href='https://www.linkedin.com/in/brianchege'>LinkedIn</a>, <a href='https://github.com/brianchege'>GitHub</a>, <a href='https://twitter.com/brianchege'>Twitter</a></li>
                     </ul>
                     <p>Check out the <a href='https://github.com/your-repo'>GitHub repository</a> for this project.</p>
                 </div>
