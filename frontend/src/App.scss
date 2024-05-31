@@ -67,7 +67,6 @@ $dark-green: #006400;
 @media screen and (max-width: 1440px) {
   body{
     overflow-x: hidden;
-    height: 300vh;
   }
   .App {
     text-align: center;
@@ -80,7 +79,7 @@ $dark-green: #006400;
   .main-app {
     width: 100%;
     max-width: calc(100% - 200px); 
-    margin-left: 200px; 
+    margin-left: 180px; 
     font-family: $jost;
     h2{
       font-size: 16px;
