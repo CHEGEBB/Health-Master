@@ -210,12 +210,14 @@ header {
         .quick-actions{
             display: flex;
             flex-direction: column;
+            .important-info{
+                background-color: $azure;
             .medications {
                 display: flex;
                 flex-direction: column;
                 gap: 1rem;
                 width: 350px;
-                background-color:$alice-blue;
+                background-color:$floral-white;
                 border-radius: 10px;
               
                 .medicine {
@@ -252,6 +254,7 @@ header {
                     }
                   }
               }
+            }
               
             .welcome-message {
                 background-color: #f0f8ff;
