@@ -414,6 +414,80 @@ const upcomingAppointmentsStyles = {
               ))}
             </div>
           </div>
+          <div className="important-info">
+          <div className="medications">
+    <div className="medicine">
+        <div className="medcon"></div>
+        <div className="med-info">
+            <p>Sermorelin (injectable)</p>
+        </div>
+        <div className="duration">
+            <p>Daily</p>
+        </div>
+    </div>
+    
+    <div className="medicine">
+        <div className="medcon"></div>
+        <div className="med-info">
+            <p>Econochlor (chloramphenicol-oral)</p>
+        </div>
+        <div className="duration">
+            <p>1 - 0 - 1</p>
+        </div>
+    </div>
+    
+    <div className="medicine">
+        <div className="medcon"></div>
+        <div className="med-info">
+            <p>Desmopressin (tabs)</p>
+        </div>
+        <div className="duration">
+            <p>1 - 1 - 1</p>
+        </div>
+    </div>
+    
+    <div className="medicine">
+        <div className="medcon"></div>
+        <div className="med-info">
+            <p>Abciximab (injection)</p>
+        </div>
+        <div className="duration">
+            <p>1 Daily</p>
+        </div>
+    </div>
+    
+    <div className="medicine">
+        <div className="medcon"></div>
+        <div className="med-info">
+            <p>Kevzara (sarilumab)</p>
+        </div>
+        <div className="duration">
+            <p>0 - 0 - 1</p>
+        </div>
+    </div>
+    
+    <div className="medicine">
+        <div className="medcon"></div>
+        <div className="med-info">
+            <p>Gentamicin (topical)</p>
+        </div>
+        <div className="duration">
+            <p>1 - 0 - 1</p>
+        </div>
+    </div>
+    
+    <div className="medicine">
+        <div className="medcon"></div>
+        <div className="med-info">
+            <p>Paliperidone palmitate (injectable)</p>
+        </div>
+        <div className="duration">
+            <p>1 - 1 - 1</p>
+        </div>
+    </div>
+</div>
+
+          </div>
         </div>
       </div>
     </div>

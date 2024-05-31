@@ -206,9 +206,53 @@ header {
         flex-direction: row;
         margin-left: 20px;
         gap: 15px;
+       
         .quick-actions{
             display: flex;
             flex-direction: column;
+            .medications {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                width: 350px;
+                background-color:$alice-blue;
+                border-radius: 10px;
+              
+                .medicine {
+                    display: flex;
+                    align-items: center;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    width: 300px;
+                    margin: 20px auto;
+                    .medcon {
+                      width: 50px;
+                      height: 50px;
+                      background-color: #f0f0f0;
+                      margin-right: 1rem;
+                    }
+                
+                    .med-info {
+                      flex: 2;
+                      
+                      p {
+                        margin: 0;
+                        font-weight: bold;
+                      }
+                    }
+                
+                    .duration {
+                      flex: 1;
+                      
+                      p {
+                        margin: 0;
+                        text-align: right;
+                      }
+                    }
+                  }
+              }
+              
             .welcome-message {
                 background-color: #f0f8ff;
                 border-radius: 10px;
