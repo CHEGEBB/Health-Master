@@ -64,6 +64,9 @@ $lime: #00ff00;
 $forest-green: #228b22;
 $sea-green: #2e8b57;
 $dark-green: #006400;
+body{
+    background: url("../images/");
+}
 .landing-page {
     .navbar {
         background-color: #333;
@@ -89,6 +92,7 @@ $dark-green: #006400;
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: 900px;
         background: url("../images//slide1.jpg");
         font-family: $jost;
         .cover-image {
@@ -128,6 +132,8 @@ $dark-green: #006400;
     .feature-section{
         padding: 2rem;
         font-family: $josefin;
+        background-color: $light-pink;
+        height: 800px;
         .content {
             text-align: center;
             h1 {
@@ -150,6 +156,8 @@ $dark-green: #006400;
     .about-section{
         padding: 2rem;
         font-family: $josefin;
+        background-color: $light-slate-blue;
+        height: 800px;
         .content {
             text-align: center;
             h1 {
