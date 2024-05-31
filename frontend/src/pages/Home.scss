@@ -103,15 +103,12 @@ header {
     background-color: $alice-blue; 
     height: 120px;
     gap: 50px;
-    width: 950x;
+    width: 1000x;
     border-bottom: 2px solid #ccc;
     padding: 0 20px;
     position: fixed;
     top: 0;
-    left: 2; 
-    ma
-    right: 0;
-    z-index: -1;
+    z-index: 100;
   }
   
 
