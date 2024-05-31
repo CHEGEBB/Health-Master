@@ -85,6 +85,28 @@ body {
             flex-direction: row;
             padding: 0;
             margin: 0;
+                .login{
+                    background-color:$hot-pink;
+                    width: 80px;
+                    border-radius: 8px;
+                    color: white;
+                    text-align: center;
+                    animation: bounce 2s infinite;
+                    &:hover{
+                        background-color:$light-slate-blue;
+                    }
+                }
+                .signup{
+                    background-color:$steel-blue;
+                    width: 90px;
+                    border-radius: 8px;
+                    color: white;
+                    text-align: center;
+                    animation: bounce 2s infinite;
+                    &:hover{
+                        background-color:$light-steel-blue;
+                    }
+                }
             li {
                 margin: 0 1rem;
                
@@ -94,7 +116,7 @@ body {
                     padding: 0.5rem 1rem;
                     position: relative;
                     &:hover {
-                        color: $dark-pink;
+                        color: crimson;
                         border: none;
                     }
                     &::after {
