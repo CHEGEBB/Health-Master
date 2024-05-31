@@ -6,13 +6,14 @@ import Login from './authpages/Login';
 import AuthenticatedRoutes from './AuthenticatedRoutes';
 import Sidenav from './components/Sidenav';
 import { DarkModeProvider } from './context/DarkModeContext';
-
+import Landingpage from './components/Landingpage';
 const App = () => {
   return (
     <DarkModeProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Signup />} />
+        <Route path="/" element={<Landingpage />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/*" element={<AuthenticatedApp />} />
         </Routes>
