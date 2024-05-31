@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import './Landingpage.scss';
 import IntroImage from '../images/3.jpg';
 import sypmtom from '../images/3(3).jpg';
+import medicine from '../images/medicine.jpg';
+import health from '../images/health.avif';
+import goals from '../images/2(1).jpg';
+import online from '../images/online.jpg';
+import feauture from '../images/1.jpg';
 
 const LandingPage = () => {
     return (  
@@ -42,7 +47,7 @@ const LandingPage = () => {
                         </div>
                         <div className='feature'>
                             <div className='feature-image'>
-                                <img src='path_to_feature2_image.jpg' alt='Medication Management System' />
+                                <img src={medicine} alt='Medication Management System' />
                             </div>
                             <div className='feature-info'>
                                 <h2>Medication Management System</h2>
@@ -51,7 +56,7 @@ const LandingPage = () => {
                         </div>
                         <div className='feature'>
                             <div className='feature-image'>
-                                <img src='path_to_feature3_image.jpg' alt='Health and Wellness Gamification App' />
+                                <img src={health} alt='Health and Wellness Gamification App' />
                             </div>
                             <div className='feature-info'>
                                 <h2>Health and Wellness Gamification App</h2>
@@ -60,7 +65,7 @@ const LandingPage = () => {
                         </div>
                         <div className='feature'>
                             <div className='feature-image'>
-                                <img src='path_to_feature4_image.jpg' alt='Health Goals and Progress Tracking' />
+                                <img src={goals} alt='Health Goals and Progress Tracking' />
                             </div>
                             <div className='feature-info'>
                                 <h2>Health Goals and Progress Tracking</h2>
@@ -69,7 +74,7 @@ const LandingPage = () => {
                         </div>
                         <div className='feature'>
                             <div className='feature-image'>
-                                <img src='path_to_feature5_image.jpg' alt='Online Consultancy' />
+                                <img src={feauture} alt='Online Consultancy' />
                             </div>
                             <div className='feature-info'>
                                 <h2>Online Consultancy</h2>
@@ -78,7 +83,7 @@ const LandingPage = () => {
                         </div>
                         <div className='feature'>
                             <div className='feature-image'>
-                                <img src='path_to_feature6_image.jpg' alt='Online Consultancy' />
+                                <img src={online} alt='Online Consultancy' />
                             </div>
                             <div className='feature-info'>
                                 <h2>Online Consultancy</h2>

@@ -67,7 +67,7 @@ body {
 
 .landing-page {
     .navbar {
-        background-color: #333;
+        background-color: $dark-slate-blue;
         height: 80px;
         width: 100%;
         display: flex;
@@ -127,6 +127,7 @@ body {
                 border-radius: 10px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
                 animation: float 6s ease-in-out infinite;
+                border: 2px solid $hot-pink;
             }
         }
         .content {
@@ -136,6 +137,7 @@ body {
                 font-size: 3rem;
                 color: #fff;
                 animation: slideInLeft 1s ease-in-out;
+                
             }
             p {
                 font-size: 1.5rem;
@@ -144,14 +146,15 @@ body {
             }
             button {
                 padding: 1rem 2rem;
-                background-color: #f0a500;
+                background-color: $dark-pink;
+                margin-top: 40px;
                 color: white;
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
                 animation: bounce 2s infinite;
                 &:hover {
-                    background-color: #d48800;
+                    background-color: $dark-slate-blue;
                 }
             }
         }
@@ -190,6 +193,7 @@ body {
                         img {
                             width: 100%;
                             border-radius: 10px;
+                            animation: float 6s ease-in-out infinite;
                         }
                     }
                     .feature-info {
