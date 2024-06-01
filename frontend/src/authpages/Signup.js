@@ -62,6 +62,8 @@ const Signup = () => {
         <div className="overlay"></div>
         <div className="sign-up">
           <div className="left">
+        <h1>HEALTH MASTER</h1>
+
 
 </div>
           

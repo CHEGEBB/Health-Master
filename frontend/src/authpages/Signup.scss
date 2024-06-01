@@ -115,6 +115,7 @@ $dark-green: #006400;
   border-radius: 8px;
   max-height: 500px;
   border-radius: 12px;
+  box-shadow:  0 0 10px rgba(53, 167, 212, 0.6);
  
 }
 .left {
@@ -129,6 +130,16 @@ $dark-green: #006400;
   position: relative;
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
+
+  h1{
+    font-family: $josefin;
+    font-size: 20px;
+    color: $snow-white;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
 
 }
 
@@ -213,13 +224,16 @@ form {
   label {
     display: flex;
     justify-content: left;
+    font-family: $josefin;
+    font-weight: 700;
+    margin-top: 5px;
   }
   input [type="text"],
   input[type="password"],
   input[type="email"] {
     width: 250px;
     padding: 10px;
-    border: 1px solid #c0c0c0;
+    border: 1px solid $deep-sky-blue;
     border-radius: 5px;
     margin-left: 6px;
     font-family: $jost;
