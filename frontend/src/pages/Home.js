@@ -223,7 +223,7 @@ const healthStatsStyles = {
   color: isDarkMode ? '#fff' : '#000'
 }
 const upcomingAppointmentsStyles = {
-  backgroundColor: isDarkMode ? '#141C27' : '#f0f8ff',
+  backgroundColor: isDarkMode ? '#09101A' : '#f0f8ff',
   color: isDarkMode ? '#fff' : '#000'
 }
 const headings = {
@@ -377,10 +377,10 @@ const rateStyles={
             </div>
           </div>
           <div className="upcoming-appointments" style={upcomingAppointmentsStyles}>
-            <h2>Upcoming Appointments</h2>
+            <h2 style={headings}>Upcoming Appointments</h2>
             <div className="appointments-list">
               {appointments.map((appointment, index) => (
-                <div key={index} className="appointment">
+                <div key={index} className="appointment" style={rateStyles}>
                   <img src={appointment.imgSrc} alt={appointment.doctorName} />
                   <div className="details">
                     <div className="doctor-info">
@@ -389,16 +389,16 @@ const rateStyles={
                     </div>
                     <div className="appointment-info">
                       <p>
-                        <strong>Date:</strong> {appointment.date}
+                        <strong style={headings}>Date:</strong> {appointment.date}
                       </p>
                       <p>
-                        <strong>Time:</strong> {appointment.time}
+                        <strong style={headings}>Time:</strong> {appointment.time}
                       </p>
                       <p>
-                        <strong>Treatment:</strong> {appointment.treatment}
+                        <strong style={headings}>Treatment:</strong> {appointment.treatment}
                       </p>
                       <p>
-                        <strong>Contact Number:</strong>{" "}
+                        <strong style={headings}>Contact Number:</strong>{" "}
                         {appointment.contactNumber}
                       </p>
                     </div>
@@ -429,8 +429,8 @@ const rateStyles={
               ))}
             </div>
           </div>
-          <div className="important-info">
-          <div className="medications">
+          <div className="important-info" style={homepageStyles}>
+          <div className="medications" style={rateStyles}>
           <h2>Medications</h2>
     <div className="medicine">
         <div className="medcon">
@@ -514,6 +514,49 @@ const rateStyles={
         </div>
         <div className="duration">
             <p>1 - 1 - 1</p>
+        </div>
+    </div>
+</div>
+<div className="reports-documents" style={rateStyles}>
+    <h2 style={headings}>Reports & Documents</h2>
+    <div className="report">
+        <div className="report-icon">
+            <img src={medcon1} alt="Reports & Documents" />
+        </div>
+        <div className="report-info">
+            <p>CT Scan</p>
+        </div>
+    </div>
+    <div className="report">
+        <div className="report-icon">
+            <img src={medcon2} alt="Reports & Documents" />
+        </div>
+        <div className="report-info">
+            <p>MRI Scan</p>
+        </div>
+    </div>
+    <div className="report">
+        <div className="report-icon">
+            <img src={medcon3} alt="Reports & Documents" />
+        </div>
+        <div className="report-info">
+            <p>Ultrasound</p>
+        </div>
+    </div>
+    <div className="report">
+        <div className="report-icon">
+            <img src={medcon4} alt="Reports & Documents" />
+        </div>
+        <div className="report-info">
+            <p>ECG</p>
+        </div>
+    </div>
+    <div className="report">
+        <div className="report-icon">
+            <img src={medcon5} alt="Reports & Documents" />
+        </div>
+        <div className="report-info">
+            <p>X-Ray</p>
         </div>
     </div>
 </div>

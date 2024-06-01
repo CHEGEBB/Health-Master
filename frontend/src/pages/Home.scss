@@ -252,11 +252,24 @@ header {
             flex-direction: column;
             .important-info{
                 background-color: $azure;
+                display:flex ;
+                flex-direction: row;
+                gap: 80px;
+                margin-left: 20px;
+                .reports-documents{
+                  display: flex;
+                  flex-direction: column;
+                  gap: 10px;
+                  width: 400px;
+                  background-color:$snow-white;
+                  border-radius: 10px;
+
+                }
             .medications {
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
-                width: 350px;
+                width: 400px;
                 background-color:$snow-white;
                 border-radius: 10px;
               
@@ -500,8 +513,8 @@ header {
                     gap: 10px;
                 .blood-count{
                     width: 250px;
+                    height: 120px;
                     background-color: $white-smoke;
-                    height: 190px;
                     border-radius: 8px;
                     display: flex;
                     flex-direction: row;
@@ -538,7 +551,7 @@ header {
                 .glucose-level{
                     width: 250px;
                     background-color: $white-smoke;
-                    height: 200px;
+                    height: 110px;
                     border-radius: 8px;
                     display: flex;
                     flex-direction: row;
@@ -723,7 +736,7 @@ header {
                     padding: 20px;
                     p {
                       margin: 0;
-                      color: #333;
+                      color: #555;
                       font-size: 0.9em;
                       display: flex;
                       flex-direction: column;
