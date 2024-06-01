@@ -200,11 +200,21 @@ $dark-green: #006400;
   
   input[type="email"],
   input[type="password"] {
-    width: 300px;
-    margin-left: -10px;
+    width: 250px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid $deep-sky-blue;
     border-radius: 5px;
+    margin-left: 6px;
+    font-family: $jost;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      border-color: $dark-slate-blue;
+      box-shadow: 0 0 10px rgba(118, 24, 116, 0.6);
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+    }
   }
   
   button {
@@ -212,11 +222,13 @@ $dark-green: #006400;
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: $deep-sky-blue;
     color: #fff;
+    margin-left: 5px;
     cursor: pointer;
+    font-family: $josefin;
   }
-  
+
   button:hover {
     background-color: #ad00b3;
   }
@@ -258,5 +270,70 @@ $dark-green: #006400;
             font-size: 16px;
             color: $special1;
         }
+    }
+  }
+  // media queries that are responsive
+  @media screen and (max-width: 768px) {
+    .log-in {
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+    .left {
+      width: 100%;
+      height: 300px;
+      border-radius: 12px 12px 0 0;
+    }
+    .login-form {
+      width: 100%;
+      border-radius: 0 0 12px 12px;
+    }
+  }
+  @media screen and (max-width: 375px) {
+    .log-in {
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+    .left {
+      width: 100%;
+      height: 300px;
+      border-radius: 12px 12px 0 0;
+    }
+    .login-form {
+      width: 100%;
+      border-radius: 0 0 12px 12px;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .log-in {
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+    .left {
+      width: 100%;
+      height: 300px;
+      border-radius: 12px 12px 0 0;
+    }
+    .login-form {
+      width: 100%;
+      border-radius: 0 0 12px 12px;
+    }
+  }
+  @media screen and (max-width: 1092px) {
+    .log-in {
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+    .left {
+      width: 100%;
+      height: 300px;
+      border-radius: 12px 12px 0 0;
+    }
+    .login-form {
+      width: 100%;
+      border-radius: 0 0 12px 12px;
     }
   }
