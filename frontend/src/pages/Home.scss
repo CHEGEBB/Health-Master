@@ -263,6 +263,7 @@ header {
                   width: 500px;
                   background-color:$snow-white;
                   border-radius: 10px;
+                  box-shadow: 0 2px 4px rgba(21, 90, 102, 0.6);
 
                   .report{
                     display: flex;
@@ -331,6 +332,8 @@ header {
                 width: 400px;
                 background-color:$snow-white;
                 border-radius: 10px;
+                box-shadow: 0 2px 4px rgba(21, 90, 102, 0.6);
+
               
                 .medicine {
                     display: flex;

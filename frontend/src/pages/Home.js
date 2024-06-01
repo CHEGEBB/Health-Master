@@ -231,8 +231,12 @@ const headings = {
 }
 
 const rateStyles={
-  backgroundColor: isDarkMode ? '#0D1B2A' : '#f0f8ff',
+  backgroundColor: isDarkMode ? '#0D1B2A' : '#f0fff0',
   color: isDarkMode ? '#fff' : '#000'
+}
+
+const handleDeleteReport = (report) => {
+  console.log(`Deleting report: ${report}`);
 }
   return (
     <div className="homepage" style={homepageStyles}>
@@ -529,7 +533,7 @@ const rateStyles={
             <p>CT Scan</p>
         </div>
         <div className="delete">
-            <button>Delete</button>
+            <button onClick={handleDeleteReport}>Delete</button>
         </div>
         <div className="download">
         <button>Download</button>
