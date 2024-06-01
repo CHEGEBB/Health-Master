@@ -3,7 +3,6 @@ import './Login.scss';
 import { auth } from '../firebase';
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import GoogleIcon from '../images/flat-color-icons--google.svg';
-import BackgroundVideo2 from '../images/background3.mp4';
 import { Link, useNavigate} from 'react-router-dom';
 
 const Login = () => {
@@ -37,12 +36,10 @@ const Login = () => {
 
     return (
         <div className="login-container">
-            <div className="video-container2">
-                <video autoPlay muted loop>
-                    <source src={BackgroundVideo2} type="video/mp4" />
-                </video>
-                <div className="overlay2"></div>
-            </div>
+        <div className="log-in">
+        <div className="left">
+        <h1>HEALTH MASTER</h1>
+</div>
             <div className="login-form">
                 <h2>Login</h2>
                 <p>Or</p>
@@ -68,6 +65,7 @@ const Login = () => {
                 <p>
                     Don't have an account? <Link to="/">Sign up</Link>
                 </p>
+            </div>
             </div>
         </div>
     );
