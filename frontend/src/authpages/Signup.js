@@ -62,7 +62,7 @@ const Signup = () => {
         <div className="background-image">
             <img src="../images/1(1).png" alt="" />
         </div>
-        <div className="sign">
+        <div className="sign-up">
           <div className="left">
 
 </div>
