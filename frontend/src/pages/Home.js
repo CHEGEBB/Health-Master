@@ -257,13 +257,13 @@ const rateStyles={
       </header>
       <div className="main">
         <div className="quick-actions">
-          <div className="welcome-message">
+          <div className="welcome-message" style={rateStyles}>
             <div className="img">
               <img src={WelcomImage} alt="Welcome" />
             </div>
             <div className="content">
-              <h1>Welcome back, John Doe!</h1>
-              <p>
+              <h1 style={headings}>Welcome back, John Doe!</h1>
+              <p style={headings}>
                 We would like to take this opportunity to welcome you to our
                 practice and to thank you for choosing our physicians to
                 participate in your healthcare. We look forward to providing you
@@ -349,24 +349,24 @@ const rateStyles={
                 </div>
               </div>
               <div className="diagnosis-stats">
-  <div className="blood-count">
+  <div className="blood-count" style={rateStyles}>
     <div className="blood-count-icon">
       <img src={Bloodcountcon} alt="Blood Count" />
     </div>
     <div className="count">
-      <h4>Blood Count</h4>
+      <h4 style={headings}>Blood Count</h4>
       <div className="blood-count-value">
         <CountUp end={9455} duration={10} />/ml
         <span className="arrow up"></span>
       </div>
     </div>
   </div>
-  <div className="glucose-level">
+  <div className="glucose-level" style={rateStyles}>
     <div className="glucose-level-icon">
       <img src={Glucosecon} alt="Glucose Level" />
     </div>
     <div className="level">
-      <h4>Glucose Level</h4>
+      <h4 style={headings}>Glucose Level</h4>
       <div className="glucose-level-value">
         <CountUp end={120} duration={10} />mg/dL
         <span className="arrow down"></span>
