@@ -435,7 +435,7 @@ const handleDeleteReport = (report) => {
           </div>
           <div className="important-info" style={homepageStyles}>
           <div className="medications" style={rateStyles}>
-          <h2>Medications</h2>
+          <h2 style={headings}>Medications</h2>
     <div className="medicine">
         <div className="medcon">
           <img src={medcon2} alt="Medications" />
