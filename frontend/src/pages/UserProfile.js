@@ -29,8 +29,8 @@ const Profile = () => {
         </div>
       </div>
       <div className="private-details">
-        <h2>Private Details</h2>
         <div className="details">
+        <div className="row1">
             <div className="detail">
             <h3>Sex</h3>
             <p>Male</p>
@@ -43,6 +43,8 @@ const Profile = () => {
           <h3>Blood Group</h3>
           <p>A+</p>
           </div>
+          </div>
+          <div className="row2">
           <div className="detail">
           <h3>Status</h3>
           <p>Active</p>
@@ -58,6 +60,7 @@ const Profile = () => {
           <div className="detail">
             <h3>Weight</h3>
             <p>70kg</p>
+          </div>
           </div>
         </div>
       </div>

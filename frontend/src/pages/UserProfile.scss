@@ -131,10 +131,39 @@ $dark-green: #006400;
 .profile-container{
     background-color: $sky-blue;
     margin-left: 100px;
+    margin-top: 20px;
     width: 980px;
     color: $special2;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    .personal-details{
+        display: flex;
+        flex-direction: row;
+        .person{
+            display: flex;
+            flex-direction: column;
+            .profile-pic{
+                img{
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                }
+            }
+        }
+        .private-details{
+            display: flex;
+            flex-direction: column;
+            .details{
+                display: flex;
+                flex-direction: column;
+                .row1,.row2{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 60px;
+                }
+            }
+        }
+    }
 
 }
