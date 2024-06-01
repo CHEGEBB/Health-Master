@@ -10,6 +10,8 @@ const Profile = () => {
     <div className="profile-container">
     <div className="personal-details">
       <div className="person">
+      <div className="bg">
+      </div>
         <div className="profile-pic">
           <img
             src="https://www.w3schools.com/howto/img_avatar.png"
@@ -42,6 +44,10 @@ const Profile = () => {
           <div className="detail">
           <h3>Blood Group</h3>
           <p>A+</p>
+          </div>
+          <div className="detail">
+          <h3>Marital Status</h3>
+          <p>Single</p>
           </div>
           </div>
           <div className="row2">

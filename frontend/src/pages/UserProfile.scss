@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ropa+Sans:ital@0;1&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+$Rubik: 'Rubik', sans-serif;
+$Opensans : 'Open Sans', sans-serif;
 $jost: 'Jost', sans-serif;
 $ropa: 'Ropa Sans', sans-serif;
 $roboto: 'Roboto', sans-serif;
@@ -129,24 +132,53 @@ $sea-green: #2e8b57;
 $dark-green: #006400;
 
 .profile-container{
-    background-color: $sky-blue;
+  
     margin-left: 100px;
     margin-top: 20px;
-    width: 980px;
+    width: 970px;
     color: $special2;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
     .personal-details{
         display: flex;
         flex-direction: row;
+        background-color: $sky-blue;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+        border-radius: 10px;
+        height: 300px;
+        width: 100%;
+        padding: 10px;
+
         .person{
             display: flex;
             flex-direction: column;
+            height: 290px;
+            background-color: red;
+            width: 300px;
+            position: relative;
+            z-index: 0;
+            .bg{
+                background-color: #0000cd;
+                height: 100px;
+                width: 300px;
+                position: relative;
+                z-index: 1;
+            }
+            h1{
+                font-size: 30px;
+                font-weight: 600;
+                font-family: $Rubik;
+            }
+            p{
+                font-size: 16px;
+                font-weight: 400;
+                font-family: $Rubik;
+            }
             .profile-pic{
+                position: relative;
+                z-index: 1000;
+                margin-top: -50px;
                 img{
-                    width: 100px;
-                    height: 100px;
+                    width: 60px;
+                    height: 60px;
                     border-radius: 50%;
                 }
             }
@@ -157,10 +189,33 @@ $dark-green: #006400;
             .details{
                 display: flex;
                 flex-direction: column;
-                .row1,.row2{
+                gap: 30px;
+                h3{
+                    font-size: 15px;
+                    color: #555;
+                    font-weight: 600;
+                    font-family: $Opensans;
+                }
+                p{
+                    font-size: 20px;
+                    color: $special1;
+                    font-weight: 700;
+                    font-family: $Opensans;
+                }
+                .row1{
                     display: flex;
                     flex-direction: row;
                     gap: 60px;
+                    width: 600px;
+                    justify-content: center;
+                    margin-top: 20px;
+                }
+                .row2{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 60px;
+                    width: 600px;
+                    justify-content: center;
                 }
             }
         }
