@@ -104,7 +104,7 @@ $dark-green: #006400;
   font-family: $jost;
   overflow: hidden;
   background-color: $dark-slate-blue;
-  background: url("../images/9154465.jpg");
+  background: url("../images/bg1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -125,7 +125,6 @@ $dark-green: #006400;
   background-size: cover;
   animation: bgShimmer 10s infinite linear;
   animation: bgPan 10s infinite linear;
-  animation: bgFade 10s infinite ease-in-out;
   overflow: hidden;
   position: relative;
   border-top-left-radius: 12px;
@@ -160,18 +159,6 @@ $dark-green: #006400;
     background-position: 100% 100%;
   }
 }
-@keyframes bgFade {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 
 
 .signup-form {
@@ -190,7 +177,7 @@ $dark-green: #006400;
 
 .signup-form h2 {
   margin: 0 0 15px 0;
-  color: $dark-red;
+  color: $deep-pink;
   font-family: $ropa;
   font-size: 25px;
 }
@@ -270,20 +257,20 @@ form {
   display: flex;
   font-family: $jost;
   &.weak {
-    color: red;
+    color:$deep-pink;
   }
   &.moderate {
-    color: orange;
+    color: $coral;
   }
   &.strong {
-    color: green;
+    color: $deep-sky-blue;
   }
 }
 
 .password-match {
   font-size: 18px;
   margin-top: 3px;
-  color: red;
+  color: $deep-pink;
   justify-content: left;
   display: flex;
   font-family: $jost;
