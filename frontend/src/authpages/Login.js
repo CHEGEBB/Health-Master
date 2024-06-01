@@ -44,7 +44,7 @@ const Login = () => {
                 <h2>Login</h2>
                 <p>Or</p>
                 <div className="google-signin">
-                    <div className="sign">
+                    <div className="sign-google">
                         <h2>Login with Google</h2>
                     </div>
                     <div className="googlecon">

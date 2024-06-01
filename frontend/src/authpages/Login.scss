@@ -181,6 +181,13 @@ $dark-green: #006400;
     border-bottom-right-radius: 12px;
   }
   
+  
+.login-form h2 {
+  margin: 0 0 15px 0;
+  color: $deep-pink;
+  font-family: $ropa;
+  font-size: 25px;
+}
   .form-group {
     margin-bottom: 15px;
   }
@@ -233,8 +240,10 @@ $dark-green: #006400;
         img{
             width: 40px;
             height: 40px;
-            margin-right: 10px;
-            margin-bottom: 10px;
+            align-items: center;
+            justify-content: center;
+            margin-left: 40px;
+
             &:hover{
                 cursor: pointer;
                 opacity: 0.8;
@@ -243,10 +252,11 @@ $dark-green: #006400;
             }
         }
     }
-    .sign{
+    .sign-google{
         h2{
             margin: 0;
             font-size: 16px;
+            color: $special1;
         }
     }
   }
