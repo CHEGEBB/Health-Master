@@ -526,6 +526,12 @@ const rateStyles={
         <div className="report-info">
             <p>CT Scan</p>
         </div>
+        <div className="delete">
+            <button>Delete</button>
+        </div>
+        <div className="download">
+        <button>Download</button>
+        </div>
     </div>
     <div className="report">
         <div className="report-icon">
