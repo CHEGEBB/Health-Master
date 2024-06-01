@@ -59,10 +59,17 @@ const Signup = () => {
 
     return (
         <div className="signup-container">
-            <div className="video-container">
-            </div>
+        <div className="background-image">
+            <img src="../images/1(1).png" alt="" />
+        </div>
+        <div className="sign">
+          <div className="left">
+
+</div>
+          
             <div className="signup-form">
                 <h2>Sign Up</h2>
+              
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
@@ -81,6 +88,7 @@ const Signup = () => {
                     <button type="submit">Sign Up</button>
                 </form>
                 <p>Already have an account? <a href="/login">Log in</a></p>
+            </div>
             </div>
         </div>
     );
