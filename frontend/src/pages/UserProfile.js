@@ -132,6 +132,35 @@ const Profile = () => {
         </div>
       </div>
       <div className="other-details">
+      <div className="patient-details">
+            <div className="detail">
+              <h3>Blood Type</h3>
+              <p>AB+</p>
+            </div>
+            <div className="detail">
+              <h3>Allergies</h3>
+              <p>Penicillin, peanuts</p>
+            </div>
+            <div className="detail">
+              <h3>Diseases</h3>
+              <p>Diabetes</p>
+            </div>
+            <div className="detail">
+              <h3>Pressure</h3>
+              <p>130/80 mmHG</p>
+            </div>
+            <div className="detail">
+              <h3>Temperature</h3>
+              <p>36.8 Degree</p>
+            </div>
+            <div className="detail">
+              <h3>Regular Checkups</h3>
+              <p>Dr Anthony Wager, Dermatologist</p>
+              <p>Dr Smith Wright, Clinical Doctor</p>
+              <p>Dr Tom Humpton, Dentist</p>
+              <p>Dr Riphat Jion, Surgeon</p>
+            </div>
+          </div>
         <div className="health-details">
           <h2>Health Metrics</h2>
           <div className="health-metrics">
