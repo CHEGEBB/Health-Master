@@ -508,7 +508,9 @@ const rateStyles={
     </div>
     
     <div className="medicine">
-        <div className="medcon"></div>
+        <div className="medcon">
+        <img src={medcon2} alt="Medications" />
+        </div>
         <div className="med-info">
             <p>Paliperidone palmitate (injectable)</p>
         </div>
@@ -540,6 +542,12 @@ const rateStyles={
         <div className="report-info">
             <p>MRI Scan</p>
         </div>
+        <div className="delete">
+            <button>Delete</button>
+        </div>
+        <div className="download">
+        <button>Download</button>
+        </div>
     </div>
     <div className="report">
         <div className="report-icon">
@@ -547,6 +555,12 @@ const rateStyles={
         </div>
         <div className="report-info">
             <p>Ultrasound</p>
+        </div>
+        <div className="delete">
+            <button>Delete</button>
+        </div>
+        <div className="download">
+        <button>Download</button>
         </div>
     </div>
     <div className="report">
@@ -556,6 +570,12 @@ const rateStyles={
         <div className="report-info">
             <p>ECG</p>
         </div>
+        <div className="delete">
+            <button>Delete</button>
+        </div>
+        <div className="download">
+        <button>Download</button>
+        </div>
     </div>
     <div className="report">
         <div className="report-icon">
@@ -563,6 +583,12 @@ const rateStyles={
         </div>
         <div className="report-info">
             <p>X-Ray</p>
+        </div>
+        <div className="delete">
+            <button>Delete</button>
+        </div>
+        <div className="download">
+        <button>Download</button>
         </div>
     </div>
 </div>
