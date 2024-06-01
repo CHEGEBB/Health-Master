@@ -128,14 +128,14 @@ const Homepage = () => {
         },
         ticks: {
           stepSize: 1,
-          color: "black"
+          color: "#555"
         }
       },
       y: {
         min: 50,
         max: 130,
         ticks: {
-          color: "black"
+          color: "#555"
         }
       }
     },
@@ -334,8 +334,8 @@ const rateStyles={
                   />
                 </div>
               </div>
-              <div className="blood-pressure">
-                <h4>Blood Pressure</h4>
+              <div className="blood-pressure" style={rateStyles}>
+                <h4 style={headings}>Blood Pressure</h4>
                 <div className="bloodcon">
                   <img src={Bloodcon} alt="Blood Pressure" />
                 </div>
