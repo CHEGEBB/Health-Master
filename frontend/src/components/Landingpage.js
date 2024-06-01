@@ -28,7 +28,7 @@ const LandingPage = () => {
                 <div className='content'>
                     <h1>Health Master</h1>
                     <p>Your personal health management companion</p>
-                    <button onClick={() => window.location.href = 'https://your-deployed-app-url.com'}>Go to Application</button>
+                    <button onClick={() => window.location.href = '/login'}>Go to Application</button>
                 </div>
             </section>
             <section className='feature-section' id='featured'>
