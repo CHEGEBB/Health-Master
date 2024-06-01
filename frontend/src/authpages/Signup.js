@@ -59,9 +59,7 @@ const Signup = () => {
 
     return (
         <div className="signup-container">
-        <div className="background-image">
-            <img src="../images/1(1).png" alt="" />
-        </div>
+        <div className="overlay"></div>
         <div className="sign-up">
           <div className="left">
 

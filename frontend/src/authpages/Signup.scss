@@ -104,6 +104,9 @@ $dark-green: #006400;
   font-family: $jost;
   overflow: hidden;
   background-color: $dark-slate-blue;
+  background: url("../images/9154465.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .sign-up{
   display: flex;
@@ -112,6 +115,7 @@ $dark-green: #006400;
   border-radius: 8px;
   max-height: 500px;
   border-radius: 12px;
+ 
 }
 .left {
   height: 500px;
