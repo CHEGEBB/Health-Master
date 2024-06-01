@@ -24,17 +24,32 @@ const Profile = () => {
           {/* authenticated email from firebase auth */}
           <p>john.doe@example.com</p>
         </div>
+        <div className="edit">
+          <button>Edit Profile</button>
+        </div>
       </div>
       <div className="private-details">
         <h2>Private Details</h2>
         <div className="details">
+            <div className="detail">
+            <h3>Sex</h3>
+            <p>Male</p>
+          </div>
+          <div className="detail">
+          <h3>Age</h3>
+          <p>24</p>
+          </div>
+          <div className="detail">
+          <h3>Blood Group</h3>
+          <p>A+</p>
+          </div>
+          <div className="detail">
+          <h3>Status</h3>
+          <p>Active</p>
+          </div>
           <div className="detail">
             <h3>Date of Birth</h3>
             <p>01/01/2000</p>
-          </div>
-          <div className="detail">
-            <h3>Sex</h3>
-            <p>Male</p>
           </div>
           <div className="detail">
             <h3>Height</h3>
