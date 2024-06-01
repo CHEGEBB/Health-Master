@@ -330,9 +330,27 @@ form {
     }
   }
 }
-
-@media screen and (min-width: 1280px) {
+// media queries alll screens max 1920 least 375px
+@media screen and (max-width: 1920px) {
+  .signup-container {
+    height: 100vh;
+  }
   .signup-form {
-    height: 600px;
+    width: 400px;
+  }
+  .left {
+    width: 450px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .signup-container {
+    height: 100vh;
+  }
+  .signup-form {
+    width: 400px;
+  }
+  .left {
+    width: 450px;
   }
 }
