@@ -13,10 +13,9 @@ export const DarkModeProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        // Update body background color based on dark mode state
-        document.body.style.backgroundColor = isDarkMode ? '#000000' : '#ffffff';
-        // Update html background color based on dark mode state
-        document.documentElement.style.backgroundColor = isDarkMode ? '#000000' : '#ffffff';
+        
+        document.body.style.backgroundColor = isDarkMode ? '#09101A' : '#ffffff';
+        document.documentElement.style.backgroundColor = isDarkMode ? '#09101A' : '#ffffff';
     }, [isDarkMode]);
 
     const switchTheme = (selectedTheme) => {

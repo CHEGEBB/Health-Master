@@ -205,7 +205,7 @@ const Homepage = () => {
 
   ];
   const headerStyles = {
-    backgroundColor: isDarkMode ? '#141C27' : '#f5f5f5', 
+    backgroundColor: isDarkMode ? '#09101A' : '#f5f5f5', 
     color: isDarkMode ? '#fff' : '#000'
   
   };
@@ -213,20 +213,25 @@ const Homepage = () => {
     filter: isDarkMode ? 'invert(1)' : 'invert(0)'
   };
   const homepageStyles ={
-    backgroundColor: isDarkMode ? '#141C27' : '#f5f5f5',
+    backgroundColor: isDarkMode ? '#09101A' : '#f5f5f5',
+    color: isDarkMode ? '#fff' : '#000'
   }
 
 
 const healthStatsStyles = {
-  backgroundColor: isDarkMode ? '#141C27' : '#f0f8ff', 
+  backgroundColor: isDarkMode ? '#09101A' : '#f0f8ff', 
+  color: isDarkMode ? '#fff' : '#000'
 }
 const upcomingAppointmentsStyles = {
   backgroundColor: isDarkMode ? '#141C27' : '#f0f8ff',
   color: isDarkMode ? '#fff' : '#000'
 }
+const headings = {
+  color: isDarkMode ? '#fff' : '#000'
+}
 
 const rateStyles={
-  backgroundColor: isDarkMode ? '#041f46' : '#f0f8ff',
+  backgroundColor: isDarkMode ? '#0D1B2A' : '#f0f8ff',
   color: isDarkMode ? '#fff' : '#000'
 }
   return (
@@ -307,12 +312,12 @@ const rateStyles={
             </div>
           </div>
           <div className="health-stats" style={healthStatsStyles}>
-            <h2>My Health Stats</h2>
+            <h2 style={headings}>My Health Stats</h2>
             <div className="stats">
               <div className="heart-rate" style={rateStyles}>
                 <div className="heartRate">
                   <div className="rate">
-                    <h4>Heart Rate</h4>
+                    <h4 style={headings}>Heart Rate</h4>
                   </div>
                   <div className="heartcon">
                     <img src={Heartcon} alt="Heart Rate" />
