@@ -71,6 +71,7 @@ const Profile = () => {
         </div>
       </div>
       </div>
+      <div className="other-details"></div>
     </div>
   );
 };

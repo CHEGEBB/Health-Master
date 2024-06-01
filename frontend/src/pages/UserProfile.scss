@@ -140,9 +140,10 @@ $dark-green: #006400;
     .personal-details{
         display: flex;
         flex-direction: row;
-        background-color: $azure;
-        box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+        gap: 30px;
+        border: 1px solid #ccc;
         border-radius: 10px;
+        // background-color: $light-sky-blue;
         height: 300px;
         width: 100%;
         padding: 10px;
@@ -151,13 +152,13 @@ $dark-green: #006400;
             display: flex;
             flex-direction: column;
             height: 290px;
-            background-color:$medium-spring-green;
             width: 300px;
+            background-color: $linen;
             position: relative;
             z-index: 0;
             border-radius: 9px;
             .bg{
-                background-color: $dark-pink;
+                background-color: $light-sky-blue;
                 background-image: url("../images//1\(1\).png");
                 background-size: cover;
                 background-repeat: no-repeat;
@@ -193,6 +194,9 @@ $dark-green: #006400;
         .private-details{
             display: flex;
             flex-direction: column;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
             .details{
                 display: flex;
                 flex-direction: column;
