@@ -74,32 +74,49 @@ const Profile = () => {
       <div className="det1">
       <h3>Blood Type</h3>
       </div>
-        
-        <p>AB+</p>
+      <div className="val1">
+      <p>AB+</p>
+      </div>
       </div>
     </div>
     <div className="detail">
       <div className="detail-content">
-        <h3>Allergies</h3>
+      <div className="det2">
+      <h3>Allergies</h3>
+      </div>
+      <div className="val2">
         <p>Penicillin, peanuts</p>
       </div>
+      </div>
     </div>
     <div className="detail">
       <div className="detail-content">
+      <div className="det3">
         <h3>Diseases</h3>
+      </div>
+      <div className="val3">
         <p>Diabetes</p>
       </div>
-    </div>
-    <div className="detail">
-      <div className="detail-content">
-        <h3>Pressure</h3>
-        <p>130/80 mmHG</p>
       </div>
     </div>
     <div className="detail">
       <div className="detail-content">
-        <h3>Temperature</h3>
-        <p>36.8 Degree</p>
+      <div className="det4">
+        <h3>Pressure</h3>
+      </div>
+      <div className="val4">
+        <p>130/80 mmHG</p>
+      </div>
+      </div>
+    </div>
+    <div className="detail">
+      <div className="detail-content">
+      <div className="det5">
+        <h3>Blood Pressure</h3>
+      </div>
+      <div className="val5">
+        <p>120/80 mmHG</p>
+      </div>
       </div>
     </div>
   </div>
