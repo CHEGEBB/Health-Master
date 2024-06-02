@@ -185,10 +185,10 @@ nav {
                 position: absolute;
                 left: -4px;
                 top: 0;
-                background-color: transparent; /* Initially transparent */
+                background-color: transparent;
             }
             &.active::after {
-                background-color: orangered; /* Change to your desired color */
+                background-color: orangered;
             }
             &:hover {
                 border: none;

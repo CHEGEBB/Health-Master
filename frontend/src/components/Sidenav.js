@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Sidenav.scss';
 import { Link } from 'react-router-dom';
 import Dashcon from '../images/icons/ic--sharp-dashboard.svg';
@@ -12,106 +12,131 @@ import Settings from '../images/icons/mdi--settings.svg';
 import { useDarkMode } from '../context/DarkModeContext';
 
 const Sidenav = () => {
-    const { isDarkMode, toggleDarkMode } = useDarkMode(); 
+    const { isDarkMode, toggleDarkMode } = useDarkMode();
+    const [activeItem, setActiveItem] = useState('');
 
-    const navStyles={
+    const navStyles = {
         backgroundColor: isDarkMode ? '#162447' : '#3A7BD5',
         color: isDarkMode ? '#ffffff' : '#000000'
+    };
+
+    const handleItemClick = (itemName) => {
+        setActiveItem(itemName);
+    };
+
+    const isActive = (itemName) => {
+        return activeItem === itemName ? 'active' : '';
+    };
+
+    const verticalActiveBar = (itemName) => {
+        return activeItem === itemName ? 'active-bar' : '';
+        
+    };
+    const verticalBarStyles ={
+        marginLeft: '-10px',
+        marginTop: '-10px',
+        width: '2px',
+        height: '100%',
+        backgroundColor: isDarkMode? '#ffffff' : '#000000'
     }
 
-    return (  
-        <nav className={`side-nav ${isDarkMode ? 'dark-mode' : ''}`} style={navStyles}> 
+    return (
+        <nav className={`side-nav ${isDarkMode ? 'dark-mode' : ''}`} style={navStyles}>
             <ul>
-                <li className='special'>
-                    <div className="nav-item">
+                <li className={`special ${isActive('Dashboard')}`}>
+                    <div className={`nav-item ${isActive('Dashboard')}`}>
                         <div className="nav-icon">
                             <img src={Dashcon} alt="Dashboard" />
                         </div>
                         <div className="navtem">
-                            <Link to='/home'>Dashboard</Link>
+                            <Link to='/home' onClick={() => handleItemClick('Dashboard')}>Dashboard</Link>
                         </div>
+                        <div className={`vertical-bar ${verticalActiveBar('Dashboard')}`} style={verticalBarStyles}></div>
                     </div>
-                </li>  
-                <li>
-                    <div className="nav-item">
+                </li>
+                <li className={`${isActive('Profile')}`}>
+                    <div className={`nav-item ${isActive('Profile')}`}>
                         <div className="nav-icon">
                             <img src={Profilecon} alt="Profile" />
                         </div>
                         <div className="navtem">
-                            <Link to='/profile'>Profile</Link>
+                            <Link to='/profile' onClick={() => handleItemClick('Profile')}>Profile</Link>
                         </div>
+                        <div className={`vertical-bar ${verticalActiveBar('Profile')}`}></div>
                     </div>
                 </li>
-                <li>
-                    <div className="nav-item">
+                <li className={`${isActive('Health Goals')}`}>
+                    <div className={`nav-item ${isActive('Health Goals')}`}>
                         <div className="nav-icon">
-                        <div className="goalcon">
-                        <img src={HealthGoalcon} alt="Health Goals" />
-
-                        </div>
+                            <img src={HealthGoalcon} alt="Health Goals" />
                         </div>
                         <div className="navtem">
-                            <Link to='/healthgoals'>Health Goals</Link>
+                            <Link to='/healthgoals' onClick={() => handleItemClick('Health Goals')}>Health Goals</Link>
                         </div>
+                        <div className={`vertical-bar ${verticalActiveBar('Health Goals')}`}></div>
                     </div>
                 </li>
-                <li>
-                    <div className="nav-item">
+                <li className={`${isActive('Symptoms')}`}>
+                    <div className={`nav-item ${isActive('Symptoms')}`}>
                         <div className="nav-icon">
                             <img src={Symptomcon} alt="Symptoms" />
                         </div>
                         <div className="navtem">
-                            <Link to='/symptoms'>Symptoms Checker</Link>
+                            <Link to='/symptoms' onClick={() => handleItemClick('Symptoms')}>Symptoms Checker</Link>
                         </div>
+                        <div className={`vertical-bar ${verticalActiveBar('Symptoms')}`}></div>
                     </div>
                 </li>
-                <li>
-                    <div className="nav-item">
+                <li className={`${isActive('Medication')}`}>
+                    <div className={`nav-item ${isActive('Medication')}`}>
                         <div className="nav-icon">
                             <img src={Medicationcon} alt="Medication" />
                         </div>
                         <div className="navtem">
-                            <Link to='/medication'>Medication Management</Link>
+                            <Link to='/medication' onClick={() => handleItemClick('Medication')}>Medication Management</Link>
                         </div>
+                        <div className={`vertical-bar ${verticalActiveBar('Medication')}`}></div>
                     </div>
                 </li>
-                <li>
-                    <div className="nav-item">
+                <li className={`${isActive('Appointments')}`}>
+                    <div className={`nav-item ${isActive('Appointments')}`}>
                         <div className="nav-icon">
                             <img src={Appointmentcon} alt="Appointments" />
                         </div>
                         <div className="navtem">
-                            <Link to='/appointments'>Appointments</Link>
+                            <Link to='/appointments' onClick={() => handleItemClick('Appointments')}>Appointments</Link>
                         </div>
+                        <div className={`vertical-bar ${verticalActiveBar('Appointments')}`}></div>
                     </div>
                 </li>
-                <li>
-                    <div className="nav-item">
+                <li className={`${isActive('Health')}`}>
+                    <div className={`nav-item ${isActive('Health')}`}>
                         <div className="nav-icon">
                             <img src={Healthcon} alt="Health" />
                         </div>
                         <div className="navtem">
-                            <Link to='/health'>Health & Wellness</Link>
+                            <Link to='/health' onClick={() => handleItemClick('Health')}>Health & Wellness</Link>
                         </div>
+                        <div className={`vertical-bar ${verticalActiveBar('Health')}`}></div>
                     </div>
                 </li>
-                <li>
-                    <div className="nav-item">
+                <li className={`${isActive('Settings')}`}>
+                    <div className={`nav-item ${isActive('Settings')}`}>
                         <div className="nav-icon">
                             <img src={Settings} alt="Settings" />
                         </div>
                         <div className="navtem">
-                            <Link to='/settings'>Settings</Link>
+                            <Link to='/settings' onClick={() => handleItemClick('Settings')}>Settings</Link>
                         </div>
+                        <div className={`vertical-bar ${verticalActiveBar('Settings')}`}></div>
                     </div>
                 </li>
             </ul>
             <div className="dark-mode-toggle" onClick={toggleDarkMode}>
-                {/* Display dark mode toggle button */}
                 {isDarkMode ? 'Light Mode' : 'Dark Mode'}
             </div>
         </nav>
     );
 }
- 
+
 export default Sidenav;
