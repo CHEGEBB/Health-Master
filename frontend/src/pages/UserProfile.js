@@ -1,5 +1,8 @@
 import React from 'react';
 import './UserProfile.scss';
+import Doctor1 from '../images/2(2).jpg';
+import Doctor2 from '../images/3(1).jpg';
+import Doctor3 from '../images/3(2).jpg';
 
 
 const Profile = () => {
@@ -122,22 +125,22 @@ const Profile = () => {
   </div>
   <div className="check-ups">
           <div className="check-up">
-            <img src="../images/2(2).jpg" alt="Dr Chealsea Green" className="doctor-photo" />
-            <p>Dr Anthony Wager, Dermatologist</p>
+            <img src={Doctor1} alt="Dr Chealsea Green" className="doctor-photo" />
+            <p>Dr Chealsea Green, Dermatologist</p>
             <button className="delete-button">Delete</button>
           </div>
           <div className="check-up">
-            <img src="../images/3" alt="Dr Jane Wright" className="doctor-photo" />
-            <p>Dr Smith Wright, Clinical Doctor</p>
+            <img src={Doctor2} alt="Dr Jane Wright" className="doctor-photo" />
+            <p>Dr Jane Wright, Clinical Doctor</p>
             <button className="delete-button">Delete</button>
           </div>
           <div className="check-up">
-            <img src="doctor3.jpg" alt="Dr Tom Humpton" className="doctor-photo" />
-            <p>Dr Tom Humpton, Dentist</p>
+            <img src={Doctor3} alt="Dr Tom Melendez" className="doctor-photo" />
+            <p>Dr Tom Melendez, Dentist</p>
             <button className="delete-button">Delete</button>
           </div>
           <div className="check-up">
-            <img src="doctor4.jpg" alt="Dr Riphat Jion" className="doctor-photo" />
+            <img src={Doctor4} alt="Dr Riphat Jion" className="doctor-photo" />
             <p>Dr Riphat Jion, Surgeon</p>
             <button className="delete-button">Delete</button>
           </div>
