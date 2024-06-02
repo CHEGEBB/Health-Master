@@ -37,6 +37,12 @@ import medcon2 from "../images/icons/bxs--injection.svg";
 import medcon3 from "../images/icons/fa6-solid--capsules.svg";
 import medcon4 from "../images/icons/fa6-solid--tablets (1).svg";
 import medcon5 from "../images/icons/fa6-solid--tablets.svg";
+import doc1 from '../images/icons/docs/ant-design--file-zip-filled.svg';
+import doc2 from '../images/icons/docs/fluent--document-link-20-filled.svg';
+import doc3 from '../images/icons/docs/fluent--document-pdf-20-filled.svg';
+import doc4 from '../images/icons/docs/healthicons--i-documents-denied.svg';
+import doc5 from '../images/icons/docs/icons8--document.svg';
+import doc6 from '../images/icons/docs/line-md--clipboard-list.svg';
 
 
 ChartJS.register(
@@ -526,8 +532,22 @@ const handleDeleteReport = (report) => {
 <div className="reports-documents" style={rateStyles}>
     <h2 style={headings}>Reports & Documents</h2>
     <div className="report">
+      <div className="report-icon">
+        <img src={doc6} alt="Reports & Documents" />
+      </div>
+      <div className="report-info">
+        <p>Doctor's Report</p>
+      </div>
+      <div className="delete">
+            <button onClick={handleDeleteReport}>Delete</button>
+        </div>
+        <div className="download">
+        <button>Download</button>
+        </div>
+    </div>
+    <div className="report">
         <div className="report-icon">
-            <img src={medcon1} alt="Reports & Documents" />
+            <img src={doc1} alt="Reports & Documents" />
         </div>
         <div className="report-info">
             <p>CT Scan</p>
@@ -541,7 +561,7 @@ const handleDeleteReport = (report) => {
     </div>
     <div className="report">
         <div className="report-icon">
-            <img src={medcon2} alt="Reports & Documents" />
+            <img src={doc2} alt="Reports & Documents" />
         </div>
         <div className="report-info">
             <p>MRI Scan</p>
@@ -555,7 +575,7 @@ const handleDeleteReport = (report) => {
     </div>
     <div className="report">
         <div className="report-icon">
-            <img src={medcon3} alt="Reports & Documents" />
+            <img src={doc3} alt="Reports & Documents" />
         </div>
         <div className="report-info">
             <p>Ultrasound</p>
@@ -569,7 +589,7 @@ const handleDeleteReport = (report) => {
     </div>
     <div className="report">
         <div className="report-icon">
-            <img src={medcon4} alt="Reports & Documents" />
+            <img src={doc4} alt="Reports & Documents" />
         </div>
         <div className="report-info">
             <p>ECG</p>
@@ -583,7 +603,7 @@ const handleDeleteReport = (report) => {
     </div>
     <div className="report">
         <div className="report-icon">
-            <img src={medcon5} alt="Reports & Documents" />
+            <img src={doc5} alt="Reports & Documents" />
         </div>
         <div className="report-info">
             <p>X-Ray</p>
