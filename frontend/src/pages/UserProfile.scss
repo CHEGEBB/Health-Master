@@ -232,49 +232,62 @@ $dark-green: #006400;
         flex-direction: row;
         gap: 30px;
         border-radius: 10px;
-        height: 300px;
+        height: 100%;
         width: 100%;
         padding: 10px;
       
         .patient-details {
           display: flex;
           flex-direction: column;
-          background-color: #00bfff;
-          gap: 30px;
+          background-color: #e0e0e0;
+          gap: 10px;
           border-radius: 10px;
-          height: 300px;
+          padding: 20px;
+          height: 100%;
           width: 400px;
-          padding: 30px;
       
           .detail {
             display: flex;
             flex-direction: row;
-            gap: 50px;
-            text-align: center;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
       
             .detail-content {
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+      
+              .det, .val {
                 display: flex;
-            flex-direction: row;
-            .det1,.det2,.det3,.det4,.det5{
-                background-color: #000080;
-            }
-            .val1,.val2,.val3,.val4,.val5{
-                background-color: #006400;
-            }
-            gap: 50px;
-              h3 {
-                font-size: 15px;
-                color: #555;
-                font-weight: 600;
-                font-family: $Opensans;
+                align-items: center;
+      
+                h3, p {
+                  font-size: 15px;
+                  font-family: $Opensans;
+                }
+      
+                h3 {
+                  color: #555;
+                  font-weight: 600;
+                }
+      
+                p {
+                  color: #333;
+                  font-weight: 700;
+                }
               }
       
-              p {
-                font-size: 15px;
-                color: $special1;
-                font-weight: 700;
-                font-family: $Opensans;
-                
+              .det {
+                flex: 1;
+              }
+      
+              .val {
+                flex: 1;
+                justify-content: flex-end;
+                text-align: right;
               }
             }
           }
@@ -310,11 +323,19 @@ $dark-green: #006400;
               border-radius: 5px;
               padding: 5px 10px;
               cursor: pointer;
+              font-size: 12px;
+              transition: background-color 0.3s ease, transform 0.3s ease;
+      
+              &:hover {
+                background-color: #cc0000;
+                transform: scale(1.1);
+              }
+      
+              &:active {
+                transform: scale(0.9);
+              }
             }
           }
         }
       }
-      
-
- 
-}
+    }      
