@@ -1,72 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import {
-  Radar,
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis,
-  BarChart,
-  Bar,
-  LineChart,
-  Line,
-  ResponsiveContainer,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip,
-} from 'recharts';
+import React from 'react';
 import './UserProfile.scss';
 
-const radarData = [
-  { subject: 'Eating', A: 120, fullMark: 150 },
-  { subject: 'Drinking', A: 98, fullMark: 150 },
-  { subject: 'Running', A: 86, fullMark: 150 },
-  { subject: 'Cycling', A: 99, fullMark: 150 },
-];
-
-const generateRandomData = () => Array.from({ length: 4 }, () => Math.floor(Math.random() * 150) + 50);
 
 const Profile = () => {
-  const [heartRateData, setHeartRateData] = useState([
-    { name: 'Jan', value: 107 },
-    { name: 'Feb', value: 105 },
-    { name: 'Mar', value: 110 },
-    { name: 'Apr', value: 115 },
-  ]);
-
-  const [glucoseRateData, setGlucoseRateData] = useState([
-    { name: 'Jan', value: 97 },
-    { name: 'Feb', value: 95 },
-    { name: 'Mar', value: 100 },
-    { name: 'Apr', value: 102 },
-  ]);
-
-  const [bloodPressureData, setBloodPressureData] = useState([
-    { name: 'Jan', systolic: 120, diastolic: 80 },
-    { name: 'Feb', systolic: 122, diastolic: 82 },
-    { name: 'Mar', systolic: 118, diastolic: 78 },
-    { name: 'Apr', systolic: 121, diastolic: 79 },
-  ]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setHeartRateData((prevData) =>
-        prevData.map((data) => ({ ...data, value: Math.floor(Math.random() * 40) + 60 }))
-      );
-      setGlucoseRateData((prevData) =>
-        prevData.map((data) => ({ ...data, value: Math.floor(Math.random() * 40) + 80 }))
-      );
-      setBloodPressureData((prevData) =>
-        prevData.map((data) => ({
-          ...data,
-          systolic: Math.floor(Math.random() * 40) + 110,
-          diastolic: Math.floor(Math.random() * 20) + 70,
-        }))
-      );
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="profile-container">
@@ -161,49 +97,6 @@ const Profile = () => {
               <p>Dr Riphat Jion, Surgeon</p>
             </div>
           </div>
-        <div className="health-details">
-          <h2>Health Metrics</h2>
-          <div className="health-metrics">
-            <div className="metric">
-              <h3>Blood Pressure</h3>
-              <ResponsiveContainer width="100%" height={150}>
-                <LineChart data={bloodPressureData}>
-                  <Line type="monotone" dataKey="systolic" stroke="#8884d8" />
-                  <Line type="monotone" dataKey="diastolic" stroke="#82ca9d" />
-                  <XAxis dataKey="name" />
-                  <Tooltip />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
-            <div className="metric">
-              <h3>Heart Rate</h3>
-              <ResponsiveContainer width="100%" height={150}>
-                <BarChart data={heartRateData}>
-                  <Bar dataKey="value" fill="#8884d8" />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-            <div className="metric">
-              <h3>Glucose Rate</h3>
-              <ResponsiveContainer width="100%" height={150}>
-                <BarChart data={glucoseRateData}>
-                  <Bar dataKey="value" fill="#82ca9d" />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          </div>
-          <h2>Patient Activities</h2>
-          <div className="health-graphs">
-            <ResponsiveContainer width="100%" height={300}>
-              <RadarChart cx="50%" cy="50%" outerRadius="80%" data={radarData}>
-                <PolarGrid />
-                <PolarAngleAxis dataKey="subject" />
-                <PolarRadiusAxis />
-                <Radar name="Activities" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-              </RadarChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
       </div>
     </div>
   );
