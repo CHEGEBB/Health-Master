@@ -255,6 +255,12 @@ $dark-green: #006400;
             .detail-content {
                 display: flex;
             flex-direction: row;
+            .det1,.det2,.det3,.det4,.det5{
+                background-color: #000080;
+            }
+            .val1,.val2,.val3,.val4,.val5{
+                background-color: #006400;
+            }
             gap: 50px;
               h3 {
                 font-size: 15px;
@@ -268,8 +274,7 @@ $dark-green: #006400;
                 color: $special1;
                 font-weight: 700;
                 font-family: $Opensans;
-                text-align: right;
-                background-color: red;
+                
               }
             }
           }
