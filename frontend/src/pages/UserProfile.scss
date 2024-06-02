@@ -138,7 +138,6 @@ $dark-green: #006400;
         display: flex;
         flex-direction: row;
         gap: 30px;
-        border: 1px solid #ccc;
         border-radius: 10px;
         height: 300px;
         width: 100%;
@@ -195,7 +194,6 @@ $dark-green: #006400;
         .private-details{
             display: flex;
             flex-direction: column;
-            border: 1px solid #ccc;
             border-radius: 10px;
             padding: 10px;
 
@@ -229,9 +227,89 @@ $dark-green: #006400;
             }
         }
     }
-    .patient-details{
-        
-    }
+    .other-details {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        border-radius: 10px;
+        height: 300px;
+        width: 100%;
+        padding: 10px;
+      
+        .patient-details {
+          display: flex;
+          flex-direction: column;
+          background-color: #00bfff;
+          gap: 30px;
+          border-radius: 10px;
+          height: 300px;
+          width: 400px;
+          padding: 30px;
+      
+          .detail {
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+            text-align: center;
+      
+            .detail-content {
+                display: flex;
+            flex-direction: row;
+            gap: 50px;
+              h3 {
+                font-size: 15px;
+                color: #555;
+                font-weight: 600;
+                font-family: $Opensans;
+              }
+      
+              p {
+                font-size: 15px;
+                color: $special1;
+                font-weight: 700;
+                font-family: $Opensans;
+                text-align: right;
+                background-color: red;
+              }
+            }
+          }
+        }
+      
+        .check-ups {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          background-color: #e0e0e0;
+          border-radius: 10px;
+          padding: 20px;
+      
+          .check-up {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+      
+            p {
+              font-size: 15px;
+              color: #333;
+              font-family: $Opensans;
+            }
+      
+            .delete-button {
+              background-color: #ff0000;
+              color: #fff;
+              border: none;
+              border-radius: 5px;
+              padding: 5px 10px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      
 
  
 }

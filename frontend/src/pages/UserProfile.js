@@ -68,36 +68,61 @@ const Profile = () => {
         </div>
       </div>
       <div className="other-details">
-      <div className="patient-details">
-            <div className="detail">
-              <h3>Blood Type</h3>
-              <p>AB+</p>
-            </div>
-            <div className="detail">
-              <h3>Allergies</h3>
-              <p>Penicillin, peanuts</p>
-            </div>
-            <div className="detail">
-              <h3>Diseases</h3>
-              <p>Diabetes</p>
-            </div>
-            <div className="detail">
-              <h3>Pressure</h3>
-              <p>130/80 mmHG</p>
-            </div>
-            <div className="detail">
-              <h3>Temperature</h3>
-              <p>36.8 Degree</p>
-            </div>
-            <div className="detail">
-              <h3>Regular Checkups</h3>
-              <p>Dr Anthony Wager, Dermatologist</p>
-              <p>Dr Smith Wright, Clinical Doctor</p>
-              <p>Dr Tom Humpton, Dentist</p>
-              <p>Dr Riphat Jion, Surgeon</p>
-            </div>
-          </div>
+  <div className="patient-details">
+    <div className="detail">
+      <div className="detail-content">
+      <div className="det1">
+      <h3>Blood Type</h3>
       </div>
+        
+        <p>AB+</p>
+      </div>
+    </div>
+    <div className="detail">
+      <div className="detail-content">
+        <h3>Allergies</h3>
+        <p>Penicillin, peanuts</p>
+      </div>
+    </div>
+    <div className="detail">
+      <div className="detail-content">
+        <h3>Diseases</h3>
+        <p>Diabetes</p>
+      </div>
+    </div>
+    <div className="detail">
+      <div className="detail-content">
+        <h3>Pressure</h3>
+        <p>130/80 mmHG</p>
+      </div>
+    </div>
+    <div className="detail">
+      <div className="detail-content">
+        <h3>Temperature</h3>
+        <p>36.8 Degree</p>
+      </div>
+    </div>
+  </div>
+  <div className="check-ups">
+    <div className="check-up">
+      <p>Dr Anthony Wager, Dermatologist</p>
+      <button className="delete-button">Delete</button>
+    </div>
+    <div className="check-up">
+      <p>Dr Smith Wright, Clinical Doctor</p>
+      <button className="delete-button">Delete</button>
+    </div>
+    <div className="check-up">
+      <p>Dr Tom Humpton, Dentist</p>
+      <button className="delete-button">Delete</button>
+    </div>
+    <div className="check-up">
+      <p>Dr Riphat Jion, Surgeon</p>
+      <button className="delete-button">Delete</button>
+    </div>
+  </div>
+</div>
+
     </div>
   );
 };
