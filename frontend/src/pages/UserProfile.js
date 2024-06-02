@@ -2,7 +2,9 @@ import React from 'react';
 import './UserProfile.scss';
 import Doctor1 from '../images/2(2).jpg';
 import Doctor2 from '../images/3(1).jpg';
-import Doctor3 from '../images/3(2).jpg';
+import Doctor3 from '../images/5.jpg';
+import Doctor4 from '../images/1(2).jpg';
+import user from "../images/smith.jpg"
 
 
 const Profile = () => {
@@ -14,7 +16,7 @@ const Profile = () => {
           <div className="bg"></div>
           <div className="profile-pic">
             <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
+              src={user}
               alt="Avatar"
               className="avatar"
             />
@@ -126,7 +128,11 @@ const Profile = () => {
   <div className="check-ups">
           <div className="check-up">
             <img src={Doctor1} alt="Dr Chealsea Green" className="doctor-photo" />
-            <p>Dr Chealsea Green, Dermatologist</p>
+            <div className="doc">
+            <h3>Dr Chealsea Green </h3>
+            <p>Dermatologist</p>
+            </div>
+       
             <button className="delete-button">Delete</button>
           </div>
           <div className="check-up">
