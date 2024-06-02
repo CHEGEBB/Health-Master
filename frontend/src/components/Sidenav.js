@@ -6,7 +6,6 @@ import Profilecon from '../images/icons/iconamoon--profile-circle-fill.svg';
 import HealthGoalcon from '../images/icons/mage--goals-fill.svg';
 import Symptomcon from '../images/icons/icon-park-solid--check-one.svg';
 import Medicationcon from '../images/icons/ic--outline-medication-liquid.svg';
-import Appointmentcon from '../images/icons/streamline--waiting-appointments-calendar-solid.svg';
 import Healthcon from '../images/icons/healthicons--blood-pressure-2-negative.svg';
 import Settings from '../images/icons/mdi--settings.svg';
 import { useDarkMode } from '../context/DarkModeContext';
@@ -68,7 +67,9 @@ const Sidenav = () => {
                 <li className={`${isActive('Health Goals')}`}>
                     <div className={`nav-item ${isActive('Health Goals')}`}>
                         <div className="nav-icon">
-                            <img src={HealthGoalcon} alt="Health Goals" />
+                        <div className="goalcon">
+                        <img src={HealthGoalcon} alt="Health Goals" />
+                        </div>
                         </div>
                         <div className="navtem">
                             <Link to='/healthgoals' onClick={() => handleItemClick('Health Goals')}>Health Goals</Link>
@@ -96,17 +97,6 @@ const Sidenav = () => {
                             <Link to='/medication' onClick={() => handleItemClick('Medication')}>Medication Management</Link>
                         </div>
                         <div className={`vertical-bar ${verticalActiveBar('Medication')}`}></div>
-                    </div>
-                </li>
-                <li className={`${isActive('Appointments')}`}>
-                    <div className={`nav-item ${isActive('Appointments')}`}>
-                        <div className="nav-icon">
-                            <img src={Appointmentcon} alt="Appointments" />
-                        </div>
-                        <div className="navtem">
-                            <Link to='/appointments' onClick={() => handleItemClick('Appointments')}>Appointments</Link>
-                        </div>
-                        <div className={`vertical-bar ${verticalActiveBar('Appointments')}`}></div>
                     </div>
                 </li>
                 <li className={`${isActive('Health')}`}>
