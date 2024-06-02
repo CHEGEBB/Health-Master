@@ -45,7 +45,10 @@ const Sidenav = () => {
                 <li>
                     <div className="nav-item">
                         <div className="nav-icon">
-                            <img src={HealthGoalcon} alt="Health Goals" />
+                        <div className="goalcon">
+                        <img src={HealthGoalcon} alt="Health Goals" />
+
+                        </div>
                         </div>
                         <div className="navtem">
                             <Link to='/healthgoals'>Health Goals</Link>

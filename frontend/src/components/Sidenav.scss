@@ -160,6 +160,11 @@ nav {
                 height: 40px;
                 margin-right: 10px;
                 margin-bottom: 10px;
+                .goalcon{
+                    img{
+                        filter: invert(8);
+                    }
+                }
                 &:hover {
                     cursor: pointer;
                 }
