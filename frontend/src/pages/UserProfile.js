@@ -74,6 +74,7 @@ const Profile = () => {
       </div>
       <div className="other-details">
   <div className="patient-details">
+  <h2>My Health Stats</h2>
     <div className="detail">
       <div className="detail-content">
         <div className="det">
@@ -126,6 +127,7 @@ const Profile = () => {
     </div>
   </div>
   <div className="check-ups">
+  <h2>My Doctors</h2>
           <div className="check-up">
             <img src={Doctor1} alt="Dr Chealsea Green" className="doctor-photo" />
             <div className="doc">
@@ -137,17 +139,26 @@ const Profile = () => {
           </div>
           <div className="check-up">
             <img src={Doctor2} alt="Dr Jane Wright" className="doctor-photo" />
-            <p>Dr Jane Wright, Clinical Doctor</p>
+            <div className="doc">
+              <h3>Dr Jane Wright </h3>
+              <p>Clinical Doctor</p>
+            </div>
             <button className="delete-button">Delete</button>
           </div>
           <div className="check-up">
             <img src={Doctor3} alt="Dr Tom Melendez" className="doctor-photo" />
-            <p>Dr Tom Melendez, Dentist</p>
+            <div className="doc">
+              <h3>Dr Tom Melendez </h3>
+              <p>Dentist</p>
+            </div>
             <button className="delete-button">Delete</button>
           </div>
           <div className="check-up">
             <img src={Doctor4} alt="Dr Riphat Jion" className="doctor-photo" />
-            <p>Dr Riphat Jion, Surgeon</p>
+            <div className="doc">
+              <h3>Dr Riphat Jion </h3>
+              <p>Surgeon</p>
+            </div>
             <button className="delete-button">Delete</button>
           </div>
   </div>
