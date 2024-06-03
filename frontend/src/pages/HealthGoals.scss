@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ropa+Sans:ital@0;1&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+$Rubik: 'Rubik', sans-serif;
+$Opensans : 'Open Sans', sans-serif;
 $jost: 'Jost', sans-serif;
 $ropa: 'Ropa Sans', sans-serif;
 $roboto: 'Roboto', sans-serif;
@@ -67,10 +71,6 @@ $special18: #4A69BD; /* Medium-dark blue */
 $special19: #566573; /* Medium-dark gray */
 $special20: #5D6D7E; /* Medium-dark blue-gray */
 
-
-
-
-
 $dark-pink: #ff1493;
 $deep-pink: #ff1493;
 $pale-violet-red: #db7093;
@@ -135,7 +135,7 @@ $dark-green: #006400;
     width: 450px;
     height: 150px;
     border-radius: 15px;
-    background-color: $light-blue;
+    background-color: $alice-blue;
     margin: 10px;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -179,6 +179,43 @@ $dark-green: #006400;
             display: flex;
             flex-direction: column;
             margin-top: 50px;
+            .prog{
+                display: flex;
+                flex-direction: row;
+                margin-top: 50px;
+                gap: 40px;
+                position: relative;
+                z-index: 23;
+                .det1{
+                    h2{
+                        color: #555;
+                        font-size: 15px;
+                        font-weight: bold;
+                        font-family:$Rubik ;
+                    }
+                    p{
+                        color: $special1;
+                        font-size: 27px;
+                        font-weight: bold;
+                        font-family:$Rubik ;
+
+                    }
+                }
+
+                .procon{
+                    background-color: #333;
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    padding: 10px;
+                    img{
+                        width: 40px;
+                        height: 40px;
+                       
+
+                    }
+                }
+            }
           
             .progress-row1 {
               display: flex;
@@ -297,17 +334,16 @@ $dark-green: #006400;
                 height: 30px;
                 background-color: #f3f3f3;
                 border-radius: 10px;
-                position: relative;
-                z-index: 1;
-                margin-top: 90px;
+                margin-top: 40px;
                 border-bottom-left-radius: 15px;
                 border-bottom-right-radius: 15px;
                 margin-left: -5px;
+               
           
                 .progress-bar-fill {
                   height: 100%;
                   width: 0%;
-                  background-color: #f7b731;
+                  background-color:$medium-spring-green;
                   border-radius: 10px;
                   transition: width 0.6s ease;
                   border-bottom-left-radius: 15px;
@@ -322,16 +358,120 @@ $dark-green: #006400;
               flex-direction: row;
               .weekly-progress-sleep{
                 @include weekly-card;
+                position: relative;
+                overflow: hidden;
+            
+                &:hover::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $medium-spring-green;
+                    animation: coverAnimation 0.5s forwards;
+                    border-radius: 15px;
+                    z-index: 0;
+                }
+                
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 0;
+                    background-color: $deep-sky-blue;
+                    border-radius: 15px;
+                    z-index: 0;
+                    transition: width 0.5s, height 0.5s; 
+                }
+                
+                &:hover::before {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                    height: 100%;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 0;
+                    background-color: $medium-spring-green;
+                    border-radius: 15px;
+                    z-index: 0;
+                    transition: width 0.5s, height 0.5s; 
+                }
+            }
+            
               }
               .weekly-progress-cycling{
                 @include weekly-card;
+                position: relative;
+                overflow: hidden;
+            
+                &:hover::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $medium-spring-green;
+                    animation: coverAnimation 0.5s forwards;
+                    border-radius: 15px;
+                    z-index: 0;
+                }
+                
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 0;
+                    background-color: $sky-blue;
+                    border-radius: 15px;
+                    z-index: 0;
+                    transition: width 0.5s, height 0.5s; 
+                }
+                
+                &:hover::before {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                    height: 100%;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 0;
+                    background-color: $light-slate-blue;
+                    border-radius: 15px;
+                    z-index: 0;
+                    transition: width 0.5s, height 0.5s; 
+                }
+            }
+            
               }
 
                 .progress-bar {
                     width: 468px;
-                    height: 30px;
+                    height: 20px;
                     background-color: #f3f3f3;
-                    margin-top: 90px;
+                    margin-top: 40px;
                     border-bottom-left-radius: 15px;
                     border-bottom-right-radius: 15px;
                     margin-left: -5px;
@@ -339,12 +479,13 @@ $dark-green: #006400;
                     .progress-bar-fill {
                     height: 100%;
                     width: 0%;
-                    background-color: #f7b731;
+                    background-color: $deep-sky-blue;
                     border-bottom-left-radius: 15px;
                     border-bottom-right-radius: 15px;
                     border-top-right-radius: 15px;
                     transition: width 0.6s ease;
-                    animation: progress-bar-fill 2s ease forwards; 
+                    animation: progress-bar-fill 2s ease forwards;
+                  
                     }
                 }
             }
@@ -358,7 +499,4 @@ $dark-green: #006400;
               width: 50%;
             }
           }
-          
-    }
-
-}
+    
