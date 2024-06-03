@@ -173,6 +173,19 @@ $dark-green: #006400;
     margin-left: 95px;
     height: 100vh;
     padding: 10px;
+    
+    .practice{
+        h2{
+            font-family: $Rubik;
+            font-size: 20px;
+            font-weight: bold;
+            color: #555;
+        }
+        p{
+            font-family: $Rubik;
+            font-size: 16px;
+            color: $special1;
+        }
     .exercise-visual {
         width: 950px;
         background-color: $azure;
@@ -185,6 +198,7 @@ $dark-green: #006400;
             height: 300px;
         }
     }
+}
     .goals{
         .progress {
             display: flex;

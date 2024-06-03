@@ -137,9 +137,14 @@ const HealthGoals = () => {
         </div>
     </div>
 </div>
+<div className="practice">
+<h2>Exercise Progress</h2>
+<p>Here is your weekly exercise progress. Keep it up!</p>
 <div className="exercise-visual">
                 <canvas ref={chartRef} width={700} height={400} />
             </div>
+            </div>
+            
 </div>
     </div>
     );
