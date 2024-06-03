@@ -172,6 +172,7 @@ $dark-green: #006400;
     margin-left: 95px;
     height: 100vh;
     border: 2px solid #f7b731;
+    padding: 10px;
     .goals{
         .progress {
             display: flex;
@@ -208,7 +209,7 @@ $dark-green: #006400;
                     background-color: $sky-blue;
                     border-radius: 15px;
                     z-index: 0;
-                    transition: width 0.5s, height 0.5s; // Add a transition for smoothness
+                    transition: width 0.5s, height 0.5s; 
                 }
             
                 &:hover::before {
