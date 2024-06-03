@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef,useState } from 'react';
 import Chart from 'chart.js/auto'; 
 import './HealthGoals.scss';
 import strong from '../images/icons/docs/icon-park-twotone--muscle.svg';
@@ -9,6 +9,11 @@ import cycle from '../images/icons/docs/bx--cycling.svg';
 const HealthGoals = () => {
     const chartRef = useRef(null);
     const chartInstanceRef = useRef(null); 
+    const [showOptions, setShowOptions] = useState(false);
+
+    const toggleOptions = () => {
+        setShowOptions(!showOptions);
+    };
 
     useEffect(() => {
         if (chartRef.current) {
@@ -144,6 +149,81 @@ const HealthGoals = () => {
                 <canvas ref={chartRef} width={700} height={400} />
             </div>
             </div>
+            <div className="plan-list">
+            <h2>Plan List</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur</p>
+            <nav>
+                <ul>
+                    <li>All</li>
+                    <li>Unfinished</li>
+                    <li>Finished</li>
+                    <li>4</li>
+                </ul>
+            </nav>
+            <div className="plan-item">
+                <div className="day">Mon</div>
+                <div>Routine Cardio Burn Workout</div>
+                <div>UNFINISHED</div>
+                <div>Running</div>
+                <div>5</div>
+                <div className="buttons">
+                    <button>Start Workout</button>
+                    <div className="options" onClick={toggleOptions}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"/>
+                            <path d="M12 5a7 7 0 0 1 7 7 7 7 0 0 1-7 7 7 7 0 0 1-7-7 7 7 0 0 1 7-7zm0-2a9 9 0 0 0-9 9 9 9 0 0 0 9 9 9 9 0 0 0 9-9 9 9 0 0 0-9-9zm0 2c5.522 0 10 4.477 10 10s-4.478 10-10 10-10-4.477-10-10 4.478-10 10-10zm1 3h-2v6h2V8z"/>
+                        </svg>
+                        {showOptions && (
+                            <div className="dropdown-menu">
+                                <button>Edit</button>
+                                <button>Delete</button>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </div>
+            <div className="plan-item">
+                <div className="day">Tue</div>
+                <div>Total Body Yoga Workout</div>
+                <div>On Progress</div>
+                <div>Yoga</div>
+                <div>3</div>
+                {/* Buttons and options go here */}
+            </div>
+            <div className="plan-item">
+                <div className="day">Sun</div>
+                <div>Routine Cardio Burn Workout</div>
+                <div>UNFINISHED</div>
+                <div>Cycling</div>
+                <div>28</div>
+                {/* Buttons and options go here */}
+            </div>
+            <div className="plan-item">
+                <div className="day">Fri</div>
+                <div>Weekly Routine Cycling</div>
+                <div>Finished34Km00:23:45</div>
+                <div>Cycling</div>
+                <div>21</div>
+                {/* Buttons and options go here */}
+            </div>
+            <div className="plan-item">
+                <div className="day">Tue</div>
+                <div>2020 Runner Event Workout</div>
+                <div>Finished34Km00:23:45</div>
+                <div>Running</div>
+                <div>18</div>
+                {/* Buttons and options go here */}
+            </div>
+            <div className="plan-item">
+                <div className="day">Sat</div>
+                <div>Daily Running Workout</div>
+                <div>Finished34Km00:23:45</div>
+                <div>Running</div>
+                <div>added below the practice</div>
+                {/* Buttons and options go here */}
+            </div>
+        </div>
+
             
 </div>
     </div>

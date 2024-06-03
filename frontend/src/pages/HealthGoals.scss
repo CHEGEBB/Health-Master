@@ -173,6 +173,79 @@ $dark-green: #006400;
     margin-left: 95px;
     height: 100vh;
     padding: 10px;
+    .plan-list {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+    
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    
+        p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+    
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+    
+            li {
+                margin-right: 20px;
+                font-weight: bold;
+                cursor: pointer;
+                font-size: 18px;
+                color: #777;
+    
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    
+        .plan-item {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+    
+            &:hover {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+    
+            .day {
+                font-weight: bold;
+                font-size: 18px;
+                margin-bottom: 10px;
+                color: #333;
+            }
+    
+            > div {
+                font-size: 16px;
+                color: #666;
+                margin-bottom: 5px;
+                line-height: 1.4;
+    
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+    
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
     
     .practice{
         h2{
