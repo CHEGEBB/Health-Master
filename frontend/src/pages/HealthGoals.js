@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Chart from 'chart.js/auto';
+import { Howl } from 'howler';
 import './HealthGoals.scss';
 
 const HealthGoals = () => {
-    // Sample data for the donut chart
+    const [stepCount, setStepCount] = useState('');
+    const [workoutChallenge, setWorkoutChallenge] = useState('');
+    const [waterCompleted, setWaterCompleted] = useState(false);
+    const [fruitCompleted, setFruitCompleted] = useState(false);
+
     const data = {
         labels: ['Completed', 'Remaining'],
         datasets: [{
@@ -13,7 +18,6 @@ const HealthGoals = () => {
         }]
     };
 
-    // Configuring options for the donut chart
     const options = {
         cutout: '90%',
         plugins: {
@@ -21,7 +25,6 @@ const HealthGoals = () => {
         }
     };
 
-    // Function to create donut chart
     const createDonutChart = (ctx) => {
         return new Chart(ctx, {
             type: 'doughnut',
@@ -30,17 +33,47 @@ const HealthGoals = () => {
         });
     };
 
-    // Function to animate progress bar
     const animateProgressBar = () => {
         const progressBar = document.querySelector('.progress-bar');
         progressBar.style.width = '70%'; // Update width to 70%
     };
 
-    // Trigger animation on component mount
+    const handleDailyChallengeCompletion = (challenge) => {
+        if (challenge === 'water') {
+            setWaterCompleted(true);
+            playSound('complete');
+        } else if (challenge === 'fruit') {
+            setFruitCompleted(true);
+            playSound('complete');
+        }
+    };
+
+    const handleChallengeInput = (e) => {
+        e.preventDefault();
+        if (stepCount.trim() !== '') {
+            playSound('success');
+            // Handle successful step count input
+        }
+        if (workoutChallenge.trim() !== '') {
+            playSound('success');
+            // Handle successful workout challenge input
+        }
+    };
+
+    const playSound = (sound) => {
+        const soundPath = sound === 'complete' ? 'complete.mp3' : 'success.mp3';
+        const soundEffect = new Howl({ src: [soundPath] });
+        soundEffect.play();
+    };
+
     React.useEffect(() => {
         animateProgressBar();
         const ctx = document.getElementById('donut-chart');
-        createDonutChart(ctx);
+        if (ctx) {
+            const existingChart = Chart.getChart(ctx);
+            if (existingChart) existingChart.destroy();
+            createDonutChart(ctx);
+        }
     }, []);
 
     return (
@@ -57,7 +90,25 @@ const HealthGoals = () => {
                 <h2>Exercise</h2>
                 <canvas id='donut-chart'></canvas>
             </div>
-            {/* Add more goals here */}
+            <div className='goal'>
+                <h2>Daily Water Intake</h2>
+                <input type='checkbox' id='water-intake' onChange={() => handleDailyChallengeCompletion('water')} checked={waterCompleted} />
+                <label htmlFor='water-intake'>Drink 8 glasses of water</label>
+            </div>
+            <div className='goal'>
+                <h2>Daily Fruit Consumption</h2>
+                <input type='checkbox' id='fruit-consumption' onChange={() => handleDailyChallengeCompletion('fruit')} checked={fruitCompleted} />
+                <label htmlFor='fruit-consumption'>Eat a fruit</label>
+            </div>
+            <div className='goal'>
+                <h2>Step Count</h2>
+                <input type='number' placeholder='Enter your step count' value={stepCount} onChange={(e) => setStepCount(e.target.value)} />
+            </div>
+            <div className='goal'>
+                <h2>Workout Challenge</h2>
+                <input type='text' placeholder='Enter your workout challenge' value={workoutChallenge} onChange={(e) => setWorkoutChallenge(e.target.value)} />
+            </div>
+            <button onClick={handleChallengeInput}>Submit</button>
         </div>
     );
 }
