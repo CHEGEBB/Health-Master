@@ -2,5 +2,10 @@
     text-align: center;
     width: 1000px;
     margin-left: 200px;
+    .goals{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
 
 }
