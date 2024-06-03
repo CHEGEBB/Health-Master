@@ -5,10 +5,74 @@ import { Howl } from 'howler';
 import './HealthGoals.scss';
 
 const HealthGoals = () => {
-    const [stepCount, setStepCount] = useState('');
-    const [workoutChallenge, setWorkoutChallenge] = useState('');
-    const [waterCompleted, setWaterCompleted] = useState(false);
-    const [fruitCompleted, setFruitCompleted] = useState(false);
+    const [activeGoal, setActiveGoal] = useState('exercise');
+    const [goalsData, setGoalsData] = useState({
+        exercise: {
+            progress: 70,
+            subGoals: ['Workout Types', 'Duration', 'Intensity'],
+            selectedSubGoal: 'Workout Types',
+            data: {
+                labels: ['Cardio', 'Strength Training', 'Flexibility'],
+                datasets: [{
+                    label: 'Workout Types',
+                    data: [30, 40, 30],
+                    backgroundColor: ['#4caf50', '#2196f3', '#ffc107'],
+                }],
+            },
+        },
+        nutrition: {
+            progress: 50,
+            subGoals: ['Fruits', 'Vegetables', 'Protein'],
+            selectedSubGoal: 'Fruits',
+            data: {
+                labels: ['Fruits', 'Vegetables', 'Protein'],
+                datasets: [{
+                    label: 'Nutrition',
+                    data: [50, 30, 20],
+                    backgroundColor: ['#4caf50', '#ff5722', '#ffc107'],
+                }],
+            },
+        },
+        sleep: {
+            progress: 80,
+            subGoals: ['Duration', 'Quality', 'Consistency'],
+            selectedSubGoal: 'Duration',
+            data: {
+                labels: ['Duration', 'Quality', 'Consistency'],
+                datasets: [{
+                    label: 'Sleep',
+                    data: [60, 20, 20],
+                    backgroundColor: ['#4caf50', '#9c27b0', '#ffc107'],
+                }],
+            },
+        },
+        drugUsage: {
+            progress: 20,
+            subGoals: ['Smoking', 'Alcohol'],
+            selectedSubGoal: 'Smoking',
+            data: {
+                labels: ['Smoking', 'Alcohol'],
+                datasets: [{
+                    label: 'Drug Usage',
+                    data: [20, 30],
+                    backgroundColor: ['#f44336', '#2196f3'],
+                }],
+            },
+        },
+        mentalHealth: {
+            progress: 90,
+            subGoals: ['Stress Management', 'Mindfulness', 'Hobbies'],
+            selectedSubGoal: 'Stress Management',
+            data: {
+                labels: ['Stress Management', 'Mindfulness', 'Hobbies'],
+                datasets: [{
+                    label: 'Mental Health',
+                    data: [40, 30, 20],
+                    backgroundColor: ['#4caf50', '#2196f3', '#ff5722'],
+                }],
+            },
+        },
+    });
 
     const playSound = (sound) => {
         const soundPath = sound === 'complete' ? 'complete.mp3' : 'success.mp3';
@@ -16,125 +80,93 @@ const HealthGoals = () => {
         soundEffect.play();
     };
 
-    const handleDailyChallengeCompletion = (goal, setGoal) => {
-        setGoal(true);
-        playSound('complete');
+    const handleGoalClick = (goal) => {
+        setActiveGoal(goal);
     };
 
-    const handleChallengeInput = (e) => {
-        e.preventDefault();
-        if (stepCount.trim() !== '') {
-            playSound('success');
-        }
-        if (workoutChallenge.trim() !== '') {
-            playSound('success');
-        }
-    };
-
-    const createDonutChart = (ctx, data, options) => {
-        return new Chart(ctx, {
-            type: 'doughnut',
-            data: data,
-            options: options
-        });
+    const handleSubGoalClick = (subGoal) => {
+        setGoalsData((prevData) => ({
+            ...prevData,
+            [activeGoal]: {
+                ...prevData[activeGoal],
+                selectedSubGoal: subGoal,
+            },
+        }));
     };
 
     useEffect(() => {
-        const createChart = (id, data, options) => {
-            const ctx = document.getElementById(id);
-            if (ctx) {
-                const existingChart = Chart.getChart(ctx);
-                if (existingChart) existingChart.destroy();
-                createDonutChart(ctx, data, options);
-            }
-        };
-
-        const data = {
-            labels: ['Completed', 'Remaining'],
-            datasets: [{
-                data: [70, 30],
-                backgroundColor: ['#4caf50', '#e0e0e0'],
-            }]
-        };
-
-        const options = {
-            cutout: '90%',
-            plugins: {
-                legend: { display: false }
-            }
-        };
-
-        createChart('weight-chart', data, options);
-        createChart('exercise-chart', data, options);
-        createChart('cycling-chart', data, options);
-        createChart('swimming-chart', data, options);
-        createChart('nutrition-chart', data, options);
-
-    }, []);
-
-    const goals = [
-        { id: 'weight-chart', title: 'Weight Management', subGoals: ['Drink a smoothie', 'Workout', 'Track calories', 'Weigh yourself', 'Eat healthy snacks'] },
-        { id: 'exercise-chart', title: 'Exercise', subGoals: ['Morning jog', 'Evening yoga', 'Strength training', 'Cycling', 'Swimming'] },
-        { id: 'cycling-chart', title: 'Cycling', subGoals: ['Ride 5 miles', 'Ride 10 miles', 'Ride 20 miles', 'Hill climbs', 'Track speed'] },
-        { id: 'swimming-chart', title: 'Swimming', subGoals: ['Swim 10 laps', 'Swim 20 laps', 'Swim 30 laps', 'Butterfly stroke', 'Freestyle stroke'] },
-        { id: 'nutrition-chart', title: 'Nutrition', subGoals: ['Eat a fruit', 'Drink 8 glasses of water', 'Avoid junk food', 'Eat vegetables', 'Take vitamins'] },
-    ];
+        const data = goalsData[activeGoal].data;
+        const ctx = document.getElementById(`${activeGoal}-chart`);
+        if (ctx) {
+            const existingChart = Chart.getChart(ctx);
+            if (existingChart) existingChart.destroy();
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: data,
+                options: {
+                    cutout: '70%',
+                    plugins: {
+                        legend: { display: true },
+                    },
+                },
+            });
+        }
+    }, [activeGoal, goalsData]);
 
     return (
-        <div className='health-goals'>
+        <div className="health-goals">
             <h1>Health Goals</h1>
+            <div className="goal-progress">
+                {Object.keys(goalsData).map((goal) => (
+                    <div
+                        key={goal}
+                        className={`progress-item ${goal === activeGoal ? 'active' : ''}`}
+                        onClick={() => handleGoalClick(goal)}
+                    >
+                        <motion.div
+                            className="progress-circle"
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            <svg className="progress-svg" viewBox="0 0 100 100">
+                                <circle
+                                    className="progress-circle-bg"
+                                    cx="50"
+                                    cy="50"
+                                    r="45"
+                                />
+                                <circle
+                                    className="progress-circle-fill"
+                                    cx="50"
+                                    cy="50"
+                                    r="45"
+                                    strokeDasharray={`${goalsData[goal].progress}, 100`}
+                                />
+                            </svg>
+                            <span className="progress-label">{goal}</span>
+                        </motion.div>
+                    </div>
+                ))}
+            </div>
 
-            {goals.map((goal) => (
-                <div key={goal.id} className='goal'>
-                    <h2>{goal.title}</h2>
-                    <div className='details'>
-                        {goal.subGoals.map((subGoal, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: -20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5 }}
-                            >
-                                <input type='checkbox' id={`${goal.id}-${index}`} onChange={() => handleDailyChallengeCompletion(subGoal)} />
-                                <label htmlFor={`${goal.id}-${index}`}>{subGoal}</label>
-                            </motion.div>
-                        ))}
-                    </div>
-                    <div className='visuals'>
-                        <canvas id={goal.id}></canvas>
-                    </div>
+            <div className="goal-details">
+                <h2>{activeGoal}</h2>
+                <div className="sub-goals">
+                    {goalsData[activeGoal].subGoals.map((subGoal) => (
+                        <div
+                            key={subGoal}
+                            className={`sub-goal ${subGoal === goalsData[activeGoal].selectedSubGoal ? 'active' : ''}`}
+                            onClick={() => handleSubGoalClick(subGoal)}
+                        >
+                            {subGoal}
+                        </div>
+                    ))}
                 </div>
-            ))}
-
-            <div className='goal'>
-                <h2>Step Count</h2>
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <input type='number' placeholder='Enter your step count' value={stepCount} onChange={(e) => setStepCount(e.target.value)} />
-                </motion.div>
+                <canvas id={`${activeGoal}-chart`} className="chart"></canvas>
             </div>
-            <div className='goal'>
-                <h2>Workout Challenge</h2>
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <input type='text' placeholder='Enter your workout challenge' value={workoutChallenge} onChange={(e) => setWorkoutChallenge(e.target.value)} />
-                </motion.div>
-            </div>
-            <motion.button 
-                onClick={handleChallengeInput}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-            >
-                Submit
-            </motion.button>
         </div>
     );
-}
+};
 
 export default HealthGoals;
