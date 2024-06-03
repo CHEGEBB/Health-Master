@@ -203,6 +203,10 @@ $dark-green: #006400;
         .nutritional-goals {
            display:flex ;
            flex-direction: column;
+           .food-vis{
+            display: flex;
+            flex-direction: row;
+           }
         
             .food-item {
                 border: 1px solid #ddd;
@@ -222,6 +226,8 @@ $dark-green: #006400;
         
                 .food-info {
                     padding: 20px;
+                    display: flex;
+                    flex-direction: column;
         
                     h2 {
                         font-size: 1.2rem;

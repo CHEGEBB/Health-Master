@@ -20,6 +20,11 @@ const HealthGoals = () => {
     const chartRef = useRef(null);
     const chartInstanceRef = useRef(null);
     const [showOptions, setShowOptions] = useState(null);
+    const [calories, setCalories] = useState('');
+    const [protein, setProtein] = useState('');
+    const [carbs, setCarbs] = useState('');
+    const [fats, setFats] = useState('');
+
 
     const toggleOptions = (index) => {
         setShowOptions(showOptions === index ? null : index);
@@ -171,7 +176,16 @@ const HealthGoals = () => {
             ],
         },
     };
-
+    const handleGoalSetting = (e) => {
+        e.preventDefault();
+        // Implement logic for handling goal setting here
+        // For now, let's just log the entered values
+        console.log('Setting goals...');
+        console.log('Calories:', calories);
+        console.log('Protein:', protein);
+        console.log('Carbs:', carbs);
+        console.log('Fats:', fats);
+    };
     return (
         <div className="health-goals">
             <div className="goals">
@@ -245,12 +259,57 @@ const HealthGoals = () => {
                         </div>
                     </div>
                 </div>
-                <div className="nutritional-goals">
+                <div className="food-vis">
                 <div className="goal-setting">
                 <h2>Nutritional Goals</h2>
-                {/* Input fields or buttons for goal setting */}
+                <form onSubmit={handleGoalSetting}>
+                    <div className="form-group">
+                        <label htmlFor="calories">Calories:</label>
+                        <input
+                            type="number"
+                            id="calories"
+                            name="calories"
+                            value={calories}
+                            onChange={(e) => setCalories(e.target.value)}
+                            placeholder="Enter daily calorie goal"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="protein">Protein (g):</label>
+                        <input
+                            type="number"
+                            id="protein"
+                            name="protein"
+                            value={protein}
+                            onChange={(e) => setProtein(e.target.value)}
+                            placeholder="Enter daily protein goal"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="carbs">Carbohydrates (g):</label>
+                        <input
+                            type="number"
+                            id="carbs"
+                            name="carbs"
+                            value={carbs}
+                            onChange={(e) => setCarbs(e.target.value)}
+                            placeholder="Enter daily carbohydrate goal"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="fats">Fats (g):</label>
+                        <input
+                            type="number"
+                            id="fats"
+                            name="fats"
+                            value={fats}
+                            onChange={(e) => setFats(e.target.value)}
+                            placeholder="Enter daily fat goal"
+                        />
+                    </div>
+                    <button type="submit">Set Goals</button>
+                </form>
             </div>
-
             <div className="radial-chart">
                 <h2>Radial Chart</h2>
                 <Chart2
@@ -265,6 +324,7 @@ const HealthGoals = () => {
                 <h2>Pie Chart</h2>
                 <Chart2 options={pieChartData.options} series={pieChartData.series} type="pie" width={380} />
             </div>
+            </div>
             <div className="foods">
     <div className="food-item">
         <div className="food-image">
@@ -276,11 +336,11 @@ const HealthGoals = () => {
                 Papaya is rich in vitamin C, which boosts immunity and aids digestion. It also contains papain, an enzyme that helps break down proteins.
             </p>
             <div className="expert-info">
-                <p>Andrew Sceenshaver</p>
-                <p>4-6 mins</p>
-                <p>6 Ingredients</p>
-                <p>568 Reviews</p>
+                <p> Dr Andrew Sceenshaver</p>
             </div>
+        </div>
+        <div className="buttons">
+            <button>Delete</button>
         </div>
     </div>
 
@@ -294,11 +354,11 @@ const HealthGoals = () => {
                 Spinach is packed with iron, essential for healthy red blood cells. It also contains vitamins A and K, folate, and antioxidants.
             </p>
             <div className="expert-info">
-                <p>Sarah Smith</p>
-                <p>3-5 mins</p>
-                <p>5 Ingredients</p>
-                <p>482 Reviews</p>
+                <p>Dr Sarah Smith</p>
             </div>
+        </div>
+        <div className="buttons">
+            <button>Delete</button>
         </div>
     </div>
     <div className="food-item">
@@ -311,12 +371,12 @@ const HealthGoals = () => {
                         Broccoli is high in fiber, vitamin K, and antioxidants. It supports digestion, bone health, and may reduce the risk of chronic diseases.
                     </p>
                     <div className="expert-info">
-                        <p>John Doe</p>
-                        <p>4-5 mins</p>
-                        <p>4 Ingredients</p>
-                        <p>321 Reviews</p>
+                        <p>Nutritionist John Williams</p>
                     </div>
                 </div>
+                <div className="buttons">
+            <button>Delete</button>
+        </div>
             </div>
 
             {/* Food item 4 */}
@@ -330,12 +390,12 @@ const HealthGoals = () => {
                         Blueberries are rich in antioxidants, which help protect cells from damage and reduce inflammation. They also support brain health and may improve memory.
                     </p>
                     <div className="expert-info">
-                        <p>Jane Doe</p>
-                        <p>2-3 mins</p>
-                        <p>3 Ingredients</p>
-                        <p>456 Reviews</p>
+                        <p>Nutritionist Jane Smith</p>
                     </div>
                 </div>
+                <div className="buttons">
+            <button>Delete</button>
+        </div>
             </div>
 
             {/* Food item 5 */}
@@ -349,12 +409,12 @@ const HealthGoals = () => {
                         Salmon is a rich source of omega-3 fatty acids, which are beneficial for heart health, brain function, and reducing inflammation. It also provides high-quality protein and essential nutrients.
                     </p>
                     <div className="expert-info">
-                        <p>Michael Johnson</p>
-                        <p>5-7 mins</p>
-                        <p>7 Ingredients</p>
-                        <p>789 Reviews</p>
+                        <p>Dr Michael Johnson</p>
                     </div>
                 </div>
+                <div className="buttons">
+            <button>Delete</button>
+        </div>
             </div>
 
             {/* Food item 6 */}
@@ -368,12 +428,12 @@ const HealthGoals = () => {
                         Quinoa is a complete protein source and high in fiber, making it a nutritious grain alternative. It also contains vitamins, minerals, and antioxidants.
                     </p>
                     <div className="expert-info">
-                        <p>Amy Smith</p>
-                        <p>4-6 mins</p>
-                        <p>5 Ingredients</p>
-                        <p>654 Reviews</p>
+                        <p>Nutritionist Amy Smith</p>
                     </div>
                 </div>
+                <div className="buttons">
+            <button>Delete</button>
+        </div>
             </div>
 
             {/* Food item 7 */}
@@ -387,12 +447,12 @@ const HealthGoals = () => {
                         Avocado is rich in healthy fats, including monounsaturated fats and omega-3 fatty acids. It also provides fiber, vitamins, and minerals, promoting heart health and satiety.
                     </p>
                     <div className="expert-info">
-                        <p>Emily Johnson</p>
-                        <p>3-4 mins</p>
-                        <p>3 Ingredients</p>
-                        <p>567 Reviews</p>
+                        <p>Food expert Emily Johnson</p>
                     </div>
                 </div>
+                <div className="buttons">
+            <button>Delete</button>
+        </div>
             </div>
 
             {/* Food item 8 */}
@@ -406,13 +466,13 @@ const HealthGoals = () => {
                         Greek yogurt is a good source of probiotics, which support gut health and immunity. It also provides high-quality protein, calcium, and vitamins.
                     </p>
                     <div className="expert-info">
-                        <p>David Brown</p>
-                        <p>2-3 mins</p>
-                        <p>2 Ingredients</p>
-                        <p>890 Reviews</p>
+                        <p>Food Expert David Brown</p>
                     </div>
                 </div>
             </div>
+            <div className="buttons">
+            <button>Delete</button>
+        </div>
             </div>
 </div>
 
@@ -459,7 +519,7 @@ const HealthGoals = () => {
                     ))}
                 </div>
             </div>
-        </div>
+        // </div>
     );
 };
 
