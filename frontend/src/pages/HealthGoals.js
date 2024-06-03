@@ -5,15 +5,16 @@ const HealthGoals = () => {
     return(
     <div className="health-goals">
 <div className="goals">
-    <div className="goals-row1">
-        <div className="steps">
-            <div className="stepcon"></div>
-            <div className="heading">
-                <h1>Steps</h1>
+<div className="progress">
+    <div className="progress-row1">
+        <div className="weekly-progress">
+            <h2>Weekly Progress</h2>
+            <div className="progress-bar">
+                <div className="progress-bar-fill"></div>
             </div>
-            {/* progress donught animated */}
         </div>
     </div>
+</div>
 </div>
     </div>
     );
