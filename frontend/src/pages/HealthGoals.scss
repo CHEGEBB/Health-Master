@@ -1,15 +1,19 @@
 .health-goals {
-    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
 }
 
 .goal {
     margin-bottom: 20px;
 }
 
-.progress {
+.progress-container {
     position: relative;
     height: 20px;
-    background-color: #f0f0f0;
+    background-color: #e0e0e0;
     border-radius: 10px;
 }
 
@@ -18,15 +22,28 @@
     top: 0;
     left: 0;
     height: 100%;
-    border-radius: 10px;
     background-color: #4caf50; /* Green color for progress */
+    border-radius: 10px;
     transition: width 1s ease-in-out; /* Animation for width change */
 }
 
-.progress span {
+.progress-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: #fff;
+    font-weight: bold;
+}
+
+// Additional styling for the donut chart
+.goal canvas {
+    width: 100%;
+    max-width: 200px; // Adjust as needed
+    height: auto;
+    margin-top: 10px;
+    border-radius: 50%;
+    display: block;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
