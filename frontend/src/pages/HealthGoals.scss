@@ -206,6 +206,11 @@ $dark-green: #006400;
            .food-vis{
             display: flex;
             flex-direction: row;
+            gap: 50px;
+            background-color: $alice-blue;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 10px;
            }
         
             .food-item {

@@ -122,10 +122,11 @@ const HealthGoals = () => {
             legend: {
                 show: true,
                 floating: true,
-                fontSize: '16px',
+                fontSize: '12px',
+                marginLeft:'50px',
                 position: 'left',
-                offsetX: 160,
-                offsetY: 15,
+                offsetX: 240,
+                offsetY: 70,
                 labels: {
                     useSeriesColors: true,
                 },
@@ -151,35 +152,8 @@ const HealthGoals = () => {
             ],
         },
     };
-
-    // Sample data for pie chart
-    const pieChartData = {
-        series: [44, 55, 13, 33],
-        options: {
-            chart: {
-                width: 380,
-                type: 'pie',
-            },
-            labels: ['Vitamin C', 'Iron', 'Fiber', 'Protein'],
-            responsive: [
-                {
-                    breakpoint: 480,
-                    options: {
-                        chart: {
-                            width: 200,
-                        },
-                        legend: {
-                            position: 'bottom',
-                        },
-                    },
-                },
-            ],
-        },
-    };
     const handleGoalSetting = (e) => {
         e.preventDefault();
-        // Implement logic for handling goal setting here
-        // For now, let's just log the entered values
         console.log('Setting goals...');
         console.log('Calories:', calories);
         console.log('Protein:', protein);
@@ -319,11 +293,6 @@ const HealthGoals = () => {
                     type="radialBar"
                     height={350}
                 />
-            </div>
-
-            <div className="pie-chart">
-                <h2>Pie Chart</h2>
-                <Chart2 options={pieChartData.options} series={pieChartData.series} type="pie" width={380} />
             </div>
             </div>
             <div className="foods">
