@@ -94,7 +94,7 @@ const HealthGoals = () => {
                             </div>
                             <div className="progress-bar">
                                 <div className="progress-bar-fill">
-                                    <div className="progress-bar-fill-text">50%</div>
+                                    <div className="progress-bar-fill">50%</div>
                                 </div>
                             </div>
                         </div>
