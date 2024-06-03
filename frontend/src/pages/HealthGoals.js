@@ -265,6 +265,7 @@ const HealthGoals = () => {
                 <h2>Pie Chart</h2>
                 <Chart2 options={pieChartData.options} series={pieChartData.series} type="pie" width={380} />
             </div>
+            <div className="foods">
     <div className="food-item">
         <div className="food-image">
             <img src={papayaImage} alt="Papaya Fruit" />
@@ -411,6 +412,7 @@ const HealthGoals = () => {
                         <p>890 Reviews</p>
                     </div>
                 </div>
+            </div>
             </div>
 </div>
 
