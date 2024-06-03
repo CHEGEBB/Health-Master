@@ -23,14 +23,14 @@ const HealthGoals = () => {
                     datasets: [
                         {
                             label: 'Walking Progress',
-                            data: [32, 26, 35, 55, 36, 43], 
-                            borderColor: 'red', 
+                            data: [32, 26, 35, 49, 36, 43], 
+                            borderColor: '#ff1493', 
                             fill: false,
                         },
                         {
                             label: 'Running Progress',
                             data: [24, 44, 47, 29, 23, 49], 
-                            borderColor: 'blue', 
+                            borderColor: '#7b68ee', 
                             fill: false,
                         },
                         {
@@ -52,6 +52,7 @@ const HealthGoals = () => {
                         },
                         y: {
                             grid: {
+                                display: false,
                                 color: '#ddd',
                             },
                         },
@@ -137,7 +138,7 @@ const HealthGoals = () => {
     </div>
 </div>
 <div className="exercise-visual">
-                <canvas ref={chartRef} width={900} height={400} />
+                <canvas ref={chartRef} width={700} height={400} />
             </div>
 </div>
     </div>
