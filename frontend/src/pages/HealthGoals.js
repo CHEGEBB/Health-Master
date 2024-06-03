@@ -10,7 +10,9 @@ const HealthGoals = () => {
         <div className="weekly-progress-workout">
             <h2>Weekly Progress</h2>
             <div className="progress-bar">
-                <div className="progress-bar-fill"></div>
+                <div className="progress-bar-fill">
+                    <div className="progress-bar-fill-text">50%</div>
+                </div>
             </div>
         </div>
         <div className="weekly-progress-run">
