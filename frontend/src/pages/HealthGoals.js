@@ -233,6 +233,49 @@ const HealthGoals = () => {
                         </div>
                     </div>
                 </div>
+                
+                <div className="practice">
+                    <h2>Exercise Progress</h2>
+                    <p>Here is your weekly exercise progress. Keep it up!</p>
+                    <div className="exercise-visual">
+                        <canvas ref={chartRef} width={700} height={400} />
+                    </div>
+                </div>
+                <div className="plan-list">
+                    <h2>Plan List</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur</p>
+                    <nav>
+                        <ul>
+                            <li>All</li>
+                            <li>Unfinished</li>
+                            <li>Finished</li>
+                            <li>4</li>
+                        </ul>
+                    </nav>
+                    {plans.map((plan, index) => (
+                        <div key={index} className="plan-item">
+                            <div className="day">{plan.day}</div>
+                            <div className="plan-details">
+                                <div className="plan-title">{plan.title}</div>
+                                <div className="plan-status">{plan.status}</div>
+                                <div className="plan-type">{plan.type}</div>
+                                <div className="plan-value">{plan.value}</div>
+                                <div className="plan-actions">
+                                    <button className="start-workout">Start Workout</button>
+                                    <div className="options" onClick={() => toggleOptions(index)}>
+                                        <img src={verticalDotsIcon} alt="Options" />
+                                        {showOptions === index && (
+                                            <div className="dropdown-menu">
+                                                <button>Edit</button>
+                                                <button>Delete</button>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
                 <div className="nutritional-goals">
                 <div className="food-vis">
                 <div className="goal-setting">
@@ -446,48 +489,6 @@ const HealthGoals = () => {
             </div>
 </div>
 
-                <div className="practice">
-                    <h2>Exercise Progress</h2>
-                    <p>Here is your weekly exercise progress. Keep it up!</p>
-                    <div className="exercise-visual">
-                        <canvas ref={chartRef} width={700} height={400} />
-                    </div>
-                </div>
-                <div className="plan-list">
-                    <h2>Plan List</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur</p>
-                    <nav>
-                        <ul>
-                            <li>All</li>
-                            <li>Unfinished</li>
-                            <li>Finished</li>
-                            <li>4</li>
-                        </ul>
-                    </nav>
-                    {plans.map((plan, index) => (
-                        <div key={index} className="plan-item">
-                            <div className="day">{plan.day}</div>
-                            <div className="plan-details">
-                                <div className="plan-title">{plan.title}</div>
-                                <div className="plan-status">{plan.status}</div>
-                                <div className="plan-type">{plan.type}</div>
-                                <div className="plan-value">{plan.value}</div>
-                                <div className="plan-actions">
-                                    <button className="start-workout">Start Workout</button>
-                                    <div className="options" onClick={() => toggleOptions(index)}>
-                                        <img src={verticalDotsIcon} alt="Options" />
-                                        {showOptions === index && (
-                                            <div className="dropdown-menu">
-                                                <button>Edit</button>
-                                                <button>Delete</button>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
             </div>
          </div>
     );
