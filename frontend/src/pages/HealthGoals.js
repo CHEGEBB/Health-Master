@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Chart from 'chart.js/auto';
+import Chart2 from 'react-apexcharts';
 import './HealthGoals.scss';
 import strong from '../images/icons/docs/icon-park-twotone--muscle.svg';
 import run from '../images/icons/docs/ic--sharp-directions-run.svg';
@@ -84,6 +85,92 @@ const HealthGoals = () => {
         { day: 'Tue', title: '2020 Runner Event Workout', status: 'FINISHED', type: 'Running', value: 24 },
         { day: 'Sat', title: 'Daily Running Workout', status: 'FINISHED:20KM', type: 'Running', value: 20 }
     ];
+    const radialChartData = {
+        series: [44, 55, 67, 83],
+        options: {
+            chart: {
+                height: 350,
+                type: 'radialBar',
+            },
+            plotOptions: {
+                radialBar: {
+                    offsetY: 0,
+                    startAngle: 0,
+                    endAngle: 270,
+                    hollow: {
+                        margin: 5,
+                        size: '30%',
+                        background: 'transparent',
+                    },
+                    dataLabels: {
+                        name: {
+                            show: false,
+                        },
+                        value: {
+                            show: true,
+                        },
+                    },
+                },
+            },
+            colors: ['#1ab7ea', '#0084ff', '#39539E', '#0077B5'],
+            labels: ['Vitamin C', 'Iron', 'Fiber', 'Protein'],
+            legend: {
+                show: true,
+                floating: true,
+                fontSize: '16px',
+                position: 'left',
+                offsetX: 160,
+                offsetY: 15,
+                labels: {
+                    useSeriesColors: true,
+                },
+                markers: {
+                    size: 0,
+                },
+                formatter: function (seriesName, opts) {
+                    return seriesName + ':  ' + opts.w.globals.series[opts.seriesIndex];
+                },
+                itemMargin: {
+                    horizontal: 1,
+                },
+            },
+            responsive: [
+                {
+                    breakpoint: 480,
+                    options: {
+                        legend: {
+                            show: false,
+                        },
+                    },
+                },
+            ],
+        },
+    };
+
+    // Sample data for pie chart
+    const pieChartData = {
+        series: [44, 55, 13, 33],
+        options: {
+            chart: {
+                width: 380,
+                type: 'pie',
+            },
+            labels: ['Vitamin C', 'Iron', 'Fiber', 'Protein'],
+            responsive: [
+                {
+                    breakpoint: 480,
+                    options: {
+                        chart: {
+                            width: 200,
+                        },
+                        legend: {
+                            position: 'bottom',
+                        },
+                    },
+                },
+            ],
+        },
+    };
 
     return (
         <div className="health-goals">
@@ -159,6 +246,25 @@ const HealthGoals = () => {
                     </div>
                 </div>
                 <div className="nutritional-goals">
+                <div className="goal-setting">
+                <h2>Nutritional Goals</h2>
+                {/* Input fields or buttons for goal setting */}
+            </div>
+
+            <div className="radial-chart">
+                <h2>Radial Chart</h2>
+                <Chart2
+                    options={radialChartData.options}
+                    series={radialChartData.series}
+                    type="radialBar"
+                    height={350}
+                />
+            </div>
+
+            <div className="pie-chart">
+                <h2>Pie Chart</h2>
+                <Chart2 options={pieChartData.options} series={pieChartData.series} type="pie" width={380} />
+            </div>
     <div className="food-item">
         <div className="food-image">
             <img src={papayaImage} alt="Papaya Fruit" />
