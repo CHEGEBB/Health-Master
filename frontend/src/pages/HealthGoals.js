@@ -70,11 +70,11 @@ const HealthGoals = () => {
 
     const plans = [
         { day: 'Mon', title: 'Routine Cardio Burn Workout', status: 'UNFINISHED', type: 'Running', value: 5 },
-        { day: 'Tue', title: 'Total Body Yoga Workout', status: 'On Progress', type: 'Yoga', value: 3 },
+        { day: 'Tue', title: 'Total Body Yoga Workout', status: 'IN PROGRESS', type: 'Yoga', value: 3 },
         { day: 'Sun', title: 'Routine Cardio Burn Workout', status: 'UNFINISHED', type: 'Cycling', value: 28 },
-        { day: 'Fri', title: 'Weekly Routine Cycling', status: 'Finished34Km00:23:45', type: 'Cycling', value: 21 },
-        { day: 'Tue', title: '2020 Runner Event Workout', status: 'Finished34Km00:23:45', type: 'Running', value: 18 },
-        { day: 'Sat', title: 'Daily Running Workout', status: 'Finished34Km00:23:45', type: 'Running', value: 'added below the practice' }
+        { day: 'Fri', title: 'Weekly Routine Cycling', status: 'FINISHED', type: 'Cycling', value: 34},
+        { day: 'Tue', title: '2020 Runner Event Workout', status: 'FINISHED', type: 'Running', value: 24 },
+        { day: 'Sat', title: 'Daily Running Workout', status: 'FINISHED:20KM', type: 'Running', value: 20 }
     ];
 
     return (
