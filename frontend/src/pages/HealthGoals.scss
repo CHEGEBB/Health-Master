@@ -172,8 +172,19 @@ $dark-green: #006400;
     width: 1000px;
     margin-left: 95px;
     height: 100vh;
-    border: 2px solid #f7b731;
     padding: 10px;
+    .exercise-visual {
+        width: 950px;
+        background-color: $azure;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin-top: 30px;
+        margin-left: 10px;
+        canvas {
+            width: 100%; 
+            height: 300px;
+        }
+    }
     .goals{
         .progress {
             display: flex;
