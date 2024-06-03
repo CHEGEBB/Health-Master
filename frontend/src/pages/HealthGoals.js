@@ -16,14 +16,9 @@ const HealthGoals = () => {
         soundEffect.play();
     };
 
-    const handleDailyChallengeCompletion = (challenge) => {
-        if (challenge === 'water') {
-            setWaterCompleted(true);
-            playSound('complete');
-        } else if (challenge === 'fruit') {
-            setFruitCompleted(true);
-            playSound('complete');
-        }
+    const handleDailyChallengeCompletion = (goal, setGoal) => {
+        setGoal(true);
+        playSound('complete');
     };
 
     const handleChallengeInput = (e) => {
@@ -69,6 +64,7 @@ const HealthGoals = () => {
             }
         };
 
+        createChart('weight-chart', data, options);
         createChart('exercise-chart', data, options);
         createChart('cycling-chart', data, options);
         createChart('swimming-chart', data, options);
@@ -77,52 +73,39 @@ const HealthGoals = () => {
     }, []);
 
     const goals = [
-        { id: 'exercise-chart', title: 'Exercise' },
-        { id: 'cycling-chart', title: 'Cycling' },
-        { id: 'swimming-chart', title: 'Swimming' },
-        { id: 'nutrition-chart', title: 'Nutrition' },
+        { id: 'weight-chart', title: 'Weight Management', subGoals: ['Drink a smoothie', 'Workout', 'Track calories', 'Weigh yourself', 'Eat healthy snacks'] },
+        { id: 'exercise-chart', title: 'Exercise', subGoals: ['Morning jog', 'Evening yoga', 'Strength training', 'Cycling', 'Swimming'] },
+        { id: 'cycling-chart', title: 'Cycling', subGoals: ['Ride 5 miles', 'Ride 10 miles', 'Ride 20 miles', 'Hill climbs', 'Track speed'] },
+        { id: 'swimming-chart', title: 'Swimming', subGoals: ['Swim 10 laps', 'Swim 20 laps', 'Swim 30 laps', 'Butterfly stroke', 'Freestyle stroke'] },
+        { id: 'nutrition-chart', title: 'Nutrition', subGoals: ['Eat a fruit', 'Drink 8 glasses of water', 'Avoid junk food', 'Eat vegetables', 'Take vitamins'] },
     ];
 
     return (
         <div className='health-goals'>
             <h1>Health Goals</h1>
-            <div className='goal'>
-                <h2>Weight Management</h2>
-                <div className='progress-container'>
-                    <motion.div className='progress-bar' initial={{ width: 0 }} animate={{ width: '70%' }}></motion.div>
-                    <span className='progress-text'>70%</span>
-                </div>
-            </div>
 
             {goals.map((goal) => (
                 <div key={goal.id} className='goal'>
                     <h2>{goal.title}</h2>
-                    <canvas id={goal.id}></canvas>
+                    <div className='details'>
+                        {goal.subGoals.map((subGoal, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                <input type='checkbox' id={`${goal.id}-${index}`} onChange={() => handleDailyChallengeCompletion(subGoal)} />
+                                <label htmlFor={`${goal.id}-${index}`}>{subGoal}</label>
+                            </motion.div>
+                        ))}
+                    </div>
+                    <div className='visuals'>
+                        <canvas id={goal.id}></canvas>
+                    </div>
                 </div>
             ))}
 
-            <div className='goal'>
-                <h2>Daily Water Intake</h2>
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <input type='checkbox' id='water-intake' onChange={() => handleDailyChallengeCompletion('water')} checked={waterCompleted} />
-                    <label htmlFor='water-intake'>Drink 8 glasses of water</label>
-                </motion.div>
-            </div>
-            <div className='goal'>
-                <h2>Daily Fruit Consumption</h2>
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <input type='checkbox' id='fruit-consumption' onChange={() => handleDailyChallengeCompletion('fruit')} checked={fruitCompleted} />
-                    <label htmlFor='fruit-consumption'>Eat a fruit</label>
-                </motion.div>
-            </div>
             <div className='goal'>
                 <h2>Step Count</h2>
                 <motion.div
