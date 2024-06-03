@@ -14,13 +14,15 @@
         border-bottom: 2px solid #ccc;
         overflow-x: hidden;
         gap: 20px;
-
+        width: 1000px;
         .progress-item {
             flex: 0 0 auto;
             padding: 10px;
             cursor: pointer;
             transition: background-color 0.3s;
             width: 300px;
+            height: 150px;
+            border-radius: 8px;
             &:hover {
                 background-color: rgba(0, 0, 0, 0.1);
             }
@@ -38,8 +40,8 @@
 
             .progress-circle {
                 position: relative;
-                width: 60px;
-                height: 60px;
+                width: 80px;
+                height: 80px;
                 margin: 0 auto;
 
                 svg {
