@@ -259,6 +259,7 @@ const HealthGoals = () => {
                         </div>
                     </div>
                 </div>
+                <div className="nutritional-goals">
                 <div className="food-vis">
                 <div className="goal-setting">
                 <h2>Nutritional Goals</h2>
@@ -519,7 +520,7 @@ const HealthGoals = () => {
                     ))}
                 </div>
             </div>
-        // </div>
+         </div>
     );
 };
 
