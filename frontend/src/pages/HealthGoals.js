@@ -8,7 +8,9 @@ const HealthGoals = () => {
     const [activeGoal, setActiveGoal] = useState('exercise');
     const [goalsData, setGoalsData] = useState({
         exercise: {
-            progress: 70,
+            progress: 4,
+            total: 10,
+            color: '#4caf50',
             subGoals: ['Workout Types', 'Duration', 'Intensity'],
             selectedSubGoal: 'Workout Types',
             data: {
@@ -21,7 +23,9 @@ const HealthGoals = () => {
             },
         },
         nutrition: {
-            progress: 50,
+            progress: 3,
+            total: 10,
+            color: '#ff5722',
             subGoals: ['Fruits', 'Vegetables', 'Protein'],
             selectedSubGoal: 'Fruits',
             data: {
@@ -34,7 +38,9 @@ const HealthGoals = () => {
             },
         },
         sleep: {
-            progress: 80,
+            progress: 2,
+            total: 10,
+            color: '#9c27b0',
             subGoals: ['Duration', 'Quality', 'Consistency'],
             selectedSubGoal: 'Duration',
             data: {
@@ -47,7 +53,9 @@ const HealthGoals = () => {
             },
         },
         drugUsage: {
-            progress: 20,
+            progress: 1,
+            total: 10,
+            color: '#f44336',
             subGoals: ['Smoking', 'Alcohol'],
             selectedSubGoal: 'Smoking',
             data: {
@@ -60,7 +68,9 @@ const HealthGoals = () => {
             },
         },
         mentalHealth: {
-            progress: 90,
+            progress: 5,
+            total: 10,
+            color: '#2196f3',
             subGoals: ['Stress Management', 'Mindfulness', 'Hobbies'],
             selectedSubGoal: 'Stress Management',
             data: {
@@ -118,35 +128,15 @@ const HealthGoals = () => {
             <h1>Health Goals</h1>
             <div className="goal-progress">
                 {Object.keys(goalsData).map((goal) => (
-                    <div
+                    <motion.div
                         key={goal}
                         className={`progress-item ${goal === activeGoal ? 'active' : ''}`}
                         onClick={() => handleGoalClick(goal)}
+                        style={{ backgroundColor: goalsData[goal].color }}
                     >
-                        <motion.div
-                            className="progress-circle"
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            transition={{ delay: 0.2 }}
-                        >
-                            <svg className="progress-svg" viewBox="0 0 100 100">
-                                <circle
-                                    className="progress-circle-bg"
-                                    cx="50"
-                                    cy="50"
-                                    r="45"
-                                />
-                                <circle
-                                    className="progress-circle-fill"
-                                    cx="50"
-                                    cy="50"
-                                    r="45"
-                                    strokeDasharray={`${goalsData[goal].progress}, 100`}
-                                />
-                            </svg>
-                            <span className="progress-label">{goal}</span>
-                        </motion.div>
-                    </div>
+                        <span className="progress-label">{goal}</span>
+                        <span className="progress-bar">{goalsData[goal].progress}/{goalsData[goal].total}</span>
+                    </motion.div>
                 ))}
             </div>
 
@@ -164,6 +154,12 @@ const HealthGoals = () => {
                     ))}
                 </div>
                 <canvas id={`${activeGoal}-chart`} className="chart"></canvas>
+            </div>
+
+            {/* Side Arrows for Navigation */}
+            <div className="side-arrows">
+                <div className="arrow left"></div>
+                <div className="arrow right"></div>
             </div>
         </div>
     );

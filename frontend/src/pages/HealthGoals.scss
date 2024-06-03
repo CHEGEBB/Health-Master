@@ -4,7 +4,7 @@ $text-color: #333;
 $background-color: #f9f9f9;
 
 .health-goals {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     background-color: $background-color;
@@ -18,12 +18,52 @@ $background-color: #f9f9f9;
         margin-bottom: 20px;
     }
 
-    .goal-section {
+    .goal-progress {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        .progress-item {
+            cursor: pointer;
+            flex: 0 0 calc(20% - 10px);
+            background-color: $primary-color;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #fff;
+
+            &:hover {
+                background-color: darken($primary-color, 10%);
+            }
+
+            &.active {
+                background-color: $primary-color;
+            }
+
+            .progress-label {
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            .progress-bar {
+                font-size: 16px;
+                background-color: rgba(255, 255, 255, 0.2);
+                border-radius: 4px;
+                padding: 4px 10px;
+                display: inline-block;
+            }
+        }
+    }
+
+    .goal-details {
         background-color: #fff;
         border-radius: 8px;
         padding: 20px;
-        margin-bottom: 20px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
 
         h2 {
             color: $primary-color;
@@ -35,38 +75,28 @@ $background-color: #f9f9f9;
             flex-wrap: wrap;
 
             .sub-goal {
-                flex: 1 1 100%;
-                display: flex;
-                align-items: center;
+                flex: 0 0 calc(33.33% - 10px);
+                background-color: $secondary-color;
+                border-radius: 8px;
+                padding: 10px;
+                margin-right: 10px;
                 margin-bottom: 10px;
+                cursor: pointer;
 
-                input[type="checkbox"] {
-                    margin-right: 10px;
-                    cursor: pointer;
+                &:hover {
+                    background-color: lighten($secondary-color, 5%);
                 }
 
-                input[type="number"],
-                input[type="text"] {
-                    flex: 1;
-                    padding: 10px;
-                    margin-left: 10px;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    font-size: 16px;
-                }
-
-                label {
-                    font-size: 16px;
-                    color: $text-color;
+                &.active {
+                    background-color: $primary-color;
                 }
             }
         }
 
-        canvas {
+        .chart {
             width: 100%;
             max-width: 300px;
-            margin: 20px auto 0;
-            display: block;
+            margin-top: 20px;
         }
     }
 }
