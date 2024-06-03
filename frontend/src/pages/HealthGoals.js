@@ -18,7 +18,9 @@ const HealthGoals = () => {
         <div className="weekly-progress-run">
             <h2>Weekly Progress</h2>
             <div className="progress-bar">
-                <div className="progress-bar-fill"></div>
+                <div className="progress-bar-fill">
+                    <div className="progress-bar-fill-text">25%</div>
+                </div>
             </div>
         </div>
     </div>
@@ -26,13 +28,17 @@ const HealthGoals = () => {
         <div className="weekly-progress-sleep">
             <h2>Weekly Progress</h2>
             <div className="progress-bar">
-                <div className="progress-bar-fill"></div>
+                <div className="progress-bar-fill">
+                    <div className="progress-bar-fill-text">40%</div>
+                </div>
             </div>
         </div>
         <div className="weekly-progress-cycling">
             <h2>Weekly Progress</h2>
             <div className="progress-bar">
-                <div className="progress-bar-fill"></div>
+                <div className="progress-bar-fill">
+                    <div className="progress-bar-fill-text">20%</div>
+                </div>
             </div>
         </div>
     </div>
