@@ -200,10 +200,52 @@ $dark-green: #006400;
     }
 }
     .goals{
+        .nutritional-goals {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        
+            .food-item {
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                overflow: hidden;
+        
+                .food-image {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                        height: auto;
+                        border-bottom: 1px solid #ddd;
+                    }
+                }
+        
+                .food-info {
+                    padding: 20px;
+        
+                    h2 {
+                        font-size: 1.2rem;
+                        margin-bottom: 10px;
+                    }
+        
+                    p {
+                        margin-bottom: 10px;
+                    }
+        
+                    .expert-info {
+                        p {
+                            margin-bottom: 5px;
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
+        }
+        
         .progress {
             display: flex;
             flex-direction: column;
             margin-top: 50px;
+
             
             .prog{
                 display: flex;

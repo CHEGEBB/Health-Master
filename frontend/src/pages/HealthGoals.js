@@ -6,6 +6,14 @@ import run from '../images/icons/docs/ic--sharp-directions-run.svg';
 import sleep from '../images/icons/docs/mdi--sleep-schedule.svg';
 import cycle from '../images/icons/docs/bx--cycling.svg';
 import verticalDotsIcon from '../images/icons/docs/cil--options.svg'; 
+import papayaImage from '../images/papaya.png';
+import spinachImage from '../images/spinach.jfif';
+import broccoliImage from '../images/brocolli.jfif';
+import blueberryImage from '../images/blueberry.jfif';
+import salmonImage from '../images/salmon.jfif';
+import quinoaImage from '../images/quinoa.jfif';
+import avocadoImage from '../images/avocado.jfif';
+import greekyogurtImage from '../images/greekyyoghurt.jfif';
 
 const HealthGoals = () => {
     const chartRef = useRef(null);
@@ -150,6 +158,156 @@ const HealthGoals = () => {
                         </div>
                     </div>
                 </div>
+                <div className="nutritional-goals">
+    <div className="food-item">
+        <div className="food-image">
+            <img src={papayaImage} alt="Papaya Fruit" />
+        </div>
+        <div className="food-info">
+            <h2>Papaya Fruit for Vitamin C</h2>
+            <p>
+                Papaya is rich in vitamin C, which boosts immunity and aids digestion. It also contains papain, an enzyme that helps break down proteins.
+            </p>
+            <div className="expert-info">
+                <p>Andrew Sceenshaver</p>
+                <p>4-6 mins</p>
+                <p>6 Ingredients</p>
+                <p>568 Reviews</p>
+            </div>
+        </div>
+    </div>
+
+    <div className="food-item">
+        <div className="food-image">
+            <img src={spinachImage} alt="Spinach" />
+        </div>
+        <div className="food-info">
+            <h2>Spinach for Iron</h2>
+            <p>
+                Spinach is packed with iron, essential for healthy red blood cells. It also contains vitamins A and K, folate, and antioxidants.
+            </p>
+            <div className="expert-info">
+                <p>Sarah Smith</p>
+                <p>3-5 mins</p>
+                <p>5 Ingredients</p>
+                <p>482 Reviews</p>
+            </div>
+        </div>
+    </div>
+    <div className="food-item">
+                <div className="food-image">
+                    <img src={broccoliImage} alt="Broccoli" />
+                </div>
+                <div className="food-info">
+                    <h2>Broccoli for Fiber and Vitamin K</h2>
+                    <p>
+                        Broccoli is high in fiber, vitamin K, and antioxidants. It supports digestion, bone health, and may reduce the risk of chronic diseases.
+                    </p>
+                    <div className="expert-info">
+                        <p>John Doe</p>
+                        <p>4-5 mins</p>
+                        <p>4 Ingredients</p>
+                        <p>321 Reviews</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Food item 4 */}
+            <div className="food-item">
+                <div className="food-image">
+                    <img src={blueberryImage} alt="Blueberries" />
+                </div>
+                <div className="food-info">
+                    <h2>Blueberries for Antioxidants</h2>
+                    <p>
+                        Blueberries are rich in antioxidants, which help protect cells from damage and reduce inflammation. They also support brain health and may improve memory.
+                    </p>
+                    <div className="expert-info">
+                        <p>Jane Doe</p>
+                        <p>2-3 mins</p>
+                        <p>3 Ingredients</p>
+                        <p>456 Reviews</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Food item 5 */}
+            <div className="food-item">
+                <div className="food-image">
+                    <img src={salmonImage} alt="Salmon" />
+                </div>
+                <div className="food-info">
+                    <h2>Salmon for Omega-3 Fatty Acids</h2>
+                    <p>
+                        Salmon is a rich source of omega-3 fatty acids, which are beneficial for heart health, brain function, and reducing inflammation. It also provides high-quality protein and essential nutrients.
+                    </p>
+                    <div className="expert-info">
+                        <p>Michael Johnson</p>
+                        <p>5-7 mins</p>
+                        <p>7 Ingredients</p>
+                        <p>789 Reviews</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Food item 6 */}
+            <div className="food-item">
+                <div className="food-image">
+                    <img src={quinoaImage} alt="Quinoa" />
+                </div>
+                <div className="food-info">
+                    <h2>Quinoa for Protein and Fiber</h2>
+                    <p>
+                        Quinoa is a complete protein source and high in fiber, making it a nutritious grain alternative. It also contains vitamins, minerals, and antioxidants.
+                    </p>
+                    <div className="expert-info">
+                        <p>Amy Smith</p>
+                        <p>4-6 mins</p>
+                        <p>5 Ingredients</p>
+                        <p>654 Reviews</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Food item 7 */}
+            <div className="food-item">
+                <div className="food-image">
+                    <img src={avocadoImage} alt="Avocado" />
+                </div>
+                <div className="food-info">
+                    <h2>Avocado for Healthy Fats</h2>
+                    <p>
+                        Avocado is rich in healthy fats, including monounsaturated fats and omega-3 fatty acids. It also provides fiber, vitamins, and minerals, promoting heart health and satiety.
+                    </p>
+                    <div className="expert-info">
+                        <p>Emily Johnson</p>
+                        <p>3-4 mins</p>
+                        <p>3 Ingredients</p>
+                        <p>567 Reviews</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Food item 8 */}
+            <div className="food-item">
+                <div className="food-image">
+                    <img src={greekyogurtImage} alt="Greek Yogurt" />
+                </div>
+                <div className="food-info">
+                    <h2>Greek Yogurt for Probiotics and Protein</h2>
+                    <p>
+                        Greek yogurt is a good source of probiotics, which support gut health and immunity. It also provides high-quality protein, calcium, and vitamins.
+                    </p>
+                    <div className="expert-info">
+                        <p>David Brown</p>
+                        <p>2-3 mins</p>
+                        <p>2 Ingredients</p>
+                        <p>890 Reviews</p>
+                    </div>
+                </div>
+            </div>
+</div>
+
                 <div className="practice">
                     <h2>Exercise Progress</h2>
                     <p>Here is your weekly exercise progress. Keep it up!</p>
