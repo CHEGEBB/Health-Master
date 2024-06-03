@@ -173,80 +173,7 @@ $dark-green: #006400;
     margin-left: 95px;
     height: 100vh;
     padding: 10px;
-    .plan-list {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 20px;
-        font-family: Arial, sans-serif;
-    
-        h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-    
-        p {
-            font-size: 16px;
-            margin-bottom: 30px;
-            color: #555;
-        }
-    
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-    
-            li {
-                margin-right: 20px;
-                font-weight: bold;
-                cursor: pointer;
-                font-size: 18px;
-                color: #777;
-    
-                &:last-child {
-                    margin-right: 0;
-                }
-            }
-        }
-    
-        .plan-item {
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
-    
-            &:hover {
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
-    
-            .day {
-                font-weight: bold;
-                font-size: 18px;
-                margin-bottom: 10px;
-                color: #333;
-            }
-    
-            > div {
-                font-size: 16px;
-                color: #666;
-                margin-bottom: 5px;
-                line-height: 1.4;
-    
-                &:last-child {
-                    margin-bottom: 0;
-                }
-            }
-    
-            &:not(:last-child) {
-                margin-bottom: 20px;
-            }
-        }
-    }
-    
+
     .practice{
         h2{
             font-family: $Rubik;
@@ -599,4 +526,130 @@ $dark-green: #006400;
             }
           }
 
+
+    .plan-list {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+      
+      h2 {
+        margin-bottom: 10px;
+      }
+  
+      nav {
+        margin-bottom: 20px;
+  
+        ul {
+          display: flex;
+          gap: 10px;
+          list-style: none;
+          padding: 0;
+          
+          li {
+            background: #eee;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+  
+            &:hover {
+              background: #ddd;
+            }
+          }
+        }
+      }
+  
+      .plan-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+        position: relative;
+  
+        .day {
+          background: #f0f0f0;
+          padding: 10px 15px;
+          border-radius: 5px;
+          font-weight: bold;
+        }
+  
+        .plan-details {
+          flex: 1;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 15px;
+          
+          .plan-title, .plan-status, .plan-type, .plan-value {
+            flex: 1;
+            text-align: center;
+          }
+        }
+  
+        .plan-actions {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+  
+          .start-workout {
+            background: #4caf50;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+  
+            &:hover {
+              background: #45a049;
+            }
+          }
+  
+          .options {
+            position: relative;
+            cursor: pointer;
+  
+            img {
+              width: 24px;
+              height: 24px;
+            }
+  
+            .dropdown-menu {
+              position: absolute;
+              top: 30px;
+              right: 0;
+              background: white;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+              z-index: 10;
+              display: flex;
+              flex-direction: column;
+              
+              button {
+                padding: 10px 20px;
+                background: none;
+                border: none;
+                text-align: left;
+                width: 100%;
+                cursor: pointer;
+                
+                &:hover {
+                  background: #f5f5f5;
+                }
+              }
+            }
+          }
+          
+        }
+      }
+    }
+  
+  
     
