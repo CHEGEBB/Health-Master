@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import Chart from 'chart.js/auto'; 
 import './HealthGoals.scss';
 import strong from '../images/icons/docs/icon-park-twotone--muscle.svg';
 import run from '../images/icons/docs/ic--sharp-directions-run.svg';
@@ -6,6 +7,60 @@ import sleep from '../images/icons/docs/mdi--sleep-schedule.svg';
 import cycle from '../images/icons/docs/bx--cycling.svg';
 
 const HealthGoals = () => {
+    const chartRef = useRef(null);
+    const chartInstanceRef = useRef(null); 
+
+    useEffect(() => {
+        if (chartRef.current) {
+            if (chartInstanceRef.current) {
+                chartInstanceRef.current.destroy(); 
+            }
+            const ctx = chartRef.current.getContext('2d');
+            chartInstanceRef.current = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                    datasets: [
+                        {
+                            label: 'Walking Progress',
+                            data: [32, 26, 35, 55, 36, 43], 
+                            borderColor: 'red', 
+                            fill: false,
+                        },
+                        {
+                            label: 'Running Progress',
+                            data: [24, 44, 47, 29, 23, 49], 
+                            borderColor: 'blue', 
+                            fill: false,
+                        },
+                        {
+                            label: 'Cycling Progress',
+                            data: [23, 24, 35, 46, 30, 50], 
+                            borderColor: '#00fa9a',
+                            fill: false,
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false,
+                            },
+                        },
+                        y: {
+                            grid: {
+                                color: '#ddd',
+                            },
+                        },
+                    },
+                },
+            });
+        }
+    }, []);
+
     return(
     <div className="health-goals">
 <div className="goals">
@@ -81,6 +136,9 @@ const HealthGoals = () => {
         </div>
     </div>
 </div>
+<div className="exercise-visual">
+                <canvas ref={chartRef} width={900} height={400} />
+            </div>
 </div>
     </div>
     );
