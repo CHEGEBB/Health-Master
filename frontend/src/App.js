@@ -8,6 +8,7 @@ import Sidenav from './components/Sidenav';
 import { DarkModeProvider } from './context/DarkModeContext';
 import Landingpage from './components/Landingpage';
 import SymptomChecker from './pages/SymptomChecker';
+
 const App = () => {
   return (
     <DarkModeProvider>

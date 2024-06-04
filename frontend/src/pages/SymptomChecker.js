@@ -1,72 +1,65 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import './SymptomChecker.scss';
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import './SymptomChecker.scss'; // Assuming you have a stylesheet
 
-const SymptomChecker = () => {
-    const [symptoms, setSymptoms] = useState('');
-    const [result, setResult] = useState('');
-    const [consent, setConsent] = useState(false);
-    const [loading, setLoading] = useState(false);
+function SymptomChecker() {
+  const [symptoms, setSymptoms] = useState(''); // State for user-entered symptoms
+  const [response, setResponse] = useState(''); // State for the generated response
+  const [isLoading, setIsLoading] = useState(false); // State to indicate loading
+  const [error, setError] = useState(null); // State for error handling
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (!consent) {
-            setResult('You must consent to provide your symptoms for analysis.');
-            return;
-        }
-        setLoading(true);
-        setResult('');
-        try {
-            const response = await axios.post('https://api.gemini.ai/v1/symptom-check', {
-                symptoms: symptoms,
-                apiKey: process.env.REACT_APP_GEMINI_API_KEY
-            });
-            setResult(response.data.diagnosis);
-        } catch (error) {
-            if (error.response) {
-                // The request was made and the server responded with a status code
-                console.error('Server Error:', error.response.data);
-            } else if (error.request) {
-                // The request was made but no response was received
-                console.error('No Response:', error.request);
-            } else {
-                // Something happened in setting up the request that triggered an error
-                console.error('Error:', error.message);
-            }
-            setResult('Error fetching diagnosis. Please try again.');
-        } finally {
-            setLoading(false);
-        }
-    };
+  const handleInputChange = (event) => {
+    setSymptoms(event.target.value);
+  };
 
-    const handleConsentChange = () => {
-        setConsent(!consent);
-    };
+  const generateResponse = async () => {
+    setIsLoading(true);
+    setResponse(''); // Clear previous response
+    setError(null); // Clear previous error
 
-    return (
-        <div className="symptom-checker">
-            <h1>Symptom Checker</h1>
-            <form onSubmit={handleSubmit}>
-                <textarea
-                    value={symptoms}
-                    onChange={(e) => setSymptoms(e.target.value)}
-                    placeholder="Describe your symptoms here"
-                ></textarea>
-                <label>
-                    <input
-                        type="checkbox"
-                        checked={consent}
-                        onChange={handleConsentChange}
-                    />
-                    I consent to providing my symptoms for analysis
-                </label>
-                <button type="submit" disabled={loading}>
-                    {loading ? 'Checking...' : 'Check Symptoms'}
-                </button>
-            </form>
-            {result && <div className="result">{result}</div>}
-        </div>
-    );
-};
+    try {
+      const API_KEY = 'AIzaSyAuYd01o05CtveTPMVevSSTmtesGqVtGxI'; // Replace with your actual API key
+      const genAI = new GoogleGenerativeAI(API_KEY);
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+      // Craft prompt for potential diseases matching the symptoms
+      const diseasesPrompt = `Based on your symptoms, you might be experiencing ${symptoms}. It is advisable to seek medical attention now.`;
+
+      const diseasesResult = await model.generateContent(diseasesPrompt);
+      const diseasesResponse = await diseasesResult.response.text();
+
+      // Set response
+      setResponse(diseasesResponse);
+    } catch (error) {
+      console.error("Error generating text:", error);
+      setError("An error occurred. Please try again later.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <div className="symptom-checker">
+      <h1>Symptom Checker</h1>
+      <div>
+        <label htmlFor="symptoms">Enter your symptoms:</label>
+        <input
+          type="text"
+          id="symptoms"
+          name="symptoms"
+          value={symptoms}
+          onChange={handleInputChange}
+        />
+        <button onClick={generateResponse} disabled={isLoading}>
+          {isLoading ? 'Generating Response...' : 'Generate Response'}
+        </button>
+      </div>
+      {error && <div className="error">{error}</div>}
+      <div id="output">
+        {response}
+      </div>
+    </div>
+  );
+}
 
 export default SymptomChecker;
