@@ -164,7 +164,7 @@ const HealthGoals = () => {
     };
 
     const weeklyStyles={
-        backgroundColor: isDarkMode ? '#041f46' : '#f0fff0',
+        backgroundColor: isDarkMode ? '#1B1B2F' : '#f0fff0',
         color: isDarkMode ? '#fff' : '#000'
     }
     const headings = {
@@ -252,7 +252,7 @@ const HealthGoals = () => {
                 <div className="practice">
                     <h2>Exercise Progress</h2>
                     <p>Here is your weekly exercise progress. Keep it up!</p>
-                    <div className="exercise-visual">
+                    <div className="exercise-visual" style={weeklyStyles}>
                         <canvas ref={chartRef} width={700} height={400} />
                     </div>
                 </div>
