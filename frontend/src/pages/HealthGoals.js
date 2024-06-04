@@ -15,6 +15,7 @@ import salmonImage from '../images/salmon.jfif';
 import quinoaImage from '../images/quinoa.jfif';
 import avocadoImage from '../images/avocado.jfif';
 import greekyogurtImage from '../images/greekyyoghurt.jfif';
+import { useDarkMode } from "../context/DarkModeContext"; 
 
 const HealthGoals = () => {
     const chartRef = useRef(null);
@@ -24,6 +25,7 @@ const HealthGoals = () => {
     const [protein, setProtein] = useState('');
     const [carbs, setCarbs] = useState('');
     const [fats, setFats] = useState('');
+    const { isDarkMode } = useDarkMode();
 
 
     const toggleOptions = (index) => {
@@ -160,19 +162,32 @@ const HealthGoals = () => {
         console.log('Carbs:', carbs);
         console.log('Fats:', fats);
     };
+
+    const weeklyStyles={
+        backgroundColor: isDarkMode ? '#041f46' : '#f0fff0',
+        color: isDarkMode ? '#fff' : '#000'
+    }
+    const headings = {
+        color: isDarkMode ? '#fff' : '#000'
+      }
+      const iconstyles={
+        backgroundColor: isDarkMode ? '#ccc' : '#555',
+        color: isDarkMode ? '#fff' : '#000'
+      }
+      
     return (
         <div className="health-goals">
             <div className="goals">
                 <div className="progress">
                     <div className="progress-row1">
-                        <div className="weekly-progress-workout">
+                        <div className="weekly-progress-workout" style={weeklyStyles}>
                             <div className="prog">
-                                <div className="procon">
+                                <div className="procon" style={iconstyles}>
                                     <img src={strong} alt="strong" />
                                 </div>
                                 <div className="det1">
-                                    <h2>Workout Progress</h2>
-                                    <p>40%</p>
+                                    <h2 style={headings}>Workout Progress</h2>
+                                    <p style={headings}>40%</p>
                                 </div>
                             </div>
                             <div className="progress-bar">
@@ -181,9 +196,9 @@ const HealthGoals = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="weekly-progress-run">
+                        <div className="weekly-progress-run" style={weeklyStyles}>
                             <div className="prog">
-                                <div className="procon">
+                                <div className="procon" style={iconstyles}>
                                     <img src={run} alt="run" />
                                 </div>
                                 <div className="det1">
@@ -199,9 +214,9 @@ const HealthGoals = () => {
                         </div>
                     </div>
                     <div className="progress-row2">
-                        <div className="weekly-progress-sleep">
+                        <div className="weekly-progress-sleep" style={weeklyStyles}>
                             <div className="prog">
-                                <div className="procon">
+                                <div className="procon" style={iconstyles}>
                                     <img src={sleep} alt="sleep" />
                                 </div>
                                 <div className="det1">
@@ -215,9 +230,9 @@ const HealthGoals = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="weekly-progress-cycling">
+                        <div className="weekly-progress-cycling" style={weeklyStyles}>
                             <div className="prog">
-                                <div className="procon">
+                                <div className="procon" style={iconstyles}>
                                     <img src={cycle} alt="cycle" />
                                 </div>
                                 <div className="det1">
