@@ -18,18 +18,18 @@ function SymptomChecker() {
     setError(null); // Clear previous error
 
     try {
-      const API_KEY = 'AIzaSyAuYd01o05CtveTPMVevSSTmtesGqVtGxI'; // Replace with your actual API key
+      const API_KEY = ''; // Replace with your actual API key
       const genAI = new GoogleGenerativeAI(API_KEY);
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-      // Craft prompt for potential diseases matching the symptoms
-      const diseasesPrompt = `Based on your symptoms, you might be experiencing ${symptoms}. It is advisable to seek medical attention now.`;
+      // Craft prompt for potential condition based on symptoms
+      const prompt = `Based on your symptoms (${symptoms}), it's advisable to seek medical attention now.`;
 
-      const diseasesResult = await model.generateContent(diseasesPrompt);
-      const diseasesResponse = await diseasesResult.response.text();
+      const result = await model.generateContent(prompt);
+      const generatedResponse = await result.response.text();
 
       // Set response
-      setResponse(diseasesResponse);
+      setResponse(generatedResponse);
     } catch (error) {
       console.error("Error generating text:", error);
       setError("An error occurred. Please try again later.");
