@@ -20,7 +20,7 @@ const SymptomChecker = () => {
 
     const apiRequestJson = {
       "messages": [
-        {"role": "user", "content": symptoms},
+        { "role": "user", "content": symptoms },
       ],
       "functions": [
         {
@@ -42,8 +42,9 @@ const SymptomChecker = () => {
 
     try {
       const apiResponse = await symptomCheckerAPI.run(apiRequestJson);
-      setDiagnosis(apiResponse.data);
-      console.log('Diagnosis:', apiResponse.data);
+      const { data } = apiResponse;
+      setDiagnosis(data);
+      console.log('Diagnosis:', data);
     } catch (error) {
       console.error('Error fetching response:', error);
       setError('Error fetching response. Please try again later.');
