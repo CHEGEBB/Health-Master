@@ -163,6 +163,11 @@ const HealthGoals = () => {
         console.log('Fats:', fats);
     };
 
+    const backStyles ={
+        backgroundColor: isDarkMode ? '#09101A' : '#f5f5f5',
+        color: isDarkMode ? '#fff' : '#000'
+      }
+
     const weeklyStyles={
         backgroundColor: isDarkMode ? '#1B1B2F' : '#f0fff0',
         color: isDarkMode ? '#fff' : '#000'
@@ -249,14 +254,14 @@ const HealthGoals = () => {
                     </div>
                 </div>
                 
-                <div className="practice">
+                <div className="practice" style={weeklyStyles}>
                     <h2>Exercise Progress</h2>
                     <p>Here is your weekly exercise progress. Keep it up!</p>
                     <div className="exercise-visual" style={weeklyStyles}>
                         <canvas ref={chartRef} width={700} height={400} />
                     </div>
                 </div>
-                <div className="plan-list">
+                <div className="plan-list" style={backStyles}>
                     <h2>Plan List</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur</p>
                     <nav>
@@ -268,8 +273,8 @@ const HealthGoals = () => {
                         </ul>
                     </nav>
                     {plans.map((plan, index) => (
-                        <div key={index} className="plan-item">
-                            <div className="day">{plan.day}</div>
+                        <div key={index} className="plan-item" style={weeklyStyles}>
+                            <div className="day" style={weeklyStyles}>{plan.day}</div>
                             <div className="plan-details">
                                 <div className="plan-title">{plan.title}</div>
                                 <div className="plan-status">{plan.status}</div>
@@ -292,7 +297,7 @@ const HealthGoals = () => {
                     ))}
                 </div>
                 <div className="nutritional-goals">
-                <div className="food-vis">
+                <div className="food-vis" style={weeklyStyles}>
                 <div className="goal-setting">
                 <h2>Nutritional Goals</h2>
                 <form onSubmit={handleGoalSetting}>
@@ -354,7 +359,7 @@ const HealthGoals = () => {
             </div>
             </div>
             <div className="foods">
-    <div className="food-item">
+    <div className="food-item" style={weeklyStyles}>
         <div className="food-image">
             <img src={papayaImage} alt="Papaya Fruit" />
         </div>
@@ -373,7 +378,7 @@ const HealthGoals = () => {
         </div>
     </div>
 
-    <div className="food-item">
+    <div className="food-item" style={weeklyStyles}>
         <div className="food-image">
             <img src={spinachImage} alt="Spinach" />
         </div>
@@ -391,7 +396,7 @@ const HealthGoals = () => {
             <button>Delete</button>
         </div>
     </div>
-    <div className="food-item">
+    <div className="food-item" style={weeklyStyles}>
                 <div className="food-image">
                     <img src={broccoliImage} alt="Broccoli" />
                 </div>
@@ -411,7 +416,7 @@ const HealthGoals = () => {
             </div>
 
             {/* Food item 4 */}
-            <div className="food-item">
+            <div className="food-item" style={weeklyStyles}>
                 <div className="food-image">
                     <img src={blueberryImage} alt="Blueberries" />
                 </div>
@@ -431,7 +436,7 @@ const HealthGoals = () => {
             </div>
 
             {/* Food item 5 */}
-            <div className="food-item">
+            <div className="food-item" style={weeklyStyles}>
                 <div className="food-image">
                     <img src={salmonImage} alt="Salmon" />
                 </div>
@@ -451,7 +456,7 @@ const HealthGoals = () => {
             </div>
 
             {/* Food item 6 */}
-            <div className="food-item">
+            <div className="food-item" style={weeklyStyles}>
                 <div className="food-image">
                     <img src={quinoaImage} alt="Quinoa" />
                 </div>
@@ -471,7 +476,7 @@ const HealthGoals = () => {
             </div>
 
             {/* Food item 7 */}
-            <div className="food-item">
+            <div className="food-item" style={weeklyStyles}>
                 <div className="food-image">
                     <img src={avocadoImage} alt="Avocado" />
                 </div>
@@ -491,7 +496,7 @@ const HealthGoals = () => {
             </div>
 
             {/* Food item 8 */}
-            <div className="food-item">
+            <div className="food-item" style={weeklyStyles}>
                 <div className="food-image">
                     <img src={greekyogurtImage} alt="Greek Yogurt" />
                 </div>
