@@ -483,6 +483,8 @@ const HealthGoals = () => {
                     </div>
                 </div>
                 <div className="buttons">
+                <button>View</button>
+
             <button>Delete</button>
         </div>
             </div>
