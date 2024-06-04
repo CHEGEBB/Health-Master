@@ -202,8 +202,8 @@ const HealthGoals = () => {
                                     <img src={run} alt="run" />
                                 </div>
                                 <div className="det1">
-                                    <h2>Run Progress</h2>
-                                    <p>25%</p>
+                                    <h2  style={headings}>Run Progress</h2>
+                                    <p  style={headings}>25%</p>
                                 </div>
                             </div>
                             <div className="progress-bar">
@@ -220,8 +220,8 @@ const HealthGoals = () => {
                                     <img src={sleep} alt="sleep" />
                                 </div>
                                 <div className="det1">
-                                    <h2>Sleep Management</h2>
-                                    <p>30%</p>
+                                    <h2  style={headings}>Sleep Management</h2>
+                                    <p  style={headings}>30%</p>
                                 </div>
                             </div>
                             <div className="progress-bar">
@@ -236,8 +236,8 @@ const HealthGoals = () => {
                                     <img src={cycle} alt="cycle" />
                                 </div>
                                 <div className="det1">
-                                    <h2>Cycling Progress</h2>
-                                    <p>40%</p>
+                                    <h2  style={headings}>Cycling Progress</h2>
+                                    <p  style={headings}>40%</p>
                                 </div>
                             </div>
                             <div className="progress-bar">
