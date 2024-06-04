@@ -7,7 +7,7 @@ import run from '../images/icons/docs/ic--sharp-directions-run.svg';
 import sleep from '../images/icons/docs/mdi--sleep-schedule.svg';
 import cycle from '../images/icons/docs/bx--cycling.svg';
 import verticalDotsIcon from '../images/icons/docs/cil--options.svg'; 
-import papayaImage from '../images/papaya.png';
+import papayaImage from '../images/papaya.webp';
 import spinachImage from '../images/spinach.jfif';
 import broccoliImage from '../images/brocolli.jfif';
 import blueberryImage from '../images/blueberry.jfif';
@@ -469,7 +469,7 @@ const HealthGoals = () => {
             </div>
 
             {/* Food item 8 */}
-            <div className="food-item-greek">
+            <div className="food-item">
                 <div className="food-image">
                     <img src={greekyogurtImage} alt="Greek Yogurt" />
                 </div>

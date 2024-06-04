@@ -267,51 +267,6 @@ $dark-green: #006400;
             display: flex;
             flex-direction:column ;
             gap: 40px;
-            .food-item-greek{
-              border: 1px solid #ddd;
-              border-radius: 8px;
-              overflow: hidden;
-              display: flex;
-              flex-direction: row;
-              gap: 20px;
-              .food-image {
-                width: 100%;
-
-                img {
-                    width: 200px;
-                    display: flex !important;
-                    justify-content: left;
-                    height: 100%;
-                    border-bottom: 1px solid #ddd;
-                }
-            }
-    
-            .food-info {
-                padding: 20px;
-                display: flex;
-                flex-direction: column;
-                background-color: red;
-                max-width: 300px;
-                margin-left: -670px;
-    
-                h2 {
-                    font-size: 1.2rem;
-                    margin-bottom: 10px;
-                }
-    
-                p {
-                    margin-bottom: 10px;
-                }
-    
-                .expert-info {
-                    p {
-                        margin-bottom: 5px;
-                        font-size: 0.9rem;
-                    }
-                }
-            }
-             
-            }
             .food-item {
                 border: 1px solid #ddd;
                 border-radius: 8px;
@@ -325,7 +280,7 @@ $dark-green: #006400;
                     width: 100%;
 
                     img {
-                        width: 200px;
+                        width: 300px;
                         display: flex !important;
                         justify-content: left;
                         height: 100%;
