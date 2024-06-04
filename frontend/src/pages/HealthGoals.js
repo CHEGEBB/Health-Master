@@ -469,7 +469,7 @@ const HealthGoals = () => {
             </div>
 
             {/* Food item 8 */}
-            <div className="food-item">
+            <div className="food-item-greek">
                 <div className="food-image">
                     <img src={greekyogurtImage} alt="Greek Yogurt" />
                 </div>
@@ -482,10 +482,11 @@ const HealthGoals = () => {
                         <p>Food Expert David Brown</p>
                     </div>
                 </div>
-            </div>
-            <div className="buttons">
+                <div className="buttons">
             <button>Delete</button>
         </div>
+            </div>
+           
             </div>
 </div>
 
