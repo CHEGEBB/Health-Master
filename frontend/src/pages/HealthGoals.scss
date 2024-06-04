@@ -291,7 +291,9 @@ $dark-green: #006400;
                       margin: 4px 2px;
                       cursor: pointer;
                       border-radius: 5px;
-                  
+                      justify-content: center;
+                    align-items:center ;
+                    margin-top: 150px;
                   }
                 }
                
@@ -322,12 +324,16 @@ $dark-green: #006400;
         
                     p {
                         margin-bottom: 10px;
+                        text-align: left;
                     }
         
                     .expert-info {
                         p {
                             margin-bottom: 5px;
                             font-size: 0.9rem;
+                            font-family: $Rubik;
+                            font-weight: bold;
+                            color: $dark-slate-blue;
                         }
                     }
                 }
