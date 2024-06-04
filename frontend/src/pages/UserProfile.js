@@ -6,6 +6,8 @@ import Doctor3 from '../images/5.jpg';
 import Doctor4 from '../images/1(2).jpg';
 import user from "../images/smith.jpg";
 import downloadIcon from '../images/icons/docs/line-md--arrow-align-bottom.svg';
+import { useDarkMode } from "../context/DarkModeContext"; 
+
 
 const Profile = () => {
   const patientHistory = [
@@ -26,11 +28,29 @@ const Profile = () => {
       documents: 'path/to/document2.pdf'
     }
   ];
+  const { isDarkMode } = useDarkMode();
+
+  const backStyles ={
+    backgroundColor: isDarkMode ? '#09101A' : '#f5f5f5',
+    color: isDarkMode ? '#fff' : '#000'
+  }
+
+const weeklyStyles={
+    backgroundColor: isDarkMode ? '#1B1B2F' : '#f0fff0',
+    color: isDarkMode ? '#fff' : '#000'
+}
+const headings = {
+    color: isDarkMode ? '#fff' : '#000'
+  }
+  const iconstyles={
+    backgroundColor: isDarkMode ? '#ccc' : '#555',
+    color: isDarkMode ? '#fff' : '#000'
+  }
 
   return (
     <div className="profile-container">
-      <div className="personal-details">
-        <div className="person">
+      <div className="personal-details" style={weeklyStyles}>
+        <div className="person" style={backStyles}>
           <div className="bg"></div>
           <div className="profile-pic">
             <img
@@ -43,6 +63,7 @@ const Profile = () => {
             <h1>John Doe</h1>
           </div>
           <div className="person-email">
+
             <p>john.doe@example.com</p>
           </div>
           <div className="edit">
@@ -53,77 +74,77 @@ const Profile = () => {
           <div className="details">
             <div className="row1">
               <div className="detail">
-                <h3>Sex</h3>
-                <p>Male</p>
+                <h3 style={headings}>Sex</h3>
+                <p style={headings}>Male</p>
               </div>
               <div className="detail">
-                <h3>Age</h3>
-                <p>24</p>
+                <h3 style={headings}>Age</h3>
+                <p style={headings}>24</p>
               </div>
               <div className="detail">
-                <h3>Blood Group</h3>
-                <p>AB+</p>
+                <h3 style={headings}>Blood Group</h3>
+                <p style={headings}>AB+</p>
               </div>
               <div className="detail">
-                <h3>Marital Status</h3>
-                <p>Single</p>
+                <h3 style={headings}>Marital Status</h3>
+                <p style={headings}>Single</p>
               </div>
             </div>
             <div className="row2">
               <div className="detail">
-                <h3>Status</h3>
-                <p>Active</p>
+                <h3 style={headings}>Status</h3>
+                <p style={headings}>Active</p>
               </div>
               <div className="detail">
-                <h3>Date of Birth</h3>
-                <p>01/01/2000</p>
+                <h3 style={headings}>Date of Birth</h3>
+                <p style={headings}>01/01/2000</p>
               </div>
               <div className="detail">
-                <h3>Height</h3>
-                <p>170cm</p>
+                <h3 style={headings}>Height</h3>
+                <p style={headings}>170cm</p>
               </div>
               <div className="detail">
-                <h3>Weight</h3>
-                <p>70kg</p>
+                <h3 style={headings}>Weight</h3>
+                <p style={headings}>70kg</p>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className="other-details">
-        <div className="patient-details">
-          <h2>My Health Stats</h2>
-          <div className="detail">
+        <div className="patient-details" style={backStyles}> 
+          <h2 style={headings}>My Health Stats</h2>
+          <div className="detail" style={weeklyStyles}>
             <div className="detail-content">
               <div className="det">
-                <h3>Blood Type</h3>
+                <h3 style={headings}>Blood Type</h3>
               </div>
               <div className="val">
-                <p>AB+</p>
+                <p style={headings}>AB+</p>
               </div>
             </div>
           </div>
-          <div className="detail">
+          <div className="detail" style={weeklyStyles}>
             <div className="detail-content">
               <div className="det">
-                <h3>Allergies</h3>
+                <h3 style={headings}>Allergies</h3>
               </div>
               <div className="val">
-                <p>Penicillin, peanuts</p>
+                <p style={headings}>Penicillin, peanuts</p>
               </div>
             </div>
           </div>
-          <div className="detail">
+          <div className="detail" style={weeklyStyles}>
             <div className="detail-content">
               <div className="det">
-                <h3>Diseases</h3>
+                <h3 style={headings}>Diseases</h3>
               </div>
               <div className="val">
-                <p>Diabetes</p>
+                <p style={headings}>Diabetes</p>
               </div>
             </div>
           </div>
-          <div className="detail">
+          <div className="detail" style={weeklyStyles}>
             <div className="detail-content">
               <div className="det">
                 <h3>Pressure</h3>
