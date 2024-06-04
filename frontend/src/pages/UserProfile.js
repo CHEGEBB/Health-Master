@@ -43,7 +43,7 @@ const headings = {
     color: isDarkMode ? '#fff' : '#000'
   }
   const iconstyles={
-    backgroundColor: isDarkMode ? '#ccc' : '#555',
+    backgroundColor: isDarkMode ? '#ccc' : '#c0c0c0',
     color: isDarkMode ? '#fff' : '#000'
   }
 
@@ -167,7 +167,7 @@ const headings = {
         </div>
         <div className="check-ups" style={weeklyStyles}>
           <h2 style={headings}>My Doctors</h2>
-          <div className="check-up">
+          <div className="check-up" style={backStyles}>
             <img src={Doctor1} alt="Dr Chealsea Green" className="doctor-photo" />
             <div className="doc">
               <h3 style={headings}>Dr Chealsea Green</h3>
@@ -175,61 +175,61 @@ const headings = {
             </div>
             <button className="delete-button">Delete</button>
           </div>
-          <div className="check-up">
+          <div className="check-up" style={backStyles}>
             <img src={Doctor2} alt="Dr Jane Wright" className="doctor-photo" />
             <div className="doc">
-              <h3>Dr Jane Wright</h3>
-              <p>Clinical Doctor</p>
+              <h3 style={headings}>Dr Jane Wright</h3>
+              <p style={headings}>Clinical Doctor</p>
             </div>
             <button className="delete-button">Delete</button>
           </div>
-          <div className="check-up">
+          <div className="check-up" style={backStyles}>
             <img src={Doctor3} alt="Dr Tom Melendez" className="doctor-photo" />
             <div className="doc">
-              <h3>Dr Tom Melendez</h3>
-              <p>Dentist</p>
+              <h3 style={headings}>Dr Tom Melendez</h3>
+              <p style={headings}>Dentist</p>
             </div>
             <button className="delete-button">Delete</button>
           </div>
-          <div className="check-up">
+          <div className="check-up" style={backStyles}>
             <img src={Doctor4} alt="Dr Riphat Jion" className="doctor-photo" />
             <div className="doc">
-              <h3>Dr Riphat Jion</h3>
-              <p>Surgeon</p>
+              <h3 style={headings}>Dr Riphat Jion</h3>
+              <p style={headings}>Surgeon</p>
             </div>
             <button className="delete-button">Delete</button>
           </div>
         </div>
       </div>
-      <div className="patient-history">
+      <div className="patient-history" style={backStyles}>
           <h2>Patient History</h2>
           {patientHistory.map((item, index) => (
-            <div className="history-item" key={index}>
+            <div className="history-item" key={index} style={weeklyStyles}>
               <div className="history-content">
                 <div className="history-detail">
-                  <h3>Date of Visit</h3>
-                  <p>{item.dateOfVisit}</p>
+                  <h3 style={headings}>Date of Visit</h3>
+                  <p style={headings}>{item.dateOfVisit}</p>
                 </div>
                 <div className="history-detail">
-                  <h3>Diagnosis</h3>
-                  <p>{item.diagnosis}</p>
+                  <h3 style={headings}>Diagnosis</h3>
+                  <p style={headings}>{item.diagnosis}</p>
                 </div>
                 <div className="history-detail">
-                  <h3>Severity</h3>
-                  <p>{item.severity}</p>
+                  <h3 style={headings}>Severity</h3>
+                  <p style={headings}>{item.severity}</p>
                 </div>
                 <div className="history-detail">
-                  <h3>Total Visits</h3>
-                  <p>{item.totalVisits}</p>
+                  <h3  style={headings}>Total Visits</h3>
+                  <p style={headings}>{item.totalVisits}</p>
                 </div>
                 <div className="history-detail">
-                  <h3>Status</h3>
-                  <p>{item.status}</p>
+                  <h3 style={headings}>Status</h3>
+                  <p style={headings}>{item.status}</p>
                 </div>
                 <div className="history-detail">
-                  <h3>Documents</h3>
+                  <h3 style={headings}>Documents</h3>
                   <a href={item.documents} download>
-                    <img src={downloadIcon} alt="Download" className="download-icon" />
+                    <img src={downloadIcon} alt="Download" className="download-icon" style={iconstyles}/>
                   </a>
                 </div>
               </div>
