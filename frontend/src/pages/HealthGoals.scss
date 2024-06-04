@@ -262,7 +262,11 @@ $dark-green: #006400;
               }
               
            }
-        
+           .foods{
+            margin-top: 20px;
+            display: flex;
+            flex-direction:column ;
+            gap: 40px;
             .food-item {
                 border: 1px solid #ddd;
                 border-radius: 8px;
@@ -302,6 +306,7 @@ $dark-green: #006400;
                     }
                 }
             }
+          }
         }
         
         .progress {
