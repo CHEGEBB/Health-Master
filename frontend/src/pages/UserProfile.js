@@ -147,31 +147,31 @@ const headings = {
           <div className="detail" style={weeklyStyles}>
             <div className="detail-content">
               <div className="det">
-                <h3>Pressure</h3>
+                <h3 style={headings}>Pressure</h3>
               </div>
               <div className="val">
-                <p>130/80 mmHG</p>
+                <p style={headings}>130/80 mmHG</p>
               </div>
             </div>
           </div>
-          <div className="detail">
+          <div className="detail" style={weeklyStyles}>
             <div className="detail-content">
               <div className="det">
-                <h3>Blood Pressure</h3>
+                <h3 style={headings}>Blood Pressure</h3>
               </div>
               <div className="val">
-                <p>120/80 mmHG</p>
+                <p style={headings}>120/80 mmHG</p>
               </div>
             </div>
           </div>
         </div>
-        <div className="check-ups">
-          <h2>My Doctors</h2>
+        <div className="check-ups" style={weeklyStyles}>
+          <h2 style={headings}>My Doctors</h2>
           <div className="check-up">
             <img src={Doctor1} alt="Dr Chealsea Green" className="doctor-photo" />
             <div className="doc">
-              <h3>Dr Chealsea Green</h3>
-              <p>Dermatologist</p>
+              <h3 style={headings}>Dr Chealsea Green</h3>
+              <p style={headings}>Dermatologist</p>
             </div>
             <button className="delete-button">Delete</button>
           </div>
