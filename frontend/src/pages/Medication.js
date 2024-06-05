@@ -127,7 +127,7 @@ const Medication = () => {
     const backStyles ={
         backgroundColor: isDarkMode ? '#09101A' : '#f5f5f5',
         color: isDarkMode ? '#fff' : '#000',
-        padding : isDarkMode ? '20px' : '20px'
+        padding : isDarkMode ? '10px' : '10px'
       }
     
     const weeklyStyles={
@@ -280,6 +280,7 @@ const Medication = () => {
             </table>
                 
             <form onSubmit={addPrescription} style={weeklyStyles}>
+            <div className="inputs">
                 <input
                     type='text'
                     name='id'
@@ -324,7 +325,11 @@ const Medication = () => {
                     required
                     style={backStyles}
                 />
+                </div>
+                <div className="buttons">
                 <button type='submit'>Add</button>
+                </div>
+              
             </form>
             
 

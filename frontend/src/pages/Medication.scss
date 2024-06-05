@@ -236,7 +236,7 @@ $dark-green: #006400;
     .interaction-section,
     .chart-section {
         margin-bottom: 30px;
-        width: 900px !important;
+        width: 850px !important;
         background: #f4f4f4;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         padding: 20px;
@@ -245,7 +245,8 @@ $dark-green: #006400;
 
     form {
         display: flex;
-        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
         align-items: center;
         margin-bottom: 20px;
         margin-top: 20px;
@@ -266,6 +267,7 @@ $dark-green: #006400;
             color: white;
             margin-left: -10px;
             cursor: pointer;
+            width: 100px;
             transition: background-color 0.2s;
 
             &:hover {
