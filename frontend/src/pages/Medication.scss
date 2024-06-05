@@ -1,7 +1,7 @@
 .medication {
     padding: 20px;
     width: 1000px !important;
-    margin-left: 200px;
+    margin-left: 120px;
     
     h1 {
         text-align: center;
@@ -10,6 +10,7 @@
     
     .gamification-section {
         margin-bottom: 30px;
+        width: 900px !important;
         
         h2 {
             text-align: center;
@@ -103,6 +104,10 @@
     .interaction-section,
     .chart-section {
         margin-bottom: 30px;
+        width: 900px !important;
+        background: #f4f4f4;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 10px;
     }
 
     form {
