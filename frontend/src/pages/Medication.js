@@ -127,7 +127,7 @@ const Medication = () => {
     const backStyles ={
         backgroundColor: isDarkMode ? '#09101A' : '#f5f5f5',
         color: isDarkMode ? '#fff' : '#000',
-        padding : isDarkMode ? '10px' : '10px'
+        padding : isDarkMode ? '20px' : '20px'
       }
     
     const weeklyStyles={
