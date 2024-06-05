@@ -145,8 +145,11 @@ $dark-green: #006400;
         width: 900px !important;
         
         h2 {
-            text-align: center;
+            text-align: left !important;
             margin-bottom: 10px;
+            font-family: $Rubik;
+            font-size: 1.5rem;
+            color: $dark-slate-blue;
         }
         
         .points-display {
@@ -159,8 +162,10 @@ $dark-green: #006400;
             
 
             h3 {
-                font-size: 1.5rem;
-                margin-bottom: 20px;
+            margin-bottom: 10px;
+            font-family: $Rubik;
+            font-size: 1.5rem;
+            color: $dark-slate-blue;
             }
             
             .earn-points {
@@ -193,6 +198,9 @@ $dark-green: #006400;
             p {
                 margin: 0;
                 margin-right: 10px;
+                font-family: $josefin;
+                font-weight: 700;
+                font-size: 18px;
             }
 
             .star {
@@ -289,6 +297,7 @@ $dark-green: #006400;
     .alarm-list, .todo-list {
         h3 {
             margin-bottom: 10px;
+            
         }
 
         ul {
