@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ropa+Sans:ital@0;1&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+$Rubik: 'Rubik', sans-serif;
+$Opensans : 'Open Sans', sans-serif;
 $jost: 'Jost', sans-serif;
 $ropa: 'Ropa Sans', sans-serif;
 $roboto: 'Roboto', sans-serif;
@@ -67,10 +71,6 @@ $special18: #4A69BD; /* Medium-dark blue */
 $special19: #566573; /* Medium-dark gray */
 $special20: #5D6D7E; /* Medium-dark blue-gray */
 
-
-
-
-
 $dark-pink: #ff1493;
 $deep-pink: #ff1493;
 $pale-violet-red: #db7093;
@@ -133,11 +133,14 @@ $dark-green: #006400;
     margin-left: 120px;
     
     h1 {
-        text-align: center;
+        text-align: left;
         margin-bottom: 20px;
+        font-family: $Rubik;
+        font-size: 2.5rem;
+
     }
     
-    .gamification-section {
+    .gamification{
         margin-bottom: 30px;
         width: 900px !important;
         
@@ -236,7 +239,7 @@ $dark-green: #006400;
         width: 900px !important;
         background: #f4f4f4;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        padding: 10px;
+        padding: 20px;
         border-radius: 8px;
     }
 
@@ -245,6 +248,8 @@ $dark-green: #006400;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 20px;
+        margin-top: 20px;
+        margin-left: -10px;
 
         input {
             margin-right: 10px;
@@ -254,11 +259,12 @@ $dark-green: #006400;
         }
 
         button {
-            padding: 10px 20px;
+            // padding: 10px 20px;
             border: none;
             border-radius: 5px;
             background-color: #3498db;
             color: white;
+            margin-left: -10px;
             cursor: pointer;
             transition: background-color 0.2s;
 

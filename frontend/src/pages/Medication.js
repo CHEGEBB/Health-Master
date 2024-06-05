@@ -126,7 +126,8 @@ const Medication = () => {
     };
     const backStyles ={
         backgroundColor: isDarkMode ? '#09101A' : '#f5f5f5',
-        color: isDarkMode ? '#fff' : '#000'
+        color: isDarkMode ? '#fff' : '#000',
+        padding : isDarkMode ? '10px' : '10px'
       }
     
     const weeklyStyles={
@@ -159,9 +160,9 @@ const Medication = () => {
         <div className='medication' style={weeklyStyles}>
             <h1>Medication Management</h1>
             
-            <div className='gamification' >
-                <h2>Adherence Gamification</h2>
-                <div className='points-display'>
+            <div className='gamification'>
+                <h2 style={headings}>Medication Adherence</h2>
+                <div className='points-display'  style={backStyles}>
                     <h3>Health Master Points: {points}</h3>
                     <button className='earn-points' onClick={addPoints}>Take Medication</button>
                 </div>
@@ -278,7 +279,7 @@ const Medication = () => {
                 </tbody>
             </table>
                 
-            <form onSubmit={addPrescription}>
+            <form onSubmit={addPrescription} style={weeklyStyles}>
                 <input
                     type='text'
                     name='id'
@@ -286,6 +287,7 @@ const Medication = () => {
                     value={newPrescription.id}
                     onChange={handleChange}
                     required
+                    style={backStyles}
                 />
                 <input
                     type='text'
@@ -294,6 +296,7 @@ const Medication = () => {
                     value={newPrescription.title}
                     onChange={handleChange}
                     required
+                    style={backStyles}
                 />
                 <input
                     type='text'
@@ -302,6 +305,7 @@ const Medication = () => {
                     value={newPrescription.createdBy}
                     onChange={handleChange}
                     required
+                    style={backStyles}
                 />
                 <input
                     type='date'
@@ -309,6 +313,7 @@ const Medication = () => {
                     value={newPrescription.date}
                     onChange={handleChange}
                     required
+                    style={backStyles}
                 />
                 <input
                     type='text'
@@ -317,9 +322,12 @@ const Medication = () => {
                     value={newPrescription.disease}
                     onChange={handleChange}
                     required
+                    style={backStyles}
                 />
-                <button type='submit'>Add Prescription</button>
+                <button type='submit'>Add</button>
             </form>
+            
+
         </div>
     );
 }
