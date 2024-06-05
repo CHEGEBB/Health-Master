@@ -151,11 +151,12 @@ $dark-green: #006400;
         
         .points-display {
             text-align: center;
-            background: #f4f4f4;
+            background:$dark-slate-blue;
             padding: 20px;
             border-radius: 10px;
             position: relative;
             animation: pulse 2s infinite;
+            
 
             h3 {
                 font-size: 1.5rem;
@@ -251,13 +252,22 @@ $dark-green: #006400;
         margin-bottom: 20px;
         margin-top: 20px;
         margin-left: -10px;
-
         input {
             margin-right: 10px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            &:hover{
+                outline: none !important;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                
+            }
+            &:focus {
+                outline: none !important;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            }
         }
+    
 
         button {
             // padding: 10px 20px;
