@@ -47,6 +47,12 @@
           background-color: #ddd;
           color: #333;
           border-radius: 15px 15px 15px 0;
+
+          // Additional styling for coach responses
+          padding: 15px; // Add padding to coach responses
+          margin-right: auto; // Align coach responses to the right
+          max-width: 70%; // Limit coach response width
+          word-wrap: break-word; // Wrap long coach responses
         }
       }
 
