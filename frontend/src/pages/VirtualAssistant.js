@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import './VirtualHealthCoach.scss';
 import Assistant from '../images/2(2).jpg';
 import User from '../images/user.png';
+import { useDarkMode } from "../context/DarkModeContext"; 
+
 
 const VirtualHealthCoach = () => {
+  const { isDarkMode } = useDarkMode();
   const [userInput, setUserInput] = useState('');
   const [conversation, setConversation] = useState([]);
   const [error, setError] = useState(null);
@@ -36,8 +39,26 @@ const VirtualHealthCoach = () => {
     }
   };
 
+  const backStyles ={
+    backgroundColor: isDarkMode ? '#09101A' : '#f5f5f5',
+    color: isDarkMode ? '#fff' : '#000'
+  }
+
+const weeklyStyles={
+    backgroundColor: isDarkMode ? '#1B1B2F' : '#f0fff0',
+    color: isDarkMode ? '#fff' : '#000'
+}
+const headings = {
+    color: isDarkMode ? '#fff' : '#000'
+  }
+
+  const conversationStyles = {
+    backgroundColor: isDarkMode? '#7b68ee' : '#3cb371',
+    color: isDarkMode? '#fff' : '#000'
+  }
+
   return (
-    <div className="virtual-health-coach">
+    <div className="virtual-health-coach" style={weeklyStyles}>
       <div className="intro-section">
         <h1>Welcome to Health Master</h1>
         <p>Your Personal Virtual Health Coach</p>
@@ -45,7 +66,7 @@ const VirtualHealthCoach = () => {
       </div>
       <div className="conversation">
         {conversation.map((message, index) => (
-          <div key={index} className={`message ${message.type}`}>
+          <div key={index} className={`message ${message.type}`} >
             {message.type === 'user' ? (
               <img src={User} alt="User Avatar" className="avatar" />
             ) : (
