@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './VirtualHealthCoach.scss';
 import Assistant from '../images/2(2).jpg';
+import User from '../images/user.png';
 
 const VirtualHealthCoach = () => {
   const [userInput, setUserInput] = useState('');
@@ -46,7 +47,7 @@ const VirtualHealthCoach = () => {
         {conversation.map((message, index) => (
           <div key={index} className={`message ${message.type}`}>
             {message.type === 'user' ? (
-              <img src="/path/to/user-avatar.jpg" alt="User Avatar" className="avatar" />
+              <img src={User} alt="User Avatar" className="avatar" />
             ) : (
               <img src={Assistant} alt="Health Coach Avatar" className="avatar" />
             )}
