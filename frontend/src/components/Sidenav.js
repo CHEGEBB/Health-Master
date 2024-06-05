@@ -99,17 +99,7 @@ const Sidenav = () => {
                         <div className={`vertical-bar ${verticalActiveBar('Medication')}`}></div>
                     </div>
                 </li>
-                <li className={`${isActive('Health')}`}>
-                    <div className={`nav-item ${isActive('Health')}`}>
-                        <div className="nav-icon">
-                            <img src={Healthcon} alt="Health" />
-                        </div>
-                        <div className="navtem">
-                            <Link to='/health' onClick={() => handleItemClick('Health')}>Health & Wellness</Link>
-                        </div>
-                        <div className={`vertical-bar ${verticalActiveBar('Health')}`}></div>
-                    </div>
-                </li>
+               
                 <li className={`${isActive('Settings')}`}>
                     <div className={`nav-item ${isActive('Settings')}`}>
                         <div className="nav-icon">

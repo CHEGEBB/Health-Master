@@ -6,7 +6,6 @@ import HealthGoals from './pages/HealthGoals';
 import SymptomChecker from './pages/SymptomChecker';
 import Medication from './pages/Medication';
 import Appointments from './pages/Appointments';
-import Health from './pages/Health';
 import Settings from './pages/Settings';
 
 const AuthenticatedRoutes = () => {
@@ -18,7 +17,6 @@ const AuthenticatedRoutes = () => {
         <Route path="/symptomchecker" element={<SymptomChecker />} />
         <Route path="/medication" element={<Medication />} />
         <Route path="/appointments" element={<Appointments />} />
-        <Route path="/health" element={<Health />} />
         <Route path="/settings" element={<Settings />} />
     </Routes>
   );
