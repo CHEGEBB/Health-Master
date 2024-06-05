@@ -1,50 +1,30 @@
 import React, { useState } from 'react';
-import LlamaAI from 'llamaai';
-import './SymptomChecker.scss';
+import './SymptomChecker.scss'; // Import your CSS file for styling
 
 const SymptomChecker = () => {
-  const [symptoms, setSymptoms] = useState('');
+  const [userInput, setUserInput] = useState('');
   const [diagnosis, setDiagnosis] = useState('');
   const [error, setError] = useState(null);
 
-  const apiToken = 'LL-mPkriaJz5jFRSimVvBwy3dtMAm72ZuyGRALInv1TMLC9znZ6wdgBbkwDtsdlstR1'; // Replace with your actual API token
-  const symptomCheckerAPI = new LlamaAI(apiToken);
-
   const handleInputChange = (event) => {
-    setSymptoms(event.target.value);
+    setUserInput(event.target.value);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setError(null);
 
-    const apiRequestJson = {
-      "messages": [
-        { "role": "user", "content": symptoms },
-      ],
-      "functions": [
-        {
-          "name": "get_diagnosis",
-          "description": "Get diagnosis based on symptoms",
-          "parameters": {
-            "type": "object",
-            "properties": {
-              "symptoms": {
-                "type": "string",
-                "description": "Symptoms entered by the user"
-              }
-            },
-            "required": ["symptoms"]
-          }
-        }
-      ]
-    };
-
     try {
-      const apiResponse = await symptomCheckerAPI.run(apiRequestJson);
-      const { data } = apiResponse;
-      setDiagnosis(data);
-      console.log('Diagnosis:', data);
+      // Fetch from backend API here and update diagnosis state
+      const response = await fetch('/api/diagnosis', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ symptoms: userInput }),
+      });
+      const data = await response.json();
+      setDiagnosis(data.diagnosis);
     } catch (error) {
       console.error('Error fetching response:', error);
       setError('Error fetching response. Please try again later.');
@@ -56,10 +36,10 @@ const SymptomChecker = () => {
       <h1>Symptom Checker</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          Enter Symptoms:
-          <input type="text" value={symptoms} onChange={handleInputChange} />
+          Describe your symptoms:
+          <textarea value={userInput} onChange={handleInputChange} />
         </label>
-        <button type="submit">Diagnose</button>
+        <button type="submit">Submit</button>
       </form>
       {error && <p className="error">{error}</p>}
       {diagnosis && (

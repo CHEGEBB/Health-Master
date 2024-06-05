@@ -246,7 +246,7 @@ const Medication = () => {
                 )}
             </div>
 
-            <div className='chart-section'>
+            <div className='chart-section' style={backStyles}>
                 <h2>Medication Progress</h2>
                 <ApexCharts options={options} series={series} type="bar" height={350} />
             </div>

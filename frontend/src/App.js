@@ -7,7 +7,6 @@ import AuthenticatedRoutes from './AuthenticatedRoutes';
 import Sidenav from './components/Sidenav';
 import { DarkModeProvider } from './context/DarkModeContext';
 import Landingpage from './components/Landingpage';
-import SymptomChecker from './pages/SymptomChecker';
 
 const App = () => {
   return (
@@ -18,7 +17,6 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/*" element={<AuthenticatedApp />} />
-          <Route path="/symptoms" element={<SymptomChecker />} />
         </Routes>
       </Router>
     </DarkModeProvider>

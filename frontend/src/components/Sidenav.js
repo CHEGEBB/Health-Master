@@ -6,7 +6,6 @@ import Profilecon from '../images/icons/iconamoon--profile-circle-fill.svg';
 import HealthGoalcon from '../images/icons/mage--goals-fill.svg';
 import Symptomcon from '../images/icons/icon-park-solid--check-one.svg';
 import Medicationcon from '../images/icons/ic--outline-medication-liquid.svg';
-import Healthcon from '../images/icons/healthicons--blood-pressure-2-negative.svg';
 import Settings from '../images/icons/mdi--settings.svg';
 import { useDarkMode } from '../context/DarkModeContext';
 
