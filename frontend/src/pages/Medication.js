@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Medication.scss';
 
 const prescriptions = [
@@ -13,9 +13,53 @@ const prescriptions = [
 ];
 
 const Medication = () => {
+    const [alarms, setAlarms] = useState([]);
+    const [alarmTime, setAlarmTime] = useState('');
+    const [alarmNote, setAlarmNote] = useState('');
+
+    const addAlarm = (e) => {
+        e.preventDefault();
+        if (alarmTime && alarmNote) {
+            setAlarms([...alarms, { time: alarmTime, note: alarmNote }]);
+            setAlarmTime('');
+            setAlarmNote('');
+        }
+    };
+
     return (
         <div className='medication'>
             <h1>Medication</h1>
+            
+            <div className='alarm-section'>
+                <h2>Set Medication Alarm</h2>
+                <form onSubmit={addAlarm}>
+                    <input
+                        type='time'
+                        value={alarmTime}
+                        onChange={(e) => setAlarmTime(e.target.value)}
+                        required
+                    />
+                    <input
+                        type='text'
+                        placeholder='Medication note'
+                        value={alarmNote}
+                        onChange={(e) => setAlarmNote(e.target.value)}
+                        required
+                    />
+                    <button type='submit'>Set Alarm</button>
+                </form>
+                <div className='alarm-list'>
+                    <h3>Set Alarms</h3>
+                    <ul>
+                        {alarms.map((alarm, index) => (
+                            <li key={index}>
+                                <span>{alarm.time}</span> - <span>{alarm.note}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+
             <table className='prescription-table'>
                 <thead>
                     <tr>
