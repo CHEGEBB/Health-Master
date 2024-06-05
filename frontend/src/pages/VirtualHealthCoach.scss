@@ -1,7 +1,8 @@
 .virtual-health-coach {
-  max-width: 600px;
-  height: 600px  !important;
+  max-width: 900px;
+  height: 700px  !important;
   margin: 0 auto;
+  margin-left: 100px !important;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -23,7 +24,7 @@
   }
 
   .conversation {
-    max-height: 400px;
+    max-height: 600px;
     overflow-y: auto;
 
     .message {
@@ -36,7 +37,7 @@
         .text {
           background-color: #4CAF50;
           color: white;
-          border-radius: 5px 5px 0 5px;
+          border-radius: 15px 15px 0 15px;
         }
       }
 
@@ -46,7 +47,7 @@
         .text {
           background-color: #ddd;
           color: #333;
-          border-radius: 5px 5px 5px 0;
+          border-radius: 15px 15px 15px 0;
         }
       }
 
