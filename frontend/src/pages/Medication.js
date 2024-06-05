@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ApexCharts from 'react-apexcharts';
 import './Medication.scss';
 
 const prescriptions = [
@@ -16,6 +17,8 @@ const Medication = () => {
     const [alarms, setAlarms] = useState([]);
     const [alarmTime, setAlarmTime] = useState('');
     const [alarmNote, setAlarmNote] = useState('');
+    const [toDo, setToDo] = useState('');
+    const [toDoList, setToDoList] = useState([]);
 
     const addAlarm = (e) => {
         e.preventDefault();
@@ -25,6 +28,47 @@ const Medication = () => {
             setAlarmNote('');
         }
     };
+
+    const addToDo = (e) => {
+        e.preventDefault();
+        if (toDo) {
+            setToDoList([...toDoList, toDo]);
+            setToDo('');
+        }
+    };
+
+    const options = {
+        chart: {
+            type: 'bar',
+            stacked: true,
+        },
+        plotOptions: {
+            bar: {
+                horizontal: false,
+                borderRadius: 10,
+            },
+        },
+        xaxis: {
+            categories: ['January', 'February', 'March', 'April', 'May', 'June'],
+        },
+        legend: {
+            position: 'top',
+        },
+        fill: {
+            opacity: 1,
+        },
+    };
+
+    const series = [
+        {
+            name: 'Medication Taken',
+            data: [30, 40, 45, 50, 49, 60],
+        },
+        {
+            name: 'Medication Missed',
+            data: [10, 15, 12, 10, 12, 8],
+        },
+    ];
 
     return (
         <div className='medication'>
@@ -60,6 +104,33 @@ const Medication = () => {
                 </div>
             </div>
 
+            <div className='todo-section'>
+                <h2>To-Do List for Medication</h2>
+                <form onSubmit={addToDo}>
+                    <input
+                        type='text'
+                        placeholder='Add a to-do'
+                        value={toDo}
+                        onChange={(e) => setToDo(e.target.value)}
+                        required
+                    />
+                    <button type='submit'>Add To-Do</button>
+                </form>
+                <div className='todo-list'>
+                    <h3>To-Do List</h3>
+                    <ul>
+                        {toDoList.map((item, index) => (
+                            <li key={index}>{item}</li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+
+            <div className='chart-section'>
+                <h2>Medication Progress</h2>
+                <ApexCharts options={options} series={series} type="bar" height={350} />
+            </div>
+
             <table className='prescription-table'>
                 <thead>
                     <tr>
@@ -80,8 +151,8 @@ const Medication = () => {
                             <td>{prescription.date}</td>
                             <td className={`disease ${prescription.disease.toLowerCase()}`}>{prescription.disease}</td>
                             <td className='actions'>
-                                <button className='download'>Download</button>
-                                <button className='delete'>Delete</button>
+                                <button className='download' onClick={() => alert(`Downloading ${prescription.title}`)}>Download</button>
+                                <button className='delete' onClick={() => alert(`Deleting ${prescription.title}`)}>Delete</button>
                             </td>
                         </tr>
                     ))}

@@ -6,7 +6,7 @@
         margin-bottom: 20px;
     }
     
-    .alarm-section {
+    .alarm-section, .todo-section {
         margin-bottom: 30px;
         
         h2 {
@@ -42,7 +42,7 @@
             }
         }
         
-        .alarm-list {
+        .alarm-list, .todo-list {
             h3 {
                 text-align: center;
                 margin-bottom: 10px;
@@ -62,6 +62,15 @@
                     justify-content: space-between;
                 }
             }
+        }
+    }
+
+    .chart-section {
+        margin-bottom: 30px;
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
         }
     }
 
