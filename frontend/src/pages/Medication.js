@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import ApexCharts from 'react-apexcharts';
 import './Medication.scss';
-
+import { useDarkMode } from "../context/DarkModeContext"; 
 
 
 const Medication = () => {
+    const { isDarkMode } = useDarkMode();
     const [alarms, setAlarms] = useState([]);
     const [alarmTime, setAlarmTime] = useState('');
     const [alarmNote, setAlarmNote] = useState('');
@@ -123,25 +124,56 @@ const Medication = () => {
             });
         }
     };
+    const backStyles ={
+        backgroundColor: isDarkMode ? '#09101A' : '#f5f5f5',
+        color: isDarkMode ? '#fff' : '#000'
+      }
+    
+    const weeklyStyles={
+        backgroundColor: isDarkMode ? '#1B1B2F' : '#f0ffff',
+        color: isDarkMode ? '#fff' : '#000'
+    }
+    const headings = {
+        color: isDarkMode ? '#fff' : '#000'
+      }
+      const iconstyles={
+        backgroundColor: isDarkMode ? '#ccc' : '#c0c0c0',
+        color: isDarkMode ? '#333' : '#000',
+        fontFamily : isDarkMode ? 'cursive' : 'cursive',
+        border : isDarkMode ? '1px solid #3cb371' : '1px solid #8470ff'
+      }
+      const successStyles={
+        backgroundColor: isDarkMode ? '#00fa9a' : '#4CAF50',
+        color: isDarkMode ? '#fff' : '#000',
+        borderRadius:'8px'
+
+      }
+      const tableStyles={
+        backgroundColor: isDarkMode ? '#4A69BD' : '#f0ffff',
+        color: isDarkMode ? '#fff' : '#000',
+        fontFamily : isDarkMode ? 'cursive' : 'cursive',
+        border : isDarkMode ? '1px solid #3cb371' : '1px solid #8470ff'
+      }
+    
     return (
-        <div className='medication'>
+        <div className='medication' style={weeklyStyles}>
             <h1>Medication Management</h1>
             
-            <div className='gamification-section'>
+            <div className='gamification' >
                 <h2>Adherence Gamification</h2>
                 <div className='points-display'>
                     <h3>Health Master Points: {points}</h3>
                     <button className='earn-points' onClick={addPoints}>Take Medication</button>
                 </div>
-                {showSuccess && (
-                    <div className='success-message'>
+                {showSuccess    && (
+                    <div className='success-message' style={successStyles}>
                         <p>Success! You've earned points.</p>
                         <span className='star'>⭐</span>
                     </div>
                 )}
             </div>
 
-            <div className='alarm-section'>
+            <div className='alarm-section' style={backStyles}>
                 <h2>Set Medication Alarm</h2>
                 <form onSubmit={addAlarm}>
                     <input
@@ -163,7 +195,7 @@ const Medication = () => {
                     <h3>Set Alarms</h3>
                     <ul>
                         {alarms.map((alarm, index) => (
-                            <li key={index}>
+                            <li key={index}  style={iconstyles}>
                                 <span>{alarm.time}</span> - <span>{alarm.note}</span>
                             </li>
                         ))}
@@ -171,7 +203,7 @@ const Medication = () => {
                 </div>
             </div>
 
-            <div className='todo-section'>
+            <div className='todo-section' style={backStyles}>
                 <h2>To-Do List for Medication</h2>
                 <form onSubmit={addToDo}>
                     <input
@@ -185,15 +217,15 @@ const Medication = () => {
                 </form>
                 <div className='todo-list'>
                     <h3>To-Do List</h3>
-                    <ul>
+                    <ul >
                         {toDoList.map((item, index) => (
-                            <li key={index}>{item}</li>
+                            <li key={index}  style={iconstyles}>{item}</li>
                         ))}
                     </ul>
                 </div>
             </div>
 
-            <div className='interaction-section'>
+            <div className='interaction-section' style={backStyles}>
                 <h2>Medication Interaction Checker</h2>
                 <form onSubmit={checkInteractions}>
                     <input
@@ -206,7 +238,7 @@ const Medication = () => {
                     <button type='submit'>Check Interactions</button>
                 </form>
                 {interactionResult && (
-                    <div className='interaction-result'>
+                    <div className='interaction-result' style={backStyles}>
                         <h3>Interaction Results</h3>
                         <p>{interactionResult}</p>
                     </div>
@@ -218,15 +250,15 @@ const Medication = () => {
                 <ApexCharts options={options} series={series} type="bar" height={350} />
             </div>
 
-            <table className='prescription-table'>
+            <table className='prescription-table' style={backStyles}>
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Title</th>
-                        <th>Created by</th>
-                        <th>Date</th>
-                        <th>Diseases</th>
-                        <th>Actions</th>
+                        <th style={tableStyles} >#</th>
+                        <th style={tableStyles}>Title</th>
+                        <th style={tableStyles}>Created by</th>
+                        <th style={tableStyles}>Date</th>
+                        <th style={tableStyles}>Diseases</th>
+                        <th style={tableStyles}>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
