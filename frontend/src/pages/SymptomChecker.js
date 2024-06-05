@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import './SymptomChecker.scss'; // Import your CSS file for styling
+import './VirtualHealthCoach.scss';
+import Assistant from '../images/2(2).jpg';
 
-const SymptomChecker = () => {
+const VirtualHealthCoach = () => {
   const [userInput, setUserInput] = useState('');
-  const [diagnosis, setDiagnosis] = useState('');
+  const [conversation, setConversation] = useState([]);
   const [error, setError] = useState(null);
 
   const handleInputChange = (event) => {
@@ -15,16 +16,19 @@ const SymptomChecker = () => {
     setError(null);
 
     try {
-      // Fetch from backend API here and update diagnosis state
-      const response = await fetch('/api/diagnosis', {
+      // Fetch response from backend API here and update conversation state
+      const response = await fetch('http://localhost:3001/gemini/generateText', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ symptoms: userInput }),
+        body: JSON.stringify({ prompt: userInput }),
       });
       const data = await response.json();
-      setDiagnosis(data.diagnosis);
+      const newMessage = { text: userInput, type: 'user' };
+      const coachMessage = { text: data.text, type: 'coach' };
+      setConversation([...conversation, newMessage, coachMessage]);
+      setUserInput('');
     } catch (error) {
       console.error('Error fetching response:', error);
       setError('Error fetching response. Please try again later.');
@@ -32,24 +36,36 @@ const SymptomChecker = () => {
   };
 
   return (
-    <div className="symptom-checker">
-      <h1>Symptom Checker</h1>
+    <div className="virtual-health-coach">
+      <div className="intro-section">
+        <h1>Welcome to Health Master</h1>
+        <p>Your Personal Virtual Health Coach</p>
+        <p>The Virtual Health Coach is here to provide personalized guidance and support to help you achieve your health and wellness goals. Feel free to ask any health-related questions or seek advice on maintaining a healthy lifestyle.</p>
+      </div>
+      <div className="conversation">
+        {conversation.map((message, index) => (
+          <div key={index} className={`message ${message.type}`}>
+            {message.type === 'user' ? (
+              <img src="/path/to/user-avatar.jpg" alt="User Avatar" className="avatar" />
+            ) : (
+              <img src={Assistant} alt="Health Coach Avatar" className="avatar" />
+            )}
+            <div className="text">{message.text}</div>
+          </div>
+        ))}
+      </div>
       <form onSubmit={handleSubmit}>
-        <label>
-          Describe your symptoms:
-          <textarea value={userInput} onChange={handleInputChange} />
-        </label>
-        <button type="submit">Submit</button>
+        <input
+          type="text"
+          value={userInput}
+          onChange={handleInputChange}
+          placeholder="Start typing here..."
+        />
+        <button type="submit">Send</button>
       </form>
       {error && <p className="error">{error}</p>}
-      {diagnosis && (
-        <div className="diagnosis">
-          <h2>Diagnosis</h2>
-          <p>{diagnosis}</p>
-        </div>
-      )}
     </div>
   );
 };
 
-export default SymptomChecker;
+export default VirtualHealthCoach;
