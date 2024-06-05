@@ -19,6 +19,10 @@ const Medication = () => {
     const [alarmNote, setAlarmNote] = useState('');
     const [toDo, setToDo] = useState('');
     const [toDoList, setToDoList] = useState([]);
+    const [medications, setMedications] = useState('');
+    const [interactionResult, setInteractionResult] = useState(null);
+    const [points, setPoints] = useState(0);
+    const [showSuccess, setShowSuccess] = useState(false);
 
     const addAlarm = (e) => {
         e.preventDefault();
@@ -35,6 +39,14 @@ const Medication = () => {
             setToDoList([...toDoList, toDo]);
             setToDo('');
         }
+    };
+
+    const checkInteractions = (e) => {
+        e.preventDefault();
+        // Here you would integrate with an API to check for interactions
+        // Mock result for demonstration
+        const result = `Interactions found for: ${medications}`;
+        setInteractionResult(result);
     };
 
     const options = {
@@ -70,10 +82,35 @@ const Medication = () => {
         },
     ];
 
+    const addPoints = () => {
+        const newPoints = points + 10;
+        setPoints(newPoints);
+        setShowSuccess(true);
+        setTimeout(() => setShowSuccess(false), 3000); // Hide success message after 3 seconds
+        if (newPoints >= 100) {
+            alert('Congratulations! You have earned a free medical checkup.');
+            setPoints(0);
+        }
+    };
+
     return (
         <div className='medication'>
             <h1>Medication</h1>
             
+            <div className='gamification-section'>
+                <h2>Adherence Gamification</h2>
+                <div className='points-display'>
+                    <h3>Health Master Points: {points}</h3>
+                    <button className='earn-points' onClick={addPoints}>Take Medication</button>
+                </div>
+                {showSuccess && (
+                    <div className='success-message'>
+                        <p>Success! You've earned points.</p>
+                        <span className='star'>⭐</span>
+                    </div>
+                )}
+            </div>
+
             <div className='alarm-section'>
                 <h2>Set Medication Alarm</h2>
                 <form onSubmit={addAlarm}>
@@ -124,6 +161,26 @@ const Medication = () => {
                         ))}
                     </ul>
                 </div>
+            </div>
+
+            <div className='interaction-section'>
+                <h2>Medication Interaction Checker</h2>
+                <form onSubmit={checkInteractions}>
+                    <input
+                        type='text'
+                        placeholder='Enter medications'
+                        value={medications}
+                        onChange={(e) => setMedications(e.target.value)}
+                        required
+                    />
+                    <button type='submit'>Check Interactions</button>
+                </form>
+                {interactionResult && (
+                    <div className='interaction-result'>
+                        <h3>Interaction Results</h3>
+                        <p>{interactionResult}</p>
+                    </div>
+                )}
             </div>
 
             <div className='chart-section'>
