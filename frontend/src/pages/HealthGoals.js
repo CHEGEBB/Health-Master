@@ -169,7 +169,7 @@ const HealthGoals = () => {
       }
 
     const weeklyStyles={
-        backgroundColor: isDarkMode ? '#1B1B2F' : '#f0fff0',
+        backgroundColor: isDarkMode ? '#1B1B2F' : '#f0f8ff',
         color: isDarkMode ? '#fff' : '#000'
     }
     const headings = {

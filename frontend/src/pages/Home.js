@@ -237,7 +237,7 @@ const headings = {
 }
 
 const rateStyles={
-  backgroundColor: isDarkMode ? '#0D1B2A' : '#f0fff0',
+  backgroundColor: isDarkMode ? '#0D1B2A' : '#f0f8ff',
   color: isDarkMode ? '#fff' : '#000'
 }
 
