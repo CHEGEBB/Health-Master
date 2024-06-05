@@ -25,7 +25,7 @@ const Medication = () => {
         { id: 'A765', title: 'Prescription 7', createdBy: 'Dr. Jacob Ryan', date: '12/05/2016', disease: 'Fever' },
         { id: 'A125', title: 'Prescription 8', createdBy: 'Dr. Rajesh', date: '12/05/2016', disease: 'Cholera' },
     ]);
-    
+
     const addAlarm = (e) => {
         e.preventDefault();
         if (alarmTime && alarmNote) {
@@ -88,7 +88,7 @@ const Medication = () => {
         const newPoints = points + 10;
         setPoints(newPoints);
         setShowSuccess(true);
-        setTimeout(() => setShowSuccess(false), 3000); // Hide success message after 3 seconds
+        setTimeout(() => setShowSuccess(false), 3000);
         if (newPoints >= 100) {
             alert('Congratulations! You have earned a free medical checkup.');
             setPoints(0);
@@ -125,7 +125,7 @@ const Medication = () => {
     };
     return (
         <div className='medication'>
-            <h1>Medication</h1>
+            <h1>Medication Management</h1>
             
             <div className='gamification-section'>
                 <h2>Adherence Gamification</h2>
