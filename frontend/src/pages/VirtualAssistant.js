@@ -39,23 +39,12 @@ const VirtualHealthCoach = () => {
     }
   };
 
-  const backStyles ={
-    backgroundColor: isDarkMode ? '#09101A' : '#f5f5f5',
-    color: isDarkMode ? '#fff' : '#000'
-  }
-
+ 
 const weeklyStyles={
     backgroundColor: isDarkMode ? '#1B1B2F' : '#f0fff0',
     color: isDarkMode ? '#fff' : '#000'
 }
-const headings = {
-    color: isDarkMode ? '#fff' : '#000'
-  }
 
-  const conversationStyles = {
-    backgroundColor: isDarkMode? '#7b68ee' : '#3cb371',
-    color: isDarkMode? '#fff' : '#000'
-  }
 
   return (
     <div className="virtual-health-coach" style={weeklyStyles}>
