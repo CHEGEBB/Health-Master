@@ -134,6 +134,23 @@ nav {
     position: fixed;
     font-family: $jost;
     padding-top: 120px;
+    .dark{
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        margin-left: 30px;
+        padding-bottom: 30px; 
+
+        img{
+            width: 30px;
+            height: 30px;
+            margin-right: 10px; 
+               margin-top: -5px;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
     h1 {
         padding: 30px;
     }

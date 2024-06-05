@@ -8,6 +8,8 @@ import Symptomcon from '../images/icons/icon-park-solid--check-one.svg';
 import Medicationcon from '../images/icons/ic--outline-medication-liquid.svg';
 import Settings from '../images/icons/mdi--settings.svg';
 import { useDarkMode } from '../context/DarkModeContext';
+import LogOut from "../images/icons/majesticons--logout.svg"
+import Theme from "../images/icons/line-md--moon-filled-to-sunny-filled-loop-transition.svg"
 
 const Sidenav = () => {
     const { isDarkMode, toggleDarkMode } = useDarkMode();
@@ -38,8 +40,19 @@ const Sidenav = () => {
         backgroundColor: isDarkMode? '#ffffff' : '#000000'
     }
 
+    const handleLogOut = () => {
+        localStorage.removeItem('token');
+        window.location.href = '/login';
+    };
+
     return (
         <nav className={`side-nav ${isDarkMode ? 'dark-mode' : ''}`} style={navStyles}>
+        <div className="dark">
+            <img src={Theme} alt="dark" onClick={toggleDarkMode} />
+        <div className="dark-mode-toggle" onClick={toggleDarkMode}>
+                {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+            </div>
+            </div>
             <ul>
                 <li className={`special ${isActive('Dashboard')}`}>
                     <div className={`nav-item ${isActive('Dashboard')}`}>
@@ -110,10 +123,18 @@ const Sidenav = () => {
                         <div className={`vertical-bar ${verticalActiveBar('Settings')}`}></div>
                     </div>
                 </li>
+                <li className={`${isActive('Log Out')}`}>
+                    <div className={`nav-item ${isActive('Log Out')}`}>
+                        <div className="nav-icon">
+                            <img src={LogOut} alt="Log Out" />
+                        </div>
+                        <div className="navtem">
+                            <Link to='/' onClick={handleLogOut}>Log Out</Link>
+                        </div>
+                        <div className={`vertical-bar ${verticalActiveBar('Log Out')}`}></div>
+                    </div>
+                </li>
             </ul>
-            <div className="dark-mode-toggle" onClick={toggleDarkMode}>
-                {isDarkMode ? 'Light Mode' : 'Dark Mode'}
-            </div>
         </nav>
     );
 }
