@@ -6,6 +6,7 @@ import HealthGoals from './pages/HealthGoals';
 import Medication from './pages/Medication';
 import Settings from './pages/Settings';
 import VirtualAssistant from './pages/VirtualAssistant';
+import Details from "./authpages/Details";
 
 
 const AuthenticatedRoutes = () => {
@@ -17,6 +18,9 @@ const AuthenticatedRoutes = () => {
         <Route path="/medication" element={<Medication />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/virtualassistant" element={<VirtualAssistant />} />
+        <Route path="/details" element={<Details />} />
+
+        
     </Routes>
   );
 };
